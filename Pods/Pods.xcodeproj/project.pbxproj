@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A451C8BB01199D6C85D1DD8ADB4C31F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		26F5EF46F42387A034F5DB76CAF80A9A /* Pods-StalkFinance-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BA7BDB585E8BE3F72A95E578CD6A91F /* Pods-StalkFinance-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36E9101BBEF28416869E050224082410 /* Pods-StalkFinanceTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B341B50B6B6C88F1FF0CC7D08E4D4 /* Pods-StalkFinanceTests-dummy.m */; };
+		3E11185B9BEAC0730379522533D15015 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		76EBF2B14173DC4BBE2AFDABEE79F28D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		85DAA3D95CD911D91AE156D0AE317FA3 /* Pods-StalkFinance-StalkFinanceUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86EFF19F34B6889F15344A31E1C31C2B /* Pods-StalkFinance-StalkFinanceUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B553ECAAA9671950883F55B5FCDE8992 /* Pods-StalkFinance-StalkFinanceUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4D8D9321AB480BD0FE149A759F502 /* Pods-StalkFinance-StalkFinanceUITests-dummy.m */; };
+		D351BEF5A84EBFBB5B41376F220F356E /* Pods-StalkFinance-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2F26EC4D257B8C280EC4E430CB22B5 /* Pods-StalkFinance-dummy.m */; };
+		EB6B5C1D7CF499103637B526B183D11E /* Pods-StalkFinanceTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54BB5D7D76A7D8A97D771C9FB15A2688 /* Pods-StalkFinanceTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D537AD4B64D6CBD27B20A7E26ED42E87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6CF5B16B9BA9486A804594187E00A2C;
+			remoteInfo = "Pods-StalkFinance";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02A25FC915B2374B20CFE020C4E90A53 /* Pods-StalkFinanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StalkFinanceTests.release.xcconfig"; sourceTree = "<group>"; };
+		1A356FDA9A038E72C41E736BEDFA283D /* Pods-StalkFinance-StalkFinanceUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StalkFinance-StalkFinanceUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2335C17E12C54FDEB0545CBBEAAB0209 /* Pods-StalkFinanceTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StalkFinanceTests"; path = Pods_StalkFinanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CE0C5D318B2CA9968DADDCAEDF20F50 /* Pods-StalkFinance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StalkFinance.release.xcconfig"; sourceTree = "<group>"; };
+		54BB5D7D76A7D8A97D771C9FB15A2688 /* Pods-StalkFinanceTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StalkFinanceTests-umbrella.h"; sourceTree = "<group>"; };
+		5BA7BDB585E8BE3F72A95E578CD6A91F /* Pods-StalkFinance-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StalkFinance-umbrella.h"; sourceTree = "<group>"; };
+		6B2D7E555E954F2C734FB7D1A2D63876 /* Pods-StalkFinance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StalkFinance.debug.xcconfig"; sourceTree = "<group>"; };
+		72AFD29EE5CBC06C259BE1C6649E6DF7 /* Pods-StalkFinanceTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StalkFinanceTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		73F7BD480DB22CC704FF5341B9E045D5 /* Pods-StalkFinanceTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StalkFinanceTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		78B2942297C0351DB9F523192CAC09DA /* Pods-StalkFinance-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StalkFinance-Info.plist"; sourceTree = "<group>"; };
+		81D4D8D9321AB480BD0FE149A759F502 /* Pods-StalkFinance-StalkFinanceUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StalkFinance-StalkFinanceUITests-dummy.m"; sourceTree = "<group>"; };
+		86EFF19F34B6889F15344A31E1C31C2B /* Pods-StalkFinance-StalkFinanceUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StalkFinance-StalkFinanceUITests-umbrella.h"; sourceTree = "<group>"; };
+		87411AA580C2CF6E154BA9FB54E54ACE /* Pods-StalkFinance-StalkFinanceUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StalkFinance-StalkFinanceUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		87BB1B0FF3EC76C3D5895AD994EA1970 /* Pods-StalkFinance-StalkFinanceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StalkFinance-StalkFinanceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93EB1074A6A35F3904A6060FD2233467 /* Pods-StalkFinance-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StalkFinance-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E2F26EC4D257B8C280EC4E430CB22B5 /* Pods-StalkFinance-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StalkFinance-dummy.m"; sourceTree = "<group>"; };
+		A26040B5A1682A56112EE2C5F757CCEC /* Pods-StalkFinance-StalkFinanceUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StalkFinance-StalkFinanceUITests.modulemap"; sourceTree = "<group>"; };
+		ACC9DF7658DFDE57BC30250EE7E83425 /* Pods-StalkFinance-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StalkFinance-acknowledgements.plist"; sourceTree = "<group>"; };
+		AEC4C6814529AB4B62257C2802BA83DD /* Pods-StalkFinance.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StalkFinance.modulemap"; sourceTree = "<group>"; };
+		B2CC18FD124033D418D7A0F690EB6C71 /* Pods-StalkFinance */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StalkFinance"; path = Pods_StalkFinance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E1BACDA94C6619861CCEA8C6253CB0 /* Pods-StalkFinanceTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StalkFinanceTests.modulemap"; sourceTree = "<group>"; };
+		D447597FBC2EB496C6688BAE90AF6268 /* Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA9B341B50B6B6C88F1FF0CC7D08E4D4 /* Pods-StalkFinanceTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StalkFinanceTests-dummy.m"; sourceTree = "<group>"; };
+		DFDEB1ACD0FEDD75981AA5231CBC8EE3 /* Pods-StalkFinanceTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StalkFinanceTests-Info.plist"; sourceTree = "<group>"; };
+		E4B83E97CC2C4D704B182232C0BE8379 /* Pods-StalkFinance-StalkFinanceUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StalkFinance-StalkFinanceUITests-Info.plist"; sourceTree = "<group>"; };
+		EA8E2EBD2D174D289FF68C1B6B960CF8 /* Pods-StalkFinance-StalkFinanceUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StalkFinance-StalkFinanceUITests"; path = Pods_StalkFinance_StalkFinanceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B4D882B8C10A37895B83C065DE033D /* Pods-StalkFinanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StalkFinanceTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		398ACB07EDB4AFDDEB8ADE3BC770BCE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A451C8BB01199D6C85D1DD8ADB4C31F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D3AB0B8E124C62EAA31DAF9366AFEDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76EBF2B14173DC4BBE2AFDABEE79F28D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECBD2CC50EDF8786DA0D20782387A0C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E11185B9BEAC0730379522533D15015 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16B99DA242D84DEFBF576E233C00CFBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2CC18FD124033D418D7A0F690EB6C71 /* Pods-StalkFinance */,
+				EA8E2EBD2D174D289FF68C1B6B960CF8 /* Pods-StalkFinance-StalkFinanceUITests */,
+				2335C17E12C54FDEB0545CBBEAAB0209 /* Pods-StalkFinanceTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20AC0EE091EC92C589C34DD82A129DA8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB415B6EC85F0BEE20CEF922F313A029 /* Pods-StalkFinance */,
+				B92B667796C00E220DB6AA922F743456 /* Pods-StalkFinance-StalkFinanceUITests */,
+				476DA6171B120B28FBEC6C6049C4AF99 /* Pods-StalkFinanceTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		476DA6171B120B28FBEC6C6049C4AF99 /* Pods-StalkFinanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4E1BACDA94C6619861CCEA8C6253CB0 /* Pods-StalkFinanceTests.modulemap */,
+				73F7BD480DB22CC704FF5341B9E045D5 /* Pods-StalkFinanceTests-acknowledgements.markdown */,
+				72AFD29EE5CBC06C259BE1C6649E6DF7 /* Pods-StalkFinanceTests-acknowledgements.plist */,
+				DA9B341B50B6B6C88F1FF0CC7D08E4D4 /* Pods-StalkFinanceTests-dummy.m */,
+				DFDEB1ACD0FEDD75981AA5231CBC8EE3 /* Pods-StalkFinanceTests-Info.plist */,
+				54BB5D7D76A7D8A97D771C9FB15A2688 /* Pods-StalkFinanceTests-umbrella.h */,
+				F1B4D882B8C10A37895B83C065DE033D /* Pods-StalkFinanceTests.debug.xcconfig */,
+				02A25FC915B2374B20CFE020C4E90A53 /* Pods-StalkFinanceTests.release.xcconfig */,
+			);
+			name = "Pods-StalkFinanceTests";
+			path = "Target Support Files/Pods-StalkFinanceTests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B92B667796C00E220DB6AA922F743456 /* Pods-StalkFinance-StalkFinanceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A26040B5A1682A56112EE2C5F757CCEC /* Pods-StalkFinance-StalkFinanceUITests.modulemap */,
+				1A356FDA9A038E72C41E736BEDFA283D /* Pods-StalkFinance-StalkFinanceUITests-acknowledgements.markdown */,
+				87411AA580C2CF6E154BA9FB54E54ACE /* Pods-StalkFinance-StalkFinanceUITests-acknowledgements.plist */,
+				81D4D8D9321AB480BD0FE149A759F502 /* Pods-StalkFinance-StalkFinanceUITests-dummy.m */,
+				E4B83E97CC2C4D704B182232C0BE8379 /* Pods-StalkFinance-StalkFinanceUITests-Info.plist */,
+				86EFF19F34B6889F15344A31E1C31C2B /* Pods-StalkFinance-StalkFinanceUITests-umbrella.h */,
+				D447597FBC2EB496C6688BAE90AF6268 /* Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig */,
+				87BB1B0FF3EC76C3D5895AD994EA1970 /* Pods-StalkFinance-StalkFinanceUITests.release.xcconfig */,
+			);
+			name = "Pods-StalkFinance-StalkFinanceUITests";
+			path = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				16B99DA242D84DEFBF576E233C00CFBF /* Products */,
+				20AC0EE091EC92C589C34DD82A129DA8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB415B6EC85F0BEE20CEF922F313A029 /* Pods-StalkFinance */ = {
+			isa = PBXGroup;
+			children = (
+				AEC4C6814529AB4B62257C2802BA83DD /* Pods-StalkFinance.modulemap */,
+				93EB1074A6A35F3904A6060FD2233467 /* Pods-StalkFinance-acknowledgements.markdown */,
+				ACC9DF7658DFDE57BC30250EE7E83425 /* Pods-StalkFinance-acknowledgements.plist */,
+				9E2F26EC4D257B8C280EC4E430CB22B5 /* Pods-StalkFinance-dummy.m */,
+				78B2942297C0351DB9F523192CAC09DA /* Pods-StalkFinance-Info.plist */,
+				5BA7BDB585E8BE3F72A95E578CD6A91F /* Pods-StalkFinance-umbrella.h */,
+				6B2D7E555E954F2C734FB7D1A2D63876 /* Pods-StalkFinance.debug.xcconfig */,
+				2CE0C5D318B2CA9968DADDCAEDF20F50 /* Pods-StalkFinance.release.xcconfig */,
+			);
+			name = "Pods-StalkFinance";
+			path = "Target Support Files/Pods-StalkFinance";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		583A137E342D21DC461F22610FF8DC0A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DAA3D95CD911D91AE156D0AE317FA3 /* Pods-StalkFinance-StalkFinanceUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		734BF59B486975E61D1D95C673080ED7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB6B5C1D7CF499103637B526B183D11E /* Pods-StalkFinanceTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6B09395D0DB8756E478B26567C19A12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F5EF46F42387A034F5DB76CAF80A9A /* Pods-StalkFinance-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		02C16FF9ACA3F57E68698988887E0097 /* Pods-StalkFinance-StalkFinanceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76B2D82A7B00476D0F08BCBF1712ECF3 /* Build configuration list for PBXNativeTarget "Pods-StalkFinance-StalkFinanceUITests" */;
+			buildPhases = (
+				583A137E342D21DC461F22610FF8DC0A /* Headers */,
+				DC18415F31955E8FDD52CBBE8BD56E3C /* Sources */,
+				ECBD2CC50EDF8786DA0D20782387A0C5 /* Frameworks */,
+				6A0B92019B48C2942FB4375921AA6057 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-StalkFinance-StalkFinanceUITests";
+			productName = Pods_StalkFinance_StalkFinanceUITests;
+			productReference = EA8E2EBD2D174D289FF68C1B6B960CF8 /* Pods-StalkFinance-StalkFinanceUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		4F93371BCCFE3454551EFBC1346666B8 /* Pods-StalkFinanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3F31C741A70C07029A47C74B09EA7C5 /* Build configuration list for PBXNativeTarget "Pods-StalkFinanceTests" */;
+			buildPhases = (
+				734BF59B486975E61D1D95C673080ED7 /* Headers */,
+				61CE7BF3A8DE2173D60C4DF9AD65118F /* Sources */,
+				398ACB07EDB4AFDDEB8ADE3BC770BCE6 /* Frameworks */,
+				DB574F0923BB77CD3FA6B09DBBC02D0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB2A7A5B0B3FB58C792FA5E71ECBB46D /* PBXTargetDependency */,
+			);
+			name = "Pods-StalkFinanceTests";
+			productName = Pods_StalkFinanceTests;
+			productReference = 2335C17E12C54FDEB0545CBBEAAB0209 /* Pods-StalkFinanceTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		D6CF5B16B9BA9486A804594187E00A2C /* Pods-StalkFinance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F24FD5160D4283A0275D0E44D91B421 /* Build configuration list for PBXNativeTarget "Pods-StalkFinance" */;
+			buildPhases = (
+				F6B09395D0DB8756E478B26567C19A12 /* Headers */,
+				69FB8C5AD8A7B4309AF18C649A569E1B /* Sources */,
+				7D3AB0B8E124C62EAA31DAF9366AFEDA /* Frameworks */,
+				7E7AF4562D08996B16C56F25CF842146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-StalkFinance";
+			productName = Pods_StalkFinance;
+			productReference = B2CC18FD124033D418D7A0F690EB6C71 /* Pods-StalkFinance */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 16B99DA242D84DEFBF576E233C00CFBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6CF5B16B9BA9486A804594187E00A2C /* Pods-StalkFinance */,
+				02C16FF9ACA3F57E68698988887E0097 /* Pods-StalkFinance-StalkFinanceUITests */,
+				4F93371BCCFE3454551EFBC1346666B8 /* Pods-StalkFinanceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A0B92019B48C2942FB4375921AA6057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E7AF4562D08996B16C56F25CF842146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB574F0923BB77CD3FA6B09DBBC02D0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		61CE7BF3A8DE2173D60C4DF9AD65118F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36E9101BBEF28416869E050224082410 /* Pods-StalkFinanceTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69FB8C5AD8A7B4309AF18C649A569E1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D351BEF5A84EBFBB5B41376F220F356E /* Pods-StalkFinance-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC18415F31955E8FDD52CBBE8BD56E3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B553ECAAA9671950883F55B5FCDE8992 /* Pods-StalkFinance-StalkFinanceUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB2A7A5B0B3FB58C792FA5E71ECBB46D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-StalkFinance";
+			target = D6CF5B16B9BA9486A804594187E00A2C /* Pods-StalkFinance */;
+			targetProxy = D537AD4B64D6CBD27B20A7E26ED42E87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		175A631DE3B5761A972DBF34BD742367 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A25FC915B2374B20CFE020C4E90A53 /* Pods-StalkFinanceTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StalkFinanceTests/Pods-StalkFinanceTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StalkFinanceTests/Pods-StalkFinanceTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		215A91858F5CB9CFC4876BF55AC909D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87BB1B0FF3EC76C3D5895AD994EA1970 /* Pods-StalkFinance-StalkFinanceUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2DE0D8898245310716431F92FA4989FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8DEE3470F8BA8647B47173F67C7318D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE0C5D318B2CA9968DADDCAEDF20F50 /* Pods-StalkFinance.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StalkFinance/Pods-StalkFinance-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StalkFinance/Pods-StalkFinance.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C6F19F81F985C30D33ED1F1D855F1537 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1B4D882B8C10A37895B83C065DE033D /* Pods-StalkFinanceTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StalkFinanceTests/Pods-StalkFinanceTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StalkFinanceTests/Pods-StalkFinanceTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D28E7DA4BB6EBFB50926C1D470CEF4B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D447597FBC2EB496C6688BAE90AF6268 /* Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED2C4CD7C8FCB10F8DF69AED32966CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B2D7E555E954F2C734FB7D1A2D63876 /* Pods-StalkFinance.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StalkFinance/Pods-StalkFinance-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StalkFinance/Pods-StalkFinance.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F24FD5160D4283A0275D0E44D91B421 /* Build configuration list for PBXNativeTarget "Pods-StalkFinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED2C4CD7C8FCB10F8DF69AED32966CFF /* Debug */,
+				8DEE3470F8BA8647B47173F67C7318D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09909ECBA13E8F70A928465E7F7A9A92 /* Debug */,
+				2DE0D8898245310716431F92FA4989FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76B2D82A7B00476D0F08BCBF1712ECF3 /* Build configuration list for PBXNativeTarget "Pods-StalkFinance-StalkFinanceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28E7DA4BB6EBFB50926C1D470CEF4B1 /* Debug */,
+				215A91858F5CB9CFC4876BF55AC909D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3F31C741A70C07029A47C74B09EA7C5 /* Build configuration list for PBXNativeTarget "Pods-StalkFinanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F19F81F985C30D33ED1F1D855F1537 /* Debug */,
+				175A631DE3B5761A972DBF34BD742367 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

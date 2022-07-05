@@ -1,0 +1,6 @@
+framework module Pods_StalkFinance_StalkFinanceUITests {
+  umbrella header "Pods-StalkFinance-StalkFinanceUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -17,6 +17,9 @@
 		50C6A5B528745F4C00F3AD65 /* StalkFinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A5B428745F4C00F3AD65 /* StalkFinanceTests.m */; };
 		50C6A5BF28745F4C00F3AD65 /* StalkFinanceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A5BE28745F4C00F3AD65 /* StalkFinanceUITests.m */; };
 		50C6A5C128745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A5C028745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m */; };
+		5B3E6D035865637C73C42076 /* Pods_StalkFinance_StalkFinanceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD37041844E21A67685FD9E /* Pods_StalkFinance_StalkFinanceUITests.framework */; };
+		9E4972EA9CF0B806FC5E4D87 /* Pods_StalkFinance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B9E3BF1DA26E0275C2C98E /* Pods_StalkFinance.framework */; };
+		F680E772A990228470F37829 /* Pods_StalkFinanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BC8CDE00BC7592F2FA3550 /* Pods_StalkFinanceTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13BC8CDE00BC7592F2FA3550 /* Pods_StalkFinanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StalkFinanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A701CB5F14E4A6925372AE /* Pods-StalkFinanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinanceTests.debug.xcconfig"; path = "Target Support Files/Pods-StalkFinanceTests/Pods-StalkFinanceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		343261EC80B6688246C3873B /* Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig"; path = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		50C6A59528745F4800F3AD65 /* StalkFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StalkFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C6A59828745F4800F3AD65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50C6A59928745F4800F3AD65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +60,12 @@
 		50C6A5BA28745F4C00F3AD65 /* StalkFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StalkFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C6A5BE28745F4C00F3AD65 /* StalkFinanceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StalkFinanceUITests.m; sourceTree = "<group>"; };
 		50C6A5C028745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StalkFinanceUITestsLaunchTests.m; sourceTree = "<group>"; };
+		80B9E3BF1DA26E0275C2C98E /* Pods_StalkFinance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StalkFinance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F4958C781DB3A1C56C4C4B7 /* Pods-StalkFinance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinance.release.xcconfig"; path = "Target Support Files/Pods-StalkFinance/Pods-StalkFinance.release.xcconfig"; sourceTree = "<group>"; };
+		AE713C8FB0D11476FFE6D234 /* Pods-StalkFinanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinanceTests.release.xcconfig"; path = "Target Support Files/Pods-StalkFinanceTests/Pods-StalkFinanceTests.release.xcconfig"; sourceTree = "<group>"; };
+		CDADBEE04DF5AC0E46F82A51 /* Pods-StalkFinance-StalkFinanceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinance-StalkFinanceUITests.release.xcconfig"; path = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFD37041844E21A67685FD9E /* Pods_StalkFinance_StalkFinanceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StalkFinance_StalkFinanceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB77D3E1EE71CCA03717A02D /* Pods-StalkFinance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinance.debug.xcconfig"; path = "Target Support Files/Pods-StalkFinance/Pods-StalkFinance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4972EA9CF0B806FC5E4D87 /* Pods_StalkFinance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F680E772A990228470F37829 /* Pods_StalkFinanceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +89,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3E6D035865637C73C42076 /* Pods_StalkFinance_StalkFinanceUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29C9511C4DEB27FB291649D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB77D3E1EE71CCA03717A02D /* Pods-StalkFinance.debug.xcconfig */,
+				8F4958C781DB3A1C56C4C4B7 /* Pods-StalkFinance.release.xcconfig */,
+				343261EC80B6688246C3873B /* Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig */,
+				CDADBEE04DF5AC0E46F82A51 /* Pods-StalkFinance-StalkFinanceUITests.release.xcconfig */,
+				14A701CB5F14E4A6925372AE /* Pods-StalkFinanceTests.debug.xcconfig */,
+				AE713C8FB0D11476FFE6D234 /* Pods-StalkFinanceTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		50C6A58C28745F4800F3AD65 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +117,8 @@
 				50C6A5B328745F4C00F3AD65 /* StalkFinanceTests */,
 				50C6A5BD28745F4C00F3AD65 /* StalkFinanceUITests */,
 				50C6A59628745F4800F3AD65 /* Products */,
+				29C9511C4DEB27FB291649D0 /* Pods */,
+				8EA7EE852DA3A9C46903E95A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +167,16 @@
 			path = StalkFinanceUITests;
 			sourceTree = "<group>";
 		};
+		8EA7EE852DA3A9C46903E95A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80B9E3BF1DA26E0275C2C98E /* Pods_StalkFinance.framework */,
+				CFD37041844E21A67685FD9E /* Pods_StalkFinance_StalkFinanceUITests.framework */,
+				13BC8CDE00BC7592F2FA3550 /* Pods_StalkFinanceTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50C6A5C428745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinance" */;
 			buildPhases = (
+				0F1C8C5E9F23751FB0EF9BF9 /* [CP] Check Pods Manifest.lock */,
 				50C6A59128745F4800F3AD65 /* Sources */,
 				50C6A59228745F4800F3AD65 /* Frameworks */,
 				50C6A59328745F4800F3AD65 /* Resources */,
@@ -160,6 +202,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50C6A5C728745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinanceTests" */;
 			buildPhases = (
+				5F3AAB2FF5B97B0A682E1934 /* [CP] Check Pods Manifest.lock */,
 				50C6A5AC28745F4C00F3AD65 /* Sources */,
 				50C6A5AD28745F4C00F3AD65 /* Frameworks */,
 				50C6A5AE28745F4C00F3AD65 /* Resources */,
@@ -178,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50C6A5CA28745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinanceUITests" */;
 			buildPhases = (
+				C349C271266999374F2E99E8 /* [CP] Check Pods Manifest.lock */,
 				50C6A5B628745F4C00F3AD65 /* Sources */,
 				50C6A5B728745F4C00F3AD65 /* Frameworks */,
 				50C6A5B828745F4C00F3AD65 /* Resources */,
@@ -260,6 +304,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F1C8C5E9F23751FB0EF9BF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StalkFinance-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F3AAB2FF5B97B0A682E1934 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StalkFinanceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C349C271266999374F2E99E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StalkFinance-StalkFinanceUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50C6A59128745F4800F3AD65 /* Sources */ = {
@@ -437,6 +550,7 @@
 		};
 		50C6A5C528745F4C00F3AD65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB77D3E1EE71CCA03717A02D /* Pods-StalkFinance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +578,7 @@
 		};
 		50C6A5C628745F4C00F3AD65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F4958C781DB3A1C56C4C4B7 /* Pods-StalkFinance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,6 +606,7 @@
 		};
 		50C6A5C828745F4C00F3AD65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14A701CB5F14E4A6925372AE /* Pods-StalkFinanceTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +625,7 @@
 		};
 		50C6A5C928745F4C00F3AD65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE713C8FB0D11476FFE6D234 /* Pods-StalkFinanceTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +644,7 @@
 		};
 		50C6A5CB28745F4C00F3AD65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 343261EC80B6688246C3873B /* Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -543,6 +661,7 @@
 		};
 		50C6A5CC28745F4C00F3AD65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDADBEE04DF5AC0E46F82A51 /* Pods-StalkFinance-StalkFinanceUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
