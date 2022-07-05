@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59928745F4800F3AD65 /* AppDelegate.m */; };
+		50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59C28745F4800F3AD65 /* SceneDelegate.m */; };
+		50C6A5A028745F4800F3AD65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59F28745F4800F3AD65 /* ViewController.m */; };
+		50C6A5A328745F4800F3AD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A128745F4800F3AD65 /* Main.storyboard */; };
+		50C6A5A528745F4B00F3AD65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A428745F4B00F3AD65 /* Assets.xcassets */; };
+		50C6A5A828745F4B00F3AD65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A628745F4B00F3AD65 /* LaunchScreen.storyboard */; };
+		50C6A5AB28745F4B00F3AD65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A5AA28745F4B00F3AD65 /* main.m */; };
+		50C6A5B528745F4C00F3AD65 /* StalkFinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A5B428745F4C00F3AD65 /* StalkFinanceTests.m */; };
+		50C6A5BF28745F4C00F3AD65 /* StalkFinanceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A5BE28745F4C00F3AD65 /* StalkFinanceUITests.m */; };
+		50C6A5C128745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A5C028745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50C6A5B128745F4C00F3AD65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50C6A58D28745F4800F3AD65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50C6A59428745F4800F3AD65;
+			remoteInfo = StalkFinance;
+		};
+		50C6A5BB28745F4C00F3AD65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50C6A58D28745F4800F3AD65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50C6A59428745F4800F3AD65;
+			remoteInfo = StalkFinance;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		50C6A59528745F4800F3AD65 /* StalkFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StalkFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C6A59828745F4800F3AD65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		50C6A59928745F4800F3AD65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		50C6A59B28745F4800F3AD65 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		50C6A59C28745F4800F3AD65 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		50C6A59E28745F4800F3AD65 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		50C6A59F28745F4800F3AD65 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		50C6A5A228745F4800F3AD65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50C6A5A428745F4B00F3AD65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50C6A5A728745F4B00F3AD65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50C6A5A928745F4B00F3AD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C6A5AA28745F4B00F3AD65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50C6A5B028745F4C00F3AD65 /* StalkFinanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StalkFinanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C6A5B428745F4C00F3AD65 /* StalkFinanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StalkFinanceTests.m; sourceTree = "<group>"; };
+		50C6A5BA28745F4C00F3AD65 /* StalkFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StalkFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C6A5BE28745F4C00F3AD65 /* StalkFinanceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StalkFinanceUITests.m; sourceTree = "<group>"; };
+		50C6A5C028745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StalkFinanceUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50C6A59228745F4800F3AD65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C6A5AD28745F4C00F3AD65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C6A5B728745F4C00F3AD65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50C6A58C28745F4800F3AD65 = {
+			isa = PBXGroup;
+			children = (
+				50C6A59728745F4800F3AD65 /* StalkFinance */,
+				50C6A5B328745F4C00F3AD65 /* StalkFinanceTests */,
+				50C6A5BD28745F4C00F3AD65 /* StalkFinanceUITests */,
+				50C6A59628745F4800F3AD65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50C6A59628745F4800F3AD65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50C6A59528745F4800F3AD65 /* StalkFinance.app */,
+				50C6A5B028745F4C00F3AD65 /* StalkFinanceTests.xctest */,
+				50C6A5BA28745F4C00F3AD65 /* StalkFinanceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50C6A59728745F4800F3AD65 /* StalkFinance */ = {
+			isa = PBXGroup;
+			children = (
+				50C6A59828745F4800F3AD65 /* AppDelegate.h */,
+				50C6A59928745F4800F3AD65 /* AppDelegate.m */,
+				50C6A59B28745F4800F3AD65 /* SceneDelegate.h */,
+				50C6A59C28745F4800F3AD65 /* SceneDelegate.m */,
+				50C6A59E28745F4800F3AD65 /* ViewController.h */,
+				50C6A59F28745F4800F3AD65 /* ViewController.m */,
+				50C6A5A128745F4800F3AD65 /* Main.storyboard */,
+				50C6A5A428745F4B00F3AD65 /* Assets.xcassets */,
+				50C6A5A628745F4B00F3AD65 /* LaunchScreen.storyboard */,
+				50C6A5A928745F4B00F3AD65 /* Info.plist */,
+				50C6A5AA28745F4B00F3AD65 /* main.m */,
+			);
+			path = StalkFinance;
+			sourceTree = "<group>";
+		};
+		50C6A5B328745F4C00F3AD65 /* StalkFinanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				50C6A5B428745F4C00F3AD65 /* StalkFinanceTests.m */,
+			);
+			path = StalkFinanceTests;
+			sourceTree = "<group>";
+		};
+		50C6A5BD28745F4C00F3AD65 /* StalkFinanceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				50C6A5BE28745F4C00F3AD65 /* StalkFinanceUITests.m */,
+				50C6A5C028745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m */,
+			);
+			path = StalkFinanceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50C6A59428745F4800F3AD65 /* StalkFinance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50C6A5C428745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinance" */;
+			buildPhases = (
+				50C6A59128745F4800F3AD65 /* Sources */,
+				50C6A59228745F4800F3AD65 /* Frameworks */,
+				50C6A59328745F4800F3AD65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StalkFinance;
+			productName = StalkFinance;
+			productReference = 50C6A59528745F4800F3AD65 /* StalkFinance.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50C6A5AF28745F4C00F3AD65 /* StalkFinanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50C6A5C728745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinanceTests" */;
+			buildPhases = (
+				50C6A5AC28745F4C00F3AD65 /* Sources */,
+				50C6A5AD28745F4C00F3AD65 /* Frameworks */,
+				50C6A5AE28745F4C00F3AD65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50C6A5B228745F4C00F3AD65 /* PBXTargetDependency */,
+			);
+			name = StalkFinanceTests;
+			productName = StalkFinanceTests;
+			productReference = 50C6A5B028745F4C00F3AD65 /* StalkFinanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50C6A5B928745F4C00F3AD65 /* StalkFinanceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50C6A5CA28745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinanceUITests" */;
+			buildPhases = (
+				50C6A5B628745F4C00F3AD65 /* Sources */,
+				50C6A5B728745F4C00F3AD65 /* Frameworks */,
+				50C6A5B828745F4C00F3AD65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50C6A5BC28745F4C00F3AD65 /* PBXTargetDependency */,
+			);
+			name = StalkFinanceUITests;
+			productName = StalkFinanceUITests;
+			productReference = 50C6A5BA28745F4C00F3AD65 /* StalkFinanceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50C6A58D28745F4800F3AD65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					50C6A59428745F4800F3AD65 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					50C6A5AF28745F4C00F3AD65 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 50C6A59428745F4800F3AD65;
+					};
+					50C6A5B928745F4C00F3AD65 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 50C6A59428745F4800F3AD65;
+					};
+				};
+			};
+			buildConfigurationList = 50C6A59028745F4800F3AD65 /* Build configuration list for PBXProject "StalkFinance" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50C6A58C28745F4800F3AD65;
+			productRefGroup = 50C6A59628745F4800F3AD65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50C6A59428745F4800F3AD65 /* StalkFinance */,
+				50C6A5AF28745F4C00F3AD65 /* StalkFinanceTests */,
+				50C6A5B928745F4C00F3AD65 /* StalkFinanceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50C6A59328745F4800F3AD65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C6A5A828745F4B00F3AD65 /* LaunchScreen.storyboard in Resources */,
+				50C6A5A528745F4B00F3AD65 /* Assets.xcassets in Resources */,
+				50C6A5A328745F4800F3AD65 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C6A5AE28745F4C00F3AD65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C6A5B828745F4C00F3AD65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50C6A59128745F4800F3AD65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C6A5A028745F4800F3AD65 /* ViewController.m in Sources */,
+				50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */,
+				50C6A5AB28745F4B00F3AD65 /* main.m in Sources */,
+				50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C6A5AC28745F4C00F3AD65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C6A5B528745F4C00F3AD65 /* StalkFinanceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50C6A5B628745F4C00F3AD65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C6A5C128745F4C00F3AD65 /* StalkFinanceUITestsLaunchTests.m in Sources */,
+				50C6A5BF28745F4C00F3AD65 /* StalkFinanceUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50C6A5B228745F4C00F3AD65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50C6A59428745F4800F3AD65 /* StalkFinance */;
+			targetProxy = 50C6A5B128745F4C00F3AD65 /* PBXContainerItemProxy */;
+		};
+		50C6A5BC28745F4C00F3AD65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50C6A59428745F4800F3AD65 /* StalkFinance */;
+			targetProxy = 50C6A5BB28745F4C00F3AD65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		50C6A5A128745F4800F3AD65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50C6A5A228745F4800F3AD65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		50C6A5A628745F4B00F3AD65 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50C6A5A728745F4B00F3AD65 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50C6A5C228745F4C00F3AD65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50C6A5C328745F4C00F3AD65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50C6A5C528745F4C00F3AD65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7RG9A85CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StalkFinance/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.StalkFinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50C6A5C628745F4C00F3AD65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7RG9A85CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StalkFinance/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.StalkFinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		50C6A5C828745F4C00F3AD65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7RG9A85CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.StalkFinanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StalkFinance.app/StalkFinance";
+			};
+			name = Debug;
+		};
+		50C6A5C928745F4C00F3AD65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7RG9A85CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.StalkFinanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StalkFinance.app/StalkFinance";
+			};
+			name = Release;
+		};
+		50C6A5CB28745F4C00F3AD65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7RG9A85CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.StalkFinanceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StalkFinance;
+			};
+			name = Debug;
+		};
+		50C6A5CC28745F4C00F3AD65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7RG9A85CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.StalkFinanceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StalkFinance;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50C6A59028745F4800F3AD65 /* Build configuration list for PBXProject "StalkFinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C6A5C228745F4C00F3AD65 /* Debug */,
+				50C6A5C328745F4C00F3AD65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50C6A5C428745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C6A5C528745F4C00F3AD65 /* Debug */,
+				50C6A5C628745F4C00F3AD65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50C6A5C728745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C6A5C828745F4C00F3AD65 /* Debug */,
+				50C6A5C928745F4C00F3AD65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50C6A5CA28745F4C00F3AD65 /* Build configuration list for PBXNativeTarget "StalkFinanceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C6A5CB28745F4C00F3AD65 /* Debug */,
+				50C6A5CC28745F4C00F3AD65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50C6A58D28745F4800F3AD65 /* Project object */;
+}
