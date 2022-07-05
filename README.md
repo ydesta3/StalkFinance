@@ -173,4 +173,14 @@ Allows users to see real time information about stocks and cryptocurrency regard
 
 
 ### Networking
-... en route
+Stock and Crypto Data API - Yahoo Finance 
+
+Base URL - https://yfapi.net
+Base URL - https://alpha.financeapi.net
+
+|HTTP Verb |Endpoint| Description|
+|-----|--------|--------|
+|GET| /v7/finance/options/{symbol}| retrieves info about options trading regarding the specific stock using its symbol|
+|GET| /ws/insights/v1/finance/insights?symbol=AAPL     |retrieves analysis and research insights regarding a stock |
+|GET  |/market/get-realtime-prices    | real time quote data for stocks, ETFs, mutuals funds, etc…
+
