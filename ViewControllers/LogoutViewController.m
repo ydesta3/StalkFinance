@@ -6,8 +6,13 @@
 //
 
 #import "LogoutViewController.h"
+#import <Parse/Parse.h>
+#import "SceneDelegate.h"
+#import "accountChoiceViewController.h"
+
 
 @interface LogoutViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userName;
 
 @end
 
@@ -16,6 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFUser *accountOwner = [PFUser currentUser];
+    self.userName.text = accountOwner.username;
+
+}
+- (IBAction)onSignoutTap:(id)sender {
+    
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+    SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    accountChoiceViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"InitialViewController"];
+    sceneDelegate.window.rootViewController = loginViewController;
+    
+    
 }
 
 /*
