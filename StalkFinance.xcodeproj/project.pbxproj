@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505912BF2875FC930081FEA6 /* accountChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912BE2875FC930081FEA6 /* accountChoiceViewController.m */; };
+		505912C2287610F30081FEA6 /* signUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912C1287610F30081FEA6 /* signUpViewController.m */; };
+		505912C5287614D10081FEA6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912C4287614D10081FEA6 /* LoginViewController.m */; };
 		50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59928745F4800F3AD65 /* AppDelegate.m */; };
 		50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59C28745F4800F3AD65 /* SceneDelegate.m */; };
-		50C6A5A028745F4800F3AD65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59F28745F4800F3AD65 /* ViewController.m */; };
 		50C6A5A328745F4800F3AD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A128745F4800F3AD65 /* Main.storyboard */; };
 		50C6A5A528745F4B00F3AD65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A428745F4B00F3AD65 /* Assets.xcassets */; };
 		50C6A5A828745F4B00F3AD65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A628745F4B00F3AD65 /* LaunchScreen.storyboard */; };
@@ -43,13 +45,17 @@
 		13BC8CDE00BC7592F2FA3550 /* Pods_StalkFinanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StalkFinanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A701CB5F14E4A6925372AE /* Pods-StalkFinanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinanceTests.debug.xcconfig"; path = "Target Support Files/Pods-StalkFinanceTests/Pods-StalkFinanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		343261EC80B6688246C3873B /* Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig"; path = "Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		505912BD2875FC930081FEA6 /* accountChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = accountChoiceViewController.h; sourceTree = "<group>"; };
+		505912BE2875FC930081FEA6 /* accountChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = accountChoiceViewController.m; sourceTree = "<group>"; };
+		505912C0287610F30081FEA6 /* signUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = signUpViewController.h; sourceTree = "<group>"; };
+		505912C1287610F30081FEA6 /* signUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = signUpViewController.m; sourceTree = "<group>"; };
+		505912C3287614D10081FEA6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		505912C4287614D10081FEA6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		50C6A59528745F4800F3AD65 /* StalkFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StalkFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C6A59828745F4800F3AD65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50C6A59928745F4800F3AD65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		50C6A59B28745F4800F3AD65 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		50C6A59C28745F4800F3AD65 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		50C6A59E28745F4800F3AD65 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		50C6A59F28745F4800F3AD65 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		50C6A5A228745F4800F3AD65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50C6A5A428745F4B00F3AD65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C6A5A728745F4B00F3AD65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,13 +112,26 @@
 				14A701CB5F14E4A6925372AE /* Pods-StalkFinanceTests.debug.xcconfig */,
 				AE713C8FB0D11476FFE6D234 /* Pods-StalkFinanceTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		505912BC2875FC550081FEA6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				505912BD2875FC930081FEA6 /* accountChoiceViewController.h */,
+				505912BE2875FC930081FEA6 /* accountChoiceViewController.m */,
+				505912C0287610F30081FEA6 /* signUpViewController.h */,
+				505912C1287610F30081FEA6 /* signUpViewController.m */,
+				505912C3287614D10081FEA6 /* LoginViewController.h */,
+				505912C4287614D10081FEA6 /* LoginViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		50C6A58C28745F4800F3AD65 = {
 			isa = PBXGroup;
 			children = (
+				505912BC2875FC550081FEA6 /* ViewControllers */,
 				50C6A59728745F4800F3AD65 /* StalkFinance */,
 				50C6A5B328745F4C00F3AD65 /* StalkFinanceTests */,
 				50C6A5BD28745F4C00F3AD65 /* StalkFinanceUITests */,
@@ -139,8 +158,6 @@
 				50C6A59928745F4800F3AD65 /* AppDelegate.m */,
 				50C6A59B28745F4800F3AD65 /* SceneDelegate.h */,
 				50C6A59C28745F4800F3AD65 /* SceneDelegate.m */,
-				50C6A59E28745F4800F3AD65 /* ViewController.h */,
-				50C6A59F28745F4800F3AD65 /* ViewController.m */,
 				50C6A5A128745F4800F3AD65 /* Main.storyboard */,
 				50C6A5A428745F4B00F3AD65 /* Assets.xcassets */,
 				50C6A5A628745F4B00F3AD65 /* LaunchScreen.storyboard */,
@@ -188,6 +205,7 @@
 				50C6A59128745F4800F3AD65 /* Sources */,
 				50C6A59228745F4800F3AD65 /* Frameworks */,
 				50C6A59328745F4800F3AD65 /* Resources */,
+				9A90C0936A8FD3BD1E109E7F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,6 +243,7 @@
 				50C6A5B628745F4C00F3AD65 /* Sources */,
 				50C6A5B728745F4C00F3AD65 /* Frameworks */,
 				50C6A5B828745F4C00F3AD65 /* Resources */,
+				1E13C18ADCE68E4341ED3138 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,6 +347,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1E13C18ADCE68E4341ED3138 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StalkFinance-StalkFinanceUITests/Pods-StalkFinance-StalkFinanceUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5F3AAB2FF5B97B0A682E1934 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +384,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A90C0936A8FD3BD1E109E7F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StalkFinance/Pods-StalkFinance-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StalkFinance/Pods-StalkFinance-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StalkFinance/Pods-StalkFinance-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C349C271266999374F2E99E8 /* [CP] Check Pods Manifest.lock */ = {
@@ -379,10 +432,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C6A5A028745F4800F3AD65 /* ViewController.m in Sources */,
+				505912C2287610F30081FEA6 /* signUpViewController.m in Sources */,
 				50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */,
+				505912C5287614D10081FEA6 /* LoginViewController.m in Sources */,
 				50C6A5AB28745F4B00F3AD65 /* main.m in Sources */,
 				50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */,
+				505912BF2875FC930081FEA6 /* accountChoiceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

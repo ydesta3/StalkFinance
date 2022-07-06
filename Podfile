@@ -6,6 +6,7 @@ target 'StalkFinance' do
   use_frameworks!
 
   # Pods for StalkFinance
+  pod 'Parse'
 
   target 'StalkFinanceTests' do
     inherit! :search_paths
