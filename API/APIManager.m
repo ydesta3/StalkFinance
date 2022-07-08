@@ -23,7 +23,10 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
-    [request addValue:@"GgHWhppNwH3KttVotQC8xaueTeyQlkwy7T4Nd0L3" forHTTPHeaderField:@"X-API-KEY"];
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString *key = [dict objectForKey: @"APIKey"];
+    [request addValue:key forHTTPHeaderField:@"X-API-KEY"];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {

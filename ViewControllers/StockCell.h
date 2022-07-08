@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) Stock *stock;
 
+@property (weak, nonatomic) IBOutlet UILabel *stockTicker;
+@property (weak, nonatomic) IBOutlet UILabel *companyName;
+
+
 
 @end
 
