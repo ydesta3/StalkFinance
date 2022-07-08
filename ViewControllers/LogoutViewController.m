@@ -8,7 +8,7 @@
 #import "LogoutViewController.h"
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
-#import "accountChoiceViewController.h"
+#import "AccountChoiceViewController.h"
 
 
 @interface LogoutViewController ()
@@ -33,7 +33,7 @@
     }];
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    accountChoiceViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"InitialViewController"];
+    AccountChoiceViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"InitialViewController"];
     sceneDelegate.window.rootViewController = loginViewController;
     
     

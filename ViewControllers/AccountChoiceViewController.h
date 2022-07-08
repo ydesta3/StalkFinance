@@ -1,5 +1,5 @@
 //
-//  signUpViewController.h
+//  accountChoiceViewController.h
 //  StalkFinance
 //
 //  Created by Yonatan Desta on 7/6/22.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface signUpViewController : UIViewController
+@interface AccountChoiceViewController : UIViewController
 
 @end
 

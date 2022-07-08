@@ -5,18 +5,18 @@
 //  Created by Yonatan Desta on 7/6/22.
 //
 
-#import "signUpViewController.h"
+#import "SignUpViewController.h"
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
 
-@interface signUpViewController ()
+@interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
-@implementation signUpViewController
+@implementation SignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

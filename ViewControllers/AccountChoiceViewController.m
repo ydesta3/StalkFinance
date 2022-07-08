@@ -5,13 +5,13 @@
 //  Created by Yonatan Desta on 7/6/22.
 //
 
-#import "accountChoiceViewController.h"
+#import "AccountChoiceViewController.h"
 
-@interface accountChoiceViewController ()
+@interface AccountChoiceViewController ()
 
 @end
 
-@implementation accountChoiceViewController
+@implementation AccountChoiceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
