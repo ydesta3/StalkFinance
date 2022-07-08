@@ -22,7 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     PFUser *accountOwner = [PFUser currentUser];
-    self.userName.text = accountOwner.username;
+    NSString *at = @"@";
+    self.userName.text = [ at stringByAppendingString:accountOwner.username];
 
 }
 - (IBAction)onSignoutTap:(id)sender {
