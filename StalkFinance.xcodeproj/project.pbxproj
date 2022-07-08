@@ -14,6 +14,8 @@
 		505912CF2877A70B0081FEA6 /* Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912CE2877A70B0081FEA6 /* Stock.m */; };
 		505912D32877A86E0081FEA6 /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912D22877A86E0081FEA6 /* Crypto.m */; };
 		505912D62877B4690081FEA6 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912D52877B4690081FEA6 /* APIManager.m */; };
+		505912D92878BCB70081FEA6 /* StockFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912D82878BCB70081FEA6 /* StockFeedViewController.m */; };
+		505912DC2878DE3A0081FEA6 /* StockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912DB2878DE3A0081FEA6 /* StockCell.m */; };
 		50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59928745F4800F3AD65 /* AppDelegate.m */; };
 		50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59C28745F4800F3AD65 /* SceneDelegate.m */; };
 		50C6A5A328745F4800F3AD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A128745F4800F3AD65 /* Main.storyboard */; };
@@ -63,6 +65,10 @@
 		505912D22877A86E0081FEA6 /* Crypto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Crypto.m; sourceTree = "<group>"; };
 		505912D42877B4690081FEA6 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		505912D52877B4690081FEA6 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		505912D72878BCB70081FEA6 /* StockFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockFeedViewController.h; sourceTree = "<group>"; };
+		505912D82878BCB70081FEA6 /* StockFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockFeedViewController.m; sourceTree = "<group>"; };
+		505912DA2878DE3A0081FEA6 /* StockCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockCell.h; sourceTree = "<group>"; };
+		505912DB2878DE3A0081FEA6 /* StockCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockCell.m; sourceTree = "<group>"; };
 		50C6A59528745F4800F3AD65 /* StalkFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StalkFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C6A59828745F4800F3AD65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50C6A59928745F4800F3AD65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 				505912C4287614D10081FEA6 /* LoginViewController.m */,
 				505912C62876364B0081FEA6 /* LogoutViewController.h */,
 				505912C72876364B0081FEA6 /* LogoutViewController.m */,
+				505912D72878BCB70081FEA6 /* StockFeedViewController.h */,
+				505912D82878BCB70081FEA6 /* StockFeedViewController.m */,
+				505912DA2878DE3A0081FEA6 /* StockCell.h */,
+				505912DB2878DE3A0081FEA6 /* StockCell.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -470,8 +480,10 @@
 			files = (
 				505912C2287610F30081FEA6 /* SignUpViewController.m in Sources */,
 				50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */,
+				505912DC2878DE3A0081FEA6 /* StockCell.m in Sources */,
 				505912C5287614D10081FEA6 /* LoginViewController.m in Sources */,
 				50C6A5AB28745F4B00F3AD65 /* main.m in Sources */,
+				505912D92878BCB70081FEA6 /* StockFeedViewController.m in Sources */,
 				505912D62877B4690081FEA6 /* APIManager.m in Sources */,
 				505912C82876364B0081FEA6 /* LogoutViewController.m in Sources */,
 				50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */,

@@ -15,8 +15,8 @@
 }
 
 
-+ (NSMutableArray *)arrayOfCryptos:(NSArray *)dictionaries {
- 
-}
+//+ (NSMutableArray *)arrayOfCryptos:(NSArray *)dictionaries {
+// 
+//}
 
 @end

@@ -116,18 +116,33 @@
         <!--Stock-->
         <scene sceneID="DcX-rW-MV6">
             <objects>
-                <viewController id="aeT-eV-mUN" sceneMemberID="viewController">
+                <viewController id="aeT-eV-mUN" customClass="StockFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kmb-Rq-lfB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Stocks" translatesAutoresizingMaskIntoConstraints="NO" id="zuv-OB-0jQ">
-                                <rect key="frame" x="0.0" y="81" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
-                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UhP-Ye-bg3">
+                                <rect key="frame" x="0.0" y="73" width="420" height="823"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Stocks" id="zuv-OB-0jQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="420" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="231" id="gha-gV-325" customClass="StockCell">
+                                        <rect key="frame" x="0.0" y="88.5" width="420" height="231"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gha-gV-325" id="ccv-4r-kb7">
+                                            <rect key="frame" x="0.0" y="0.0" width="420" height="231"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stocks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-8J-FVJ">
                                 <rect key="frame" x="20" y="32" width="288" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -140,6 +155,9 @@
                         <color key="backgroundColor" red="0.001308795103" green="0.0003852633579" blue="0.00089066849550000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stock" image="chart.line.uptrend.xyaxis" catalog="system" id="K94-gj-uTQ"/>
+                    <connections>
+                        <outlet property="stockTableView" destination="UhP-Ye-bg3" id="eOe-TO-ef9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC5-ow-rQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GU1-bu-Hdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2035" y="1550"/>
+            <point key="canvasLocation" x="2133" y="2206"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cep-Ga-q5x">
@@ -359,34 +377,27 @@
             <point key="canvasLocation" x="2783" y="842"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="M2r-mv-i2r">
-            <objects>
-                <viewController id="aJ8-OJ-BZN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tUe-SU-8Vt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="RXp-rY-DdQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YXD-at-ezM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="93" y="1849"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="vqh-UA-n9L">
             <objects>
                 <viewController id="HI4-qS-WYC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UO8-mO-h1n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzD-pJ-eXu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="878"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="YCd-AH-YZp"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="UTc-wn-1k4"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MWC-v8-2Q4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qn3-uB-OZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="1849"/>
+            <point key="canvasLocation" x="93" y="1959"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="e5B-zk-a9w">
@@ -395,43 +406,21 @@
                     <view key="view" contentMode="scaleToFill" id="U2B-b9-Zr2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iId-63-Dr6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="878"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="hMp-da-3ag"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ibP-40-aef"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pXf-Uo-qIZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgJ-UV-dUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139" y="1981"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="UPV-t4-wrJ">
-            <objects>
-                <viewController id="kMz-Pn-Vxy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kRh-2J-opP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ppn-aE-9zB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YHB-Sm-g5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1139" y="1981"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Udr-Jj-8lv">
-            <objects>
-                <viewController id="hAh-fW-ooB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TXu-ZD-wXQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="XKv-Rx-xCT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0jk-1m-nwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2309" y="2297"/>
+            <point key="canvasLocation" x="1064" y="2089"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Mt4-ri-aj0">
@@ -441,12 +430,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="DbB-yc-Mx2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0R-fh-BEp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2309" y="2297"/>
+            <point key="canvasLocation" x="2400" y="1503"/>
         </scene>
     </scenes>
     <resources>
