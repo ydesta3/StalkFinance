@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
 @property (nonatomic, strong)NSMutableArray *stocksArray;
 
-
-
 @end
 
 @implementation StockFeedViewController
@@ -30,6 +28,8 @@
     
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
+    //self.stockTableView.rowHeight = UITableViewAutomaticDimension;
+
     [self fetchStocks];
     
 }
@@ -43,9 +43,9 @@
             NSLog(@"Successfully loaded Stock Feed");
             //
             for (Stock *stock in stocks) {
-                // uses text field in tweet model to fetch the text body of a tweet.
-                NSString *company = stock.companyName;
-                NSLog(@": YD: %@", company);
+                // uses text field in stock model to fetch the text body of a stock.
+                NSString *ticker = stock.ticker;
+                NSLog(@": YD: %@", ticker);
             }
         } else {
             NSLog(@"Error getting Stock Feed: %@", error.localizedDescription);
@@ -68,17 +68,17 @@
 */
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    StockCell *stockCell = [tableView dequeueReusableCellWithIdentifier:@"d"];
+    StockCell *stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockCell"];
     Stock *stock = self.stocksArray[indexPath.row];
-    // sets tweet instance to current tweet in tweet cell
+    // sets stock instance to current stock in stock cell
     stockCell.stock = stock;
     stockCell.selectionStyle = nil;
-
+    
     return stockCell;
-}
+} 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.stocksArray.count;
+    return 6;//self.stocksArray.count;
 }
 
 @end

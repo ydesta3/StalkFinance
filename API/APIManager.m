@@ -41,11 +41,22 @@
             }
            else {
                NSDictionary *stockDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-               NSLog(@": YD2: %@", stockDictionary);
-
+               NSDictionary *financeDictionary = stockDictionary[@"finance"];
+               NSLog(@": YD2: %@", financeDictionary);
+               NSDictionary *result = financeDictionary[@"result"];
+               NSLog(@"stockResults: %@", result);
+               NSMutableArray *quotes = nil;
+               for (NSDictionary *dict in result) {
+                   quotes = dict[@"quotes"];
+                   //NSLog(@"stockQuotes: %@", quotes);
+               }
+               NSLog(@"stockQuotes: %@", quotes);
+               NSMutableArray *stocks = [Stock arrayOfStocks:quotes];
+               completion(stocks, nil);
            }
        }];
     [task resume];
 }
+
 
 @end
