@@ -3,7 +3,7 @@ StalkFinance Design Project - README
 
 # StalkFinance 
 
- **StalkFinance**: Allows uses to see real time information about stocks and crypto regarding price, charts, analysis and financial statements in a timeline like feed. Contains built-in public chat-rooms feature that users can create to share financial insights or an in app link to a stock/crypto  details page to a particular chat-room thread.
+ **StalkFinance**: Allows uses to see real time information about stocks and crypto regarding price, analysis, and financial statements in a timeline like feed. Contains built-in public chat-rooms feature that users can create to share financial insights or an in app link to a stock/crypto  details page to a particular chat-room thread.
 
 ### Stock/Crypto Feed Data
 **Yahoo Finance API**
@@ -26,7 +26,9 @@ StalkFinance Design Project - README
 
 ### Opportunity for Complexity
 - Using two api's for access to low-latency data for stock and crypto data models (Yahoo Finance and Financial Modeling Prep) to gather all desired data and a parse-like database for authentication and chat-room feature
-- Handle inappropiate language concerns in chat threads
+- Suggest A WatchList of Stocks based on the sector that the user tends to search stocks in
+- Ask user what type of stocks they are interested and have a watchlist feed dedicated to that
+- Recommend a channel for a user to do analysis in based on searched or clicked on stocks
 
 ## Table of Contents
 1. [Overview](#Overview)
