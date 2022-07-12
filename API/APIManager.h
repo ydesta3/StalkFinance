@@ -7,6 +7,9 @@
 
 #import "BDBOAuth1SessionManager.h"
 #import "Stock.h"
+#import "Crypto.h"
+
+
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shared;
 
 - (void)fetchStockQuote:(void(^)(NSArray *stocks, NSError *error))completion;
+- (void)fetchCryptoQuotes:(void(^)(NSArray *stocks, NSError *error))completion;
 
 
 @end

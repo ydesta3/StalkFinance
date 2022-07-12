@@ -11,12 +11,21 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
+    if (self){
+        self.ticker = dictionary[@"identifier"];
+        
+    }
+
     return self;
 }
 
-
-//+ (NSMutableArray *)arrayOfCryptos:(NSArray *)dictionaries {
-// 
-//}
++ (NSMutableArray *)arrayOfCryptoAttributes:(NSArray *)dictionaries {
+    NSMutableArray *cryptos = [NSMutableArray array];
+    for (NSDictionary *dictionary in dictionaries) {
+        Crypto *crypto = [[Crypto alloc] initWithDictionary:dictionary];
+        [cryptos addObject:crypto];
+    }
+    return cryptos;
+}
 
 @end

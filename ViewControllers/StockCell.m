@@ -23,6 +23,7 @@
     NSString *currentPriceString = [NSString stringWithFormat: @"%@", self.stock.currentPrice];
     self.currentPrice.text = currentPriceString;
     NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.stock.percentChange];
+    
     self.percentMarketChange.text = marketChangePercentString;
     
 

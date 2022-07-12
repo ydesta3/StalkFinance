@@ -58,5 +58,40 @@
     [task resume];
 }
 
+- (void)fetchCryptoQuotes:(void(^)(NSArray *stocks, NSError *error))completion{
+    NSURL *url = [NSURL URLWithString:@"https://alpha.financeapi.net/market/get-realtime-prices?symbols=BTC-USD%2CETH-USD%2CXRP-USD%2CDOGE-USD%2CSOL-USD%2CSHIB-USD%2CADA-USD%2CMATIC-USD%2CLTC-USD%2CUSDT-USD"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString *key = [dict objectForKey: @"APIKey"];
+    [request addValue:key forHTTPHeaderField:@"X-API-KEY"];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@": YD1: %@", [error localizedDescription]);
+           }
+          else {
+              NSDictionary *cryptoDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+              NSLog(@": CryptoDictionary: %@", cryptoDictionary);
+              NSMutableArray *quotes = cryptoDictionary[@"data"];
+              NSLog(@"cryptoQ: %@", quotes);
+              NSMutableArray *cryptoAttributes = [[NSMutableArray alloc] init];
+              for (NSMutableDictionary *dict in quotes) {
+                  NSDictionary *cryptoAttribute = dict[@"attributes"];
+                  [cryptoAttributes addObject: cryptoAttribute];
+              }
+              NSLog(@"cryptoAttributes: %@", cryptoAttributes);
+
+              NSMutableArray *cryptos = [Crypto arrayOfCryptoAttributes:cryptoAttributes];
+              completion(cryptos, nil);
+          }
+      }];
+   [task resume];
+    
+}
+
+
 
 @end

@@ -78,7 +78,7 @@
 } 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;//self.stocksArray.count;
+   return 20;//self.stocksArray.count;
 }
 
 @end

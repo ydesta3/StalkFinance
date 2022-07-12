@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
     @property (nonatomic, strong) NSNumber *highTwentyFour;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-+ (NSMutableArray *)arrayOfCryptos:(NSArray *)dictionaries;
++ (NSMutableArray *)arrayOfCryptoAttributes:(NSArray *)dictionaries;
 
 @end
 

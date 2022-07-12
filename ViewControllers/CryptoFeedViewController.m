@@ -9,6 +9,8 @@
 #import "CryptoCell.h"
 #import "Stock.h"
 #import "StockCell.h"
+#import "APIManager.h"
+
 
 @interface CryptoFeedViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
@@ -24,8 +26,30 @@
     
     self.cryptoTableView.dataSource = self;
     self.cryptoTableView.delegate = self;
+    [self fetchCryptoData];
 }
 
+-(void) fetchCryptoData{
+    // Get timeline
+    [[APIManager shared] fetchCryptoQuotes:^(NSArray * _Nonnull cryptos, NSError * _Nonnull error) {
+        
+        if (cryptos) {
+            self.cryptoArray = (NSMutableArray *)cryptos;
+            NSLog(@"Successfully loaded Crypto Feed");
+            //
+            for (Crypto *crypto in cryptos) {
+                // uses text field in stock model to fetch the text body of a stock.
+                NSString *ticker = crypto.ticker;
+                NSLog(@": cryptoTickers: %@", ticker);
+            }
+        } else {
+            NSLog(@"Error getting Crypto Feed: %@", error.localizedDescription);
+        }
+        [self.cryptoTableView reloadData];
+        
+    
+    }];
+}
 /*
 #pragma mark - Navigation
 
@@ -47,7 +71,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 50;//self.stocksArray.count;
+    return 10;
 }
 
 @end
