@@ -55,22 +55,22 @@ Allows users to see real time information about stocks and cryptocurrency regard
 
 ### **Required Must-have Stories**
 
-- User can sign up to create a new account using backend databse authentication
-- User can log in and log out of his or her account
-- The current signed in user is persisted across app restarts
-- User can use a tab bar to surface  stock, crypto, and chat views.
--  User can view stock prices as a preview in a timeline feed
--  User can view crypto prices as a preview in a timeline feed
--  User can pull to refresh either crypto/stock timeline to get updated prices
--   Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
--   Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
-- Users can create a chat room with a custom title
-- Users can post a chat to a chat room
-- Users can see existing public chat rooms
-- Users can double tap on a chat to like, increasing the like count
-- Users can share a particular stock/crypto detail page to a desired room thread as a post
-- Users can click on links that appear in chats
-- Incorporates at least one external library to add visual polish
+- [X] User can sign up to create a new account using backend databse authentication
+- [X] User can log in and log out of his or her account
+- [X] The current signed in user is persisted across app restarts
+- [X] User can use a tab bar to surface  stock, crypto, and chat views.
+- [X] User can view stock prices as a preview in a timeline feed
+- [X] User can view crypto prices as a preview in a timeline feed
+- [] User can pull to refresh either crypto/stock timeline to get updated prices
+- [] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
+- [] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
+- [] Users can create a chat room with a custom title
+- [] Users can post a chat to a chat room
+- [] Users can see existing public chat rooms
+- [] Users can double tap on a chat to like, increasing the like count
+- [] Users can share a particular stock/crypto detail page to a desired room thread as a post
+- [] Users can click on links that appear in chats
+- [] Incorporates at least one external library to add visual polish
 
 
 
