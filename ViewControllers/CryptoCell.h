@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CryptoCell : UITableViewCell
 @property (strong, nonatomic) Crypto *crypto;
+@property (strong, nonatomic) Crypto *cryptoMeta;
 @property (weak, nonatomic) IBOutlet UILabel *ticker;
-@property (weak, nonatomic) IBOutlet UILabel *crypSymbol;
 @property (weak, nonatomic) IBOutlet UILabel *currentPrice;
 @property (weak, nonatomic) IBOutlet UILabel *percentMarketChange;
+@property (weak, nonatomic) IBOutlet UILabel *conversionId;
 
 @end
 

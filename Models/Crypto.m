@@ -12,8 +12,10 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self){
-        self.ticker = dictionary[@"identifier"];
-        
+        self.conversionId = dictionary[@"identifier"];
+        self.percentChange = dictionary[@"percentChange"];
+        self.ticker = dictionary[@"symbol"];
+        self.currentPrice = dictionary[@"price"];
     }
 
     return self;

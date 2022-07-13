@@ -31,13 +31,6 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
                NSLog(@": YD1: %@", [error localizedDescription]);
-//               UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Stock Info"
-//                                              message:@"The Internet connection seems to be offline."
-//                                              preferredStyle:UIAlertControllerStyleAlert];
-//               UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault
-//                                                                     handler:^(UIAlertAction * action) {[self fetchStockQuote];}];
-//
-//               [alert addAction:defaultAction];
             }
            else {
                NSDictionary *stockDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -79,11 +72,12 @@
               NSLog(@"cryptoQ: %@", quotes);
               NSMutableArray *cryptoAttributes = [[NSMutableArray alloc] init];
               for (NSMutableDictionary *dict in quotes) {
-                  NSDictionary *cryptoAttribute = dict[@"attributes"];
+                  NSMutableDictionary *cryptoAttribute = dict[@"attributes"];
+                  NSMutableDictionary *cryptoAttributee = dict[@"meta"];
+                  [cryptoAttribute addEntriesFromDictionary:cryptoAttributee];
                   [cryptoAttributes addObject: cryptoAttribute];
               }
               NSLog(@"cryptoAttributes: %@", cryptoAttributes);
-
               NSMutableArray *cryptos = [Crypto arrayOfCryptoAttributes:cryptoAttributes];
               completion(cryptos, nil);
           }

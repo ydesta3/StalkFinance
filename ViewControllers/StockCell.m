@@ -21,10 +21,11 @@
     self.stockTicker.text = self.stock.ticker;
     self.companyName.text = self.stock.companyName;
     NSString *currentPriceString = [NSString stringWithFormat: @"%@", self.stock.currentPrice];
-    self.currentPrice.text = currentPriceString;
+    NSString *moneySign = @"$ ";
+    self.currentPrice.text = [ moneySign stringByAppendingString:currentPriceString];
     NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.stock.percentChange];
-    
-    self.percentMarketChange.text = marketChangePercentString;
+    NSString *percent = @" %";
+    self.percentMarketChange.text = [ marketChangePercentString stringByAppendingString:percent];
     
 
 

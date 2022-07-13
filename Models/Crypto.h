@@ -10,13 +10,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Crypto : NSObject
-
     @property (nonatomic, strong) NSString *ticker;
+    @property (nonatomic, strong) NSString *conversionId;
     @property (nonatomic, strong) NSString *symbol;
     @property (nonatomic, strong) NSNumber *cryptoName;
-    @property (nonatomic, strong) NSNumber *currentPrice;
+    @property (nonatomic, strong) NSString *currentPrice;
     @property (nonatomic, strong) NSNumber *openPrice;
-    @property (nonatomic, strong) NSNumber *percentChange;
+    @property (nonatomic, strong) NSDecimalNumber *percentChange;
     @property (nonatomic, strong) NSNumber *tradingVolume;
     @property (nonatomic, strong) NSNumber *lowTwentyFour;
     @property (nonatomic, strong) NSNumber *highTwentyFour;

@@ -18,8 +18,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    self.ticker.text = self.crypto.ticker;
-
+    self.ticker.text = [self.crypto.ticker uppercaseString];
+    self.currentPrice.text = (NSString *)self.crypto.currentPrice;
+    NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.crypto.percentChange];
+    self.percentMarketChange.text = [ marketChangePercentString stringByAppendingString:@" %"];
+    self.conversionId.text = [self.crypto.conversionId uppercaseString];
     
 }
 
