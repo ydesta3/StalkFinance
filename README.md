@@ -25,10 +25,8 @@ StalkFinance Design Project - README
 * For Chat Rooms/Collaboration 
 
 ### Opportunity for Complexity
-- Using two api's for access to low-latency data for stock and crypto data models (Yahoo Finance and Financial Modeling Prep) to gather all desired data and a parse-like database for authentication and chat-room feature
-- Suggest A WatchList of Stocks based on the sector that the user tends to search stocks in
-- Ask user what type of stocks they are interested and have a watchlist feed dedicated to that
-- Recommend a channel for a user to do analysis in based on searched or clicked on stocks
+- Using multiple api's for access to low-latency data for stock crypto and news data models (Yahoo Finance and Financial Modeling Prep & Business News) to gather all desired data amongst utilizing Parse for authentication and chat-channel feature
+- Personalized Newsfeed for each user based on time spent on user content + more signals
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -103,6 +101,11 @@ Allows users to see real time information about stocks and cryptocurrency regard
    * Public Chat Room Display
    -- Chat Room Conversation Thread
    -- Allows users post chats to a particular room thread 
+   
+* Newsfeed 
+   -- Tabular news display
+   -- Tap gesture recognizer to send user to Safari to read full text of synopsis. 
+   
 
 ### 3. Navigation
 
@@ -111,6 +114,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
 * Stock Feed
 * Chat-room Feed
 * Crypto Feed
+* NewsFeed
 
 **Flow Navigation** (Screen to Screen)
 
@@ -121,6 +125,8 @@ Allows users to see real time information about stocks and cryptocurrency regard
 * Crypto feed view -> Specific crypto details view
 
 * Public chat-rooms view -> Specific chat-room thread
+
+* NewsFeed view -> Safari
 
 
 
