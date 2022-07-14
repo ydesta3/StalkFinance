@@ -10,9 +10,13 @@
 #import "Stock.h"
 #import "StockCell.h"
 #import "APIManager.h"
+#import "CryptoDetailsViewController.h"
 
 
-@interface CryptoFeedViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+
+
+@interface CryptoFeedViewController ()<CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
 @property (nonatomic, strong)NSMutableArray *cryptoArray;
 
@@ -50,21 +54,27 @@
     
     }];
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString: @"toCryptoDetails"]){
+        CryptoDetailsViewController *cryptoDetailsController = [segue destinationViewController];
+        NSIndexPath *index = self.cryptoTableView.indexPathForSelectedRow;
+        Crypto *dataToPass = self.cryptoArray[index.row];
+        cryptoDetailsController.crypto = dataToPass;
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
         CryptoCell *cryptoCell = [tableView dequeueReusableCellWithIdentifier:@"cryptoCell"];
         Crypto *crypto = self.cryptoArray[indexPath.row];
         // sets stock instance to current stock in stock cell
-        cryptoCell.cryptoMeta = crypto;
+        //cryptoCell.cryptoMeta = crypto;
         cryptoCell.crypto = crypto;
         //cryptoCell.cryptoMeta = crypto;
         cryptoCell.selectionStyle = nil;

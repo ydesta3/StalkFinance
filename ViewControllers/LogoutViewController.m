@@ -9,10 +9,13 @@
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
 #import "AccountChoiceViewController.h"
+#import "NewsFeedCell.h"
 
 
-@interface LogoutViewController ()
+
+@interface LogoutViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
 
 @end
 
@@ -38,5 +41,15 @@
     
     
 }
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    NewsFeedCell *newsFeed = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+    return newsFeed;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+
 
 @end

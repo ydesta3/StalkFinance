@@ -8,6 +8,7 @@ target 'StalkFinance' do
   # Pods for StalkFinance
   pod 'Parse'
   pod 'BDBOAuth1Manager'
+  pod 'DateTools'
 
   target 'StalkFinanceTests' do
     inherit! :search_paths
