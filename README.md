@@ -59,17 +59,17 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] User can use a tab bar to surface  stock, crypto, and chat views.
 - [X] User can view stock prices as a preview in a timeline feed
 - [X] User can view crypto prices as a preview in a timeline feed
-- [] User can pull to refresh either crypto/stock timeline to get updated prices
-- [] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
-- [] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
-- [] Users can create a chat room with a custom title
-- [] Users can post a chat to a chat room
-- [] Users can see existing public chat rooms
-- [] Users can double tap on a chat to like, increasing the like count
-- [] Users can share a particular stock/crypto detail page to a desired room thread as a post
-- [] Users can click on links that appear in chats
-- [] Incorporates at least one external library to add visual polish
-
+- [X] User can pull to refresh either crypto/stock timeline to get updated prices
+- [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
+- [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
+- Users can see a personalized news feed in the respective tab with at least three articles.
+- Users can create a chat room with a custom title
+- Users can post a chat to a chat room
+- Users can see existing public chat rooms
+- Users can double tap on a chat to like, increasing the like count
+- Users can share a particular stock/crypto detail page to a desired room thread as a post
+- Users can click on links that appear in chats
+- Incorporates at least one external library to add visual polish
 
 
 ### **Optional Nice-to-have Stories**
@@ -77,6 +77,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
 -- stock
 -- crypto
 -- chat room
+-- news feed
 * Profile page for each user
 * Allow users to make sub-comments on a comment
 
@@ -169,6 +170,14 @@ Allows users to see real time information about stocks and cryptocurrency regard
 |tradingVolume  |Number     |how much value of a coin has been bought and sold over the course of a day|
 |lowTwentyFour  |Number      |the crypto's lowest price per share of the day (past 24 hours)|
 |highTwentyFour |Number      |the crypto's highest price per share of the day (past 24 hours)|
+
+### NewsFeed
+
+|Property |Type| Description|
+|-----|--------|--------|
+|author|String     |author of published document|
+|title|String     |title of published document|
+|content  |String      |composed text/insight|
 
 ### Chat
 
