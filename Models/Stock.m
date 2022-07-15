@@ -14,7 +14,7 @@
     
     if (self){
         self.ticker = dictionary[@"symbol"];
-        self.companyName = dictionary[@"displayName"];
+        self.companyName = dictionary[@"shortName"];
         self.currentPrice = dictionary[@"regularMarketPrice"];
         self.openPrice = dictionary[@"regularMarketOpen"];
         self.percentChange = dictionary[@"regularMarketChangePercent"];
@@ -23,6 +23,17 @@
         self.tradingVolume = dictionary[@"regularMarketVolume"];
         self.lowFiftyTwo = dictionary[@"fiftyTwoWeekLow"];
         self.highFiftyTwo = dictionary[@"fiftyTwoWeekHigh"];
+        self.ask = dictionary[@"ask"];
+        self.averageAnalystRating = dictionary[@"fiftyTwoWeekHigh"];
+        self.averageDailyVolume10Day = dictionary[@"averageDailyVolume10Day"];
+        self.bidSize = dictionary[@"bidSize"];
+        self.currency = dictionary[@"currency"];
+        self.exchange = dictionary[@"exchange"];
+        self.marketCap = dictionary[@"marketCap"];
+        self.quoteSourceName = dictionary[@"quoteSourceName"];
+        self.twoHundredDayAverage = dictionary[@"twoHundredDayAverage"];
+        self.region = dictionary[@"region"];
+    
         self.insight = dictionary[@""];
         self.insightTitle = dictionary[@""];
         self.insightProvider = dictionary[@""];

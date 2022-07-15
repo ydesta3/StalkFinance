@@ -26,6 +26,7 @@
     NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.stock.percentChange];
     NSString *percent = @" %";
     self.percentMarketChange.text = [ marketChangePercentString stringByAppendingString:percent];
+    self.exchange.text = self.stock.exchange;
     
 
 

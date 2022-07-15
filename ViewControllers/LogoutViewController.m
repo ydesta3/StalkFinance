@@ -27,6 +27,8 @@
     PFUser *accountOwner = [PFUser currentUser];
     NSString *at = @"@";
     self.userName.text = [ at stringByAppendingString:accountOwner.username];
+    self.newsFeedTableView.dataSource = self;
+    self.newsFeedTableView.delegate = self;
 
 }
 - (IBAction)onSignoutTap:(id)sender {

@@ -11,8 +11,7 @@
 #import "StockCell.h"
 #import "APIManager.h"
 #import "CryptoDetailsViewController.h"
-
-
+#import "DateTools.h"
 
 
 

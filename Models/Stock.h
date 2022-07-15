@@ -25,6 +25,16 @@ NS_ASSUME_NONNULL_BEGIN
     @property (nonatomic, strong) NSString *insightTitle;
     @property (nonatomic, strong) NSString *insightProvider;
     @property (nonatomic, strong) NSDate *insightDate;
+    @property (nonatomic, strong) NSNumber *ask;
+    @property (nonatomic, strong) NSDecimalNumber *averageAnalystRating;
+    @property (nonatomic, strong) NSNumber *averageDailyVolume10Day;
+    @property (nonatomic, strong) NSNumber *bidSize;
+    @property (nonatomic, strong) NSString *currency;
+    @property (nonatomic, strong) NSString *exchange;
+    @property (nonatomic, strong) NSNumber *marketCap;
+    @property (nonatomic, strong) NSString *quoteSourceName;
+    @property (nonatomic, strong) NSString *twoHundredDayAverage;
+    @property (nonatomic, strong) NSString *region;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)arrayOfStocks:(NSArray *)dictionaries;

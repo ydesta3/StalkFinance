@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *companyName;
 @property (weak, nonatomic) IBOutlet UILabel *currentPrice;
 @property (weak, nonatomic) IBOutlet UILabel *percentMarketChange;
+@property (weak, nonatomic) IBOutlet UILabel *exchange;
 
 
 
