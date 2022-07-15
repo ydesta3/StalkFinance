@@ -20,6 +20,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *fiftyTwoWeekLow;
 @property (weak, nonatomic) IBOutlet UILabel *marketPrice;
 @property (weak, nonatomic) IBOutlet UILabel *percentChange;
+@property (weak, nonatomic) IBOutlet UILabel *ask;
+@property (weak, nonatomic) IBOutlet UILabel *askSize;
+@property (weak, nonatomic) IBOutlet UILabel *bid;
+@property (weak, nonatomic) IBOutlet UILabel *bidSize;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -27,8 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+300);
     // Do any additional setup after loading the view.
-    
     self.ticker.text = self.stock.ticker;
     self.companyName.text = self.stock.companyName;
     self.exchange.text = self.stock.exchange;
@@ -42,16 +47,17 @@
     self.marketPrice.text = [ @"$ " stringByAppendingString:currentPriceString];
     NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.stock.percentChange];
     self.percentChange.text =  [ marketChangePercentString stringByAppendingString:@"%"];
-}
+    self.ask.text = [NSString stringWithFormat: @"%@", self.stock.ask];
+    NSString *askSizeFormat = [NSString stringWithFormat: @"%@", self.stock.askSize];
+    self.askSize.text = askSizeFormat;
+    self.bid.text = [NSString stringWithFormat: @"%@", self.stock.bid];
+    NSString *bidSizeFormat = [NSString stringWithFormat: @"%@", self.stock.bidSize];
+    self.bidSize.text = bidSizeFormat;
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+- (IBAction)didTapDismiss:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 
 @end

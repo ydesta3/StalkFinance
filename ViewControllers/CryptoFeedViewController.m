@@ -18,6 +18,10 @@
 @interface CryptoFeedViewController ()<CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
 @property (nonatomic, strong)NSMutableArray *cryptoArray;
+@property (weak, nonatomic) IBOutlet UILabel *todaysDate;
+@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+
+
 
 @end
 
@@ -29,7 +33,19 @@
     
     self.cryptoTableView.dataSource = self;
     self.cryptoTableView.delegate = self;
+    
+    //date formatter
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM dd, YYYY"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    NSString *dateToday = [formatter stringFromDate:[NSDate date]];
+    self.todaysDate.text = dateToday;
+    
     [self fetchCryptoData];
+    self.refresh = [[UIRefreshControl alloc] init];
+    [self.refresh setTintColor:[UIColor whiteColor]];
+    [self.refresh addTarget:self action:@selector(fetchCryptoData) forControlEvents:UIControlEventValueChanged];
+    [self.cryptoTableView addSubview: self.refresh];
 }
 
 -(void) fetchCryptoData{
@@ -49,6 +65,7 @@
             NSLog(@"Error getting Crypto Feed: %@", error.localizedDescription);
         }
         [self.cryptoTableView reloadData];
+        [self.refresh endRefreshing];
         
     
     }];
@@ -56,7 +73,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

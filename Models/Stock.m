@@ -33,7 +33,10 @@
         self.quoteSourceName = dictionary[@"quoteSourceName"];
         self.twoHundredDayAverage = dictionary[@"twoHundredDayAverage"];
         self.region = dictionary[@"region"];
-    
+        self.ask = dictionary[@"ask"];
+        self.askSize = dictionary[@"@askSize"];
+        self.bid = dictionary[@"bid"];
+        self.bidSize = dictionary[@"bidSize"];
         self.insight = dictionary[@""];
         self.insightTitle = dictionary[@""];
         self.insightProvider = dictionary[@""];

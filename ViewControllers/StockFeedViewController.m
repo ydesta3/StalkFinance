@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
 @property (nonatomic, strong)NSMutableArray *stocksArray;
 @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
+@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+
 
 @end
 
@@ -27,8 +29,19 @@
     // Do any additional setup after loading the view.
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
-    [self fetchStocks];
     
+    //date formatter
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM dd, YYYY"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    NSString *dateToday = [formatter stringFromDate:[NSDate date]];
+    self.todaysDate.text = dateToday;
+    
+    [self fetchStocks];
+    self.refresh = [[UIRefreshControl alloc] init];
+    [self.refresh setTintColor:[UIColor whiteColor]];
+    [self.refresh addTarget:self action:@selector(fetchStocks) forControlEvents:UIControlEventValueChanged];
+    [self.stockTableView addSubview: self.refresh];
 }
 
 -(void)fetchStocks{
@@ -48,12 +61,9 @@
             NSLog(@"Error getting Stock Feed: %@", error.localizedDescription);
         }
         [self.stockTableView reloadData];
-        
-    
+        [self.refresh endRefreshing];
     }];
 }
-
-
 
 #pragma mark - Navigation
 
