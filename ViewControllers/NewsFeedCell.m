@@ -17,8 +17,10 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+        self.title.text = self.news.title;
+        self.synopsis.text = self.news.description;
+        
+    
 }
 
 @end

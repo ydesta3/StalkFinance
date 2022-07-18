@@ -17,7 +17,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
     self.ticker.text = [self.crypto.ticker uppercaseString];
     self.currentPrice.text = (NSString *)self.crypto.currentPrice;
     NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.crypto.percentChange];

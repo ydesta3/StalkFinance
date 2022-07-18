@@ -6,13 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Stock.h"
+#import "News.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsFeedCell : UITableViewCell
 
-@property (strong, nonatomic) Stock *news;
+@property (strong, nonatomic) News *news;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *synopsis;
+@property (weak, nonatomic) IBOutlet UIImageView *articleImage;
 
 
 @end

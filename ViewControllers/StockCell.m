@@ -17,7 +17,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
     self.stockTicker.text = self.stock.ticker;
     self.companyName.text = self.stock.companyName;
     NSString *currentPriceString = [NSString stringWithFormat: @"%@", self.stock.currentPrice];

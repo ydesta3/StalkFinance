@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     @property (nonatomic, strong) NSString *synopsis;
     @property (nonatomic, strong) NSURL *url;
     @property (nonatomic, strong) NSURL *publishedAt;
+    @property (nonatomic, strong) NSURL *urlImage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)arrayOfNews:(NSArray *)dictionaries;

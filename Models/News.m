@@ -12,9 +12,13 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self){
-    
-        
-        
+        self.author = dictionary[@"author"];
+        self.title = dictionary[@"title"];
+        self.content = dictionary[@"content"];
+        self.synopsis = dictionary[@"description"];
+        self.url = dictionary[@"url"];
+        self.urlImage = dictionary[@"urlToImage"];
+        self.publishedAt = dictionary[@"author"];
     }
 
     return self;

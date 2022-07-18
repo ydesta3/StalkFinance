@@ -23,7 +23,7 @@
         self.previousClose = dictionary[@"previousClose"];
         self.supply = dictionary[@"supply"];
         self.marketCap = dictionary[@"marketcap"];
-        //self.updatedAt = dictionary[@"];
+        self.updatedAt = dictionary[@"\"updated_at"];
     }
 
     return self;

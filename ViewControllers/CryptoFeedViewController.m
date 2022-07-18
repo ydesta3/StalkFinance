@@ -89,9 +89,7 @@
         CryptoCell *cryptoCell = [tableView dequeueReusableCellWithIdentifier:@"cryptoCell"];
         Crypto *crypto = self.cryptoArray[indexPath.row];
         // sets stock instance to current stock in stock cell
-        //cryptoCell.cryptoMeta = crypto;
         cryptoCell.crypto = crypto;
-        //cryptoCell.cryptoMeta = crypto;
         cryptoCell.selectionStyle = nil;
         
         return cryptoCell;

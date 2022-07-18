@@ -41,7 +41,6 @@
                NSMutableArray *quotes = nil;
                for (NSDictionary *dict in result) {
                    quotes = dict[@"quotes"];
-                   //NSLog(@"stockQuotes: %@", quotes);
                }
                NSLog(@"stockQuotes: %@", quotes);
                NSMutableArray *stocks = [Stock arrayOfStocks:quotes];

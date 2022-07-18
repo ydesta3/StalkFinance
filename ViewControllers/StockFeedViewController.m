@@ -76,12 +76,6 @@
     } else {
         self.isFiltered = true;
         self.filteredStocksArray = [[NSMutableArray alloc] init];
-//        for (Stock *stock in self.stocksArray) {
-//            NSRange *stockRange = [self.stocksArray NSStringFromRange: searchText options: NSCaseInsensitiveSearch];
-//            if(stockRange.location != NSNotFound){
-//                [self.filteredStocksArray addobject: ];
-//            }
-//        }
     }
 }
 

@@ -67,7 +67,7 @@
 - (IBAction)onSignoutTap:(id)sender {
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
+    // PFUser.current() will now be nil
     }];
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -77,6 +77,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NewsFeedCell *newsFeed = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+    newsFeed.selectionStyle = nil;
     return newsFeed;
 }
 
