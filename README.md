@@ -12,20 +12,18 @@ StalkFinance Design Project - README
 **Financial Modeling Prep**
 #### https://site.financialmodelingprep.com/developer/docs/#Earning-Call-Transcript
 
-- Primarily for Earning Call Transcripts
-
 **Finnhub**
 #### https://finnhub.io/docs/api
 
+**News Data**
+#### https://newsapi.org/
 
-### Database/ Chat-Room Feature API
-#### https://firebase.google.com/docs/ios/setup
-
+Chat-Channel
 #### https://www.pubnub.com/docs/sdks/objective-c/api-reference/channel-groups
 * For Chat Rooms/Collaboration 
 
 ### Opportunity for Complexity
-- Using multiple api's for access to low-latency data for stock crypto and news data models (Yahoo Finance and Financial Modeling Prep & Business News) to gather all desired data amongst utilizing Parse for authentication and chat-channel feature
+- Using multiple api's for access to low-latency data for stock crypto and news data models to gather all desired data amongst utilizing Parse for backend authentication and chat-channel feature
 - Personalized Newsfeed for each user based on time spent on user content + more signals
 
 ## Table of Contents
@@ -62,7 +60,8 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] User can pull to refresh either crypto/stock timeline to get updated prices
 - [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
 - [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
-- Users can see a personalized news feed in the respective tab with at least three articles.
+- Users can see a default news feed in the respective tab with at least three articles.
+- Users can see a personalized news feed in the respective tab after taking time to search/view certain stocks and cryptocurrencies.
 - Users can create a chat room with a custom title
 - Users can post a chat to a chat room
 - Users can see existing public chat rooms
@@ -74,10 +73,10 @@ Allows users to see real time information about stocks and cryptocurrency regard
 
 ### **Optional Nice-to-have Stories**
 * Search bar to search for a particular
--- stock
--- crypto
--- chat room
--- news feed
+   - stock
+   - crypto
+   - news article/source
+   - chat room
 * Profile page for each user
 * Allow users to make sub-comments on a comment
 
@@ -97,16 +96,15 @@ Allows users to see real time information about stocks and cryptocurrency regard
 * Crypto Price/Chart Feed
    * Simple Crypto Price Preview 
    -- Detailed Price, Analysis, & Insights
+   
+* Newsfeed 
+   -- Tabular news display
+   -- Tap gesture recognizer to send user to Safari to read full text of synopsis. 
 
 * Chat 
    * Public Chat Room Display
    -- Chat Room Conversation Thread
    -- Allows users post chats to a particular room thread 
-   
-* Newsfeed 
-   -- Tabular news display
-   -- Tap gesture recognizer to send user to Safari to read full text of synopsis. 
-   
 
 ### 3. Navigation
 
@@ -128,8 +126,6 @@ Allows users to see real time information about stocks and cryptocurrency regard
 * Public chat-rooms view -> Specific chat-room thread
 
 * NewsFeed view -> Safari
-
-
 
 ## Wireframes
 * See wireframes.pdf in directory
@@ -198,6 +194,12 @@ Base URL - https://alpha.financeapi.net
 |HTTP Verb |Endpoint| Description|
 |-----|--------|--------|
 |GET| /v7/finance/options/{symbol}| retrieves info about options trading regarding the specific stock using its symbol|
-|GET| /ws/insights/v1/finance/insights?symbol=AAPL     |retrieves analysis and research insights regarding a stock |
+|GET| /ws/insights/v1/finance/insights?symbol={symbol}     |retrieves analysis and research insights regarding a stock |
 |GET  |/market/get-realtime-prices    | real time quote data for stocks, ETFs, mutuals funds, etc…
 
+News API
+
+|HTTP Verb |Endpoint| Description|
+|-----|--------|--------|
+|GET| /v2/everything| "Search every article published by over 80,000 different sources large and small in the last 4 years. This endpoint is ideal for news analysis and article discovery."|
+|GET| /v2/top-headlines |"Returns breaking news headlines for countries, categories, and singular publishers. This is perfect for use with news tickers or anywhere you want to use live up-to-date news headlines." |
