@@ -24,8 +24,6 @@
         self.supply = dictionary[@"supply"];
         self.marketCap = dictionary[@"marketcap"];
         //self.updatedAt = dictionary[@"];
-        
-        
     }
 
     return self;

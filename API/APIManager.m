@@ -86,6 +86,31 @@
     
 }
 
-
+- (void)fetchNews: (void(^)(NSArray *newsArticles, NSError *error))completion{
+    NSURL *url = [NSURL URLWithString:@"https://newsapi.org/v2/top-headlines?country=us&category=business"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString *key = [dict objectForKey: @"News"];
+    [request addValue:key forHTTPHeaderField:@"X-Api-Key"];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@": YD: %@", [error localizedDescription]);
+           }
+          else {
+              NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+              NSLog(@": NewsDictionary: %@", newsDictionary);
+              NSMutableArray *storylines = newsDictionary[@"articles"];
+              NSLog(@": Storylines: %@", storylines);
+              NSMutableArray *articleOfNews = [News arrayOfNews:storylines];
+              completion(articleOfNews, nil);
+          }
+      }];
+   [task resume];
+    
+}
 
 @end

@@ -18,7 +18,9 @@
 @property (nonatomic, strong)NSMutableArray *stocksArray;
 @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
-
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong)NSMutableArray *filteredStocksArray;
+@property (nonatomic, assign) BOOL isFiltered;
 
 @end
 
@@ -29,6 +31,9 @@
     // Do any additional setup after loading the view.
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
+    
+    _isFiltered = FALSE;
+    self.searchBar.delegate = self;
     
     //date formatter
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -63,6 +68,21 @@
         [self.stockTableView reloadData];
         [self.refresh endRefreshing];
     }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if(searchText.length == 0){
+        self.isFiltered = false;
+    } else {
+        self.isFiltered = true;
+        self.filteredStocksArray = [[NSMutableArray alloc] init];
+//        for (Stock *stock in self.stocksArray) {
+//            NSRange *stockRange = [self.stocksArray NSStringFromRange: searchText options: NSCaseInsensitiveSearch];
+//            if(stockRange.location != NSNotFound){
+//                [self.filteredStocksArray addobject: ];
+//            }
+//        }
+    }
 }
 
 #pragma mark - Navigation
