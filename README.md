@@ -174,6 +174,8 @@ Allows users to see real time information about stocks and cryptocurrency regard
 |author|String     |author of published document|
 |title|String     |title of published document|
 |content  |String      |composed text/insight|
+|urlImage|URL     |Image associated with news article|
+|urlToArticle|URL     |Link to article|
 
 ### Chat
 
