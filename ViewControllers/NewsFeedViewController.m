@@ -14,10 +14,6 @@
 #import "News.h"
 
 
-
-
-
-
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
@@ -54,7 +50,7 @@
             //
             for (News *news in newsArticles) {
                 // uses text field in stock model to fetch the text body of a stock.
-                NSString *newsDescription = news.description;
+                NSString *newsDescription = news.title;
                 NSLog(@": YD: %@", newsDescription);
             }
         } else {
@@ -77,6 +73,9 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NewsFeedCell *newsFeed = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+    News *article = self.newsArray[indexPath.row];
+    // sets news instance to be an article in an index of the news collection
+    newsFeed.news = article;
     newsFeed.selectionStyle = nil;
     return newsFeed;
 }

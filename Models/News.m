@@ -16,7 +16,7 @@
         self.title = dictionary[@"title"];
         self.content = dictionary[@"content"];
         self.synopsis = dictionary[@"description"];
-        self.url = dictionary[@"url"];
+        self.urlToArticle = dictionary[@"url"];
         self.urlImage = dictionary[@"urlToImage"];
         self.publishedAt = dictionary[@"author"];
     }
