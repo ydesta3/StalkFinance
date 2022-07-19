@@ -12,6 +12,7 @@
 #import "NewsFeedCell.h"
 #import "APIManager.h"
 #import "News.h"
+@import SafariServices;
 
 
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -80,9 +81,20 @@
     return newsFeed;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    News *selectedArticle = self.newsArray[indexPath.row];
+    NSString *articleUrlString = selectedArticle.urlToArticle;
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@", articleUrlString]];
+    SFSafariViewController *safariViewCont = [[SFSafariViewController alloc] initWithURL:URL];
+    [self presentViewController:safariViewCont animated:YES completion:nil];
+    
+}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.newsArray.count;
 }
+
+
 
 
 @end

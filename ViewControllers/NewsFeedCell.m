@@ -18,7 +18,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     self.title.text = (NSString *)self.news.title;
-    self.synopsis.text = (NSString *)self.news.description;
+    self.synopsis.text = (NSString *)self.news.synopsis;
     NSURL *url = [NSURL URLWithString:self.news.urlImage];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
     // stores data in image object
