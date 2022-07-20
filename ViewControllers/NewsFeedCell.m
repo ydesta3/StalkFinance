@@ -21,7 +21,7 @@
     
     self.title.text = (NSString *)self.news.title;
     if ([self.synopsis.text isEqualToString:@"<null>"]){
-        self.synopsis.text = self.news.author;
+        self.synopsis.text = @" ";
     } else {
         self.synopsis.text = [NSString stringWithFormat:@"%@", self.news.synopsis];
     }
