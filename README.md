@@ -60,7 +60,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] User can pull to refresh either crypto/stock timeline to get updated prices
 - [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
 - [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
-- Users can see a default news feed in the respective tab with at least three articles.
+- [X] Users can see a default news feed rooted in business topics in the respective tab.
 - Users can see a personalized news feed in the respective tab after taking time to search/view certain stocks and cryptocurrencies.
 - Users can create a chat room with a custom title
 - Users can post a chat to a chat room
