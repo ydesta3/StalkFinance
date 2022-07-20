@@ -20,7 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+        [self.view addGestureRecognizer:gestureRecognizer];
+        gestureRecognizer.cancelsTouchesInView = NO;
+
 }
+
+- (void)dismissKeyboard {
+     [self.view endEditing:YES];
+}
+
 - (IBAction)onLoginTap:(id)sender {
     
     NSString *username = self.usernameField.text;
@@ -39,5 +48,7 @@
         }
     }];
 }
+
+
 
 @end

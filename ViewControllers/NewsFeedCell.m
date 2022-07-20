@@ -6,6 +6,7 @@
 //
 
 #import "NewsFeedCell.h"
+#import "UIImageview+AFNetworking.h"
 
 
 @implementation NewsFeedCell
@@ -17,13 +18,20 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    
     self.title.text = (NSString *)self.news.title;
-    self.synopsis.text = (NSString *)self.news.synopsis;
-    NSURL *url = [NSURL URLWithString:self.news.urlImage];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
-    // stores data in image object
-    UIImage *image = [UIImage imageWithData:urlData];
-    self.articleImage.image = image;
+    if ([self.synopsis.text isEqualToString:@"<null>"]){
+        self.synopsis.text = self.news.author;
+    } else {
+        self.synopsis.text = [NSString stringWithFormat:@"%@", self.news.synopsis];
+    }
+    NSString *urltoImageString = [NSString stringWithFormat:@"%@", self.news.urlImage];
+    if ([urltoImageString isEqualToString:@"<null>"]){
+        self.articleImage.image = [UIImage imageNamed:@"newspaper.fill"];
+    } else {
+        NSURL *url = [NSURL URLWithString:urltoImageString];
+        [self.articleImage setImageWithURL:url];
+    }
     
 }
 
