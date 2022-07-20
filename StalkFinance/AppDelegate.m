@@ -24,6 +24,7 @@
       configuration.server = @"https://parseapi.back4app.com/";
     }];
     [Parse initializeWithConfiguration:configuration];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 
