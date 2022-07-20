@@ -9,9 +9,6 @@ StalkFinance Design Project - README
 **Yahoo Finance API**
 #### https://www.yahoofinanceapi.com/
 
-**Financial Modeling Prep**
-#### https://site.financialmodelingprep.com/developer/docs/#Earning-Call-Transcript
-
 **Finnhub**
 #### https://finnhub.io/docs/api
 
@@ -24,7 +21,7 @@ Chat-Channel
 
 ### Opportunity for Complexity
 - Using multiple api's for access to low-latency data for stock crypto and news data models to gather all desired data amongst utilizing Parse for backend authentication and chat-channel feature
-- Personalized Newsfeed for each user based on time spent on user content + more signals
+- Personalized Newsfeed for each user based on time spent on user content + more signals (using parse analytics tools)
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -79,6 +76,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
    - chat room
 * Profile page for each user
 * Allow users to make sub-comments on a comment
+* Login using credentials of many other platforms.
 
 
 
