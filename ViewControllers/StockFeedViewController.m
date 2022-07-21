@@ -5,6 +5,7 @@
 //  Created by Yonatan Desta on 7/8/22.
 //
 
+#import <Parse/Parse.h>
 #import "StockFeedViewController.h"
 #import "APIManager.h"
 #import "Stock.h"
@@ -12,6 +13,8 @@
 #import "StockFeedViewController.h"
 #import "StockDetailsViewController.h"
 #import "DateTools.h"
+#import "NewsFeedViewController.m"
+
 
 @interface StockFeedViewController () <StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
@@ -104,5 +107,20 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    return self.stocksArray.count;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Stock *stock = self.stocksArray[indexPath.row];
+    NSString *stockTicker = stock.ticker;
+    NewsFeedViewController *newsFeedVc = [NewsFeedViewController alloc];
+    [newsFeedVc updateToPersonalizedNews: stock.ticker];
+    NSDictionary *dimensions = @{
+      // Define ranges to bucket data points into meaningful segments
+      @"Stock Ticker": [NSString stringWithFormat: @"%@", stock.ticker],
+      @"User": [NSString stringWithFormat: @"%@", [PFUser currentUser]],
+    };
+    // Send the dimensions to Parse along with the event
+    [PFAnalytics trackEvent:@"UserToStockEngagement" dimensions:dimensions];
+}
+
 
 @end

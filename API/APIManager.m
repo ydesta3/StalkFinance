@@ -8,6 +8,8 @@
 #import "APIManager.h"
 
 @implementation APIManager
+    NSString *headlinesApiUrl = @"https://newsapi.org/v2/top-headlines?q=";
+    NSString *businessNewsApiUrl = @"https://newsapi.org/v2/top-headlines?country=us&category=business";
 
 + (instancetype)shared {
     static APIManager *sharedManager = nil;
@@ -85,8 +87,10 @@
     
 }
 
-- (void)fetchNews: (void(^)(NSArray *newsArticles, NSError *error))completion{
-    NSURL *url = [NSURL URLWithString:@"https://newsapi.org/v2/top-headlines?country=us&category=business"];
+- (void)fetchNews: (void(^)(NSArray *newsArticles, NSString *ticker, NSError *error))completion{
+    NSURL *url = [NSURL URLWithString:businessNewsApiUrl];
+    NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString: ];
+    NSURL *url = [NSURL URLWithString:appendEndpoint];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
@@ -105,7 +109,7 @@
               NSMutableArray *storylines = newsDictionary[@"articles"];
               NSLog(@": Storylines: %@", storylines);
               NSMutableArray *articleOfNews = [News arrayOfNews:storylines];
-              completion(articleOfNews, nil);
+              completion(articleOfNews, nil, nil);
           }
       }];
    [task resume];

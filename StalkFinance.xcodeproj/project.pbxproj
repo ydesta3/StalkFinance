@@ -16,13 +16,13 @@
 		505912D62877B4690081FEA6 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912D52877B4690081FEA6 /* APIManager.m */; };
 		505912D92878BCB70081FEA6 /* StockFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912D82878BCB70081FEA6 /* StockFeedViewController.m */; };
 		505912DC2878DE3A0081FEA6 /* StockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912DB2878DE3A0081FEA6 /* StockCell.m */; };
-		505912DE2878F4D40081FEA6 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505912DD2878F4D40081FEA6 /* Keys.plist */; };
 		505912E1287A14BD0081FEA6 /* CryptoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912E0287A14BD0081FEA6 /* CryptoCell.m */; };
 		505912EA287A15B80081FEA6 /* CryptoFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912E9287A15B80081FEA6 /* CryptoFeedViewController.m */; };
 		505912ED287F8E930081FEA6 /* NewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912EC287F8E930081FEA6 /* NewsFeedCell.m */; };
 		505912F0287FD9230081FEA6 /* StockDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912EF287FD9230081FEA6 /* StockDetailsViewController.m */; };
 		505912F3287FD93A0081FEA6 /* CryptoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912F2287FD93A0081FEA6 /* CryptoDetailsViewController.m */; };
 		505912F62885C4F70081FEA6 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912F52885C4F70081FEA6 /* News.m */; };
+		505912FA28889F300081FEA6 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505912F928889F300081FEA6 /* Keys.plist */; };
 		50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59928745F4800F3AD65 /* AppDelegate.m */; };
 		50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59C28745F4800F3AD65 /* SceneDelegate.m */; };
 		50C6A5A328745F4800F3AD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A128745F4800F3AD65 /* Main.storyboard */; };
@@ -76,7 +76,6 @@
 		505912D82878BCB70081FEA6 /* StockFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockFeedViewController.m; sourceTree = "<group>"; };
 		505912DA2878DE3A0081FEA6 /* StockCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockCell.h; sourceTree = "<group>"; };
 		505912DB2878DE3A0081FEA6 /* StockCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockCell.m; sourceTree = "<group>"; };
-		505912DD2878F4D40081FEA6 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		505912DF287A14BD0081FEA6 /* CryptoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoCell.h; sourceTree = "<group>"; };
 		505912E0287A14BD0081FEA6 /* CryptoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoCell.m; sourceTree = "<group>"; };
 		505912E8287A15B80081FEA6 /* CryptoFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoFeedViewController.h; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		505912F2287FD93A0081FEA6 /* CryptoDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoDetailsViewController.m; sourceTree = "<group>"; };
 		505912F42885C4F70081FEA6 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		505912F52885C4F70081FEA6 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		505912F928889F300081FEA6 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		50C6A59528745F4800F3AD65 /* StalkFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StalkFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C6A59828745F4800F3AD65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50C6A59928745F4800F3AD65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 				50C6A5A628745F4B00F3AD65 /* LaunchScreen.storyboard */,
 				50C6A5A928745F4B00F3AD65 /* Info.plist */,
 				50C6A5AA28745F4B00F3AD65 /* main.m */,
-				505912DD2878F4D40081FEA6 /* Keys.plist */,
+				505912F928889F300081FEA6 /* Keys.plist */,
 			);
 			path = StalkFinance;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				505912DE2878F4D40081FEA6 /* Keys.plist in Resources */,
+				505912FA28889F300081FEA6 /* Keys.plist in Resources */,
 				50C6A5A828745F4B00F3AD65 /* LaunchScreen.storyboard in Resources */,
 				50C6A5A528745F4B00F3AD65 /* Assets.xcassets in Resources */,
 				50C6A5A328745F4800F3AD65 /* Main.storyboard in Resources */,

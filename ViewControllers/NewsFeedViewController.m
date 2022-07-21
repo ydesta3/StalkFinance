@@ -12,6 +12,8 @@
 #import "NewsFeedCell.h"
 #import "APIManager.h"
 #import "News.h"
+#import "Stock.h"
+
 @import SafariServices;
 
 
@@ -61,6 +63,15 @@
         [self.refresh endRefreshing];
     }];
 }
+
+- (void) updateToPersonalizedNews:(void(^)(NSString *ticker))completion {
+    [[APIManager shared] fetchNews:^(NSArray * newsArticles, NSString * ticker, NSError * _Nonnull error){
+        
+    }];
+    
+    
+}
+
 - (IBAction)onSignoutTap:(id)sender {
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
