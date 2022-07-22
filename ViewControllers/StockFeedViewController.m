@@ -13,17 +13,20 @@
 #import "StockFeedViewController.h"
 #import "StockDetailsViewController.h"
 #import "DateTools.h"
-#import "NewsFeedViewController.m"
+#import "NewsFeedViewController.h"
+
 
 
 @interface StockFeedViewController () <StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
 @property (nonatomic, strong)NSMutableArray *stocksArray;
+@property (nonatomic, strong)NSMutableArray *cacheOfInterestedStocks;
 @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong)NSMutableArray *filteredStocksArray;
 @property (nonatomic, assign) BOOL isFiltered;
+
 
 @end
 
@@ -110,9 +113,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Stock *stock = self.stocksArray[indexPath.row];
-    NSString *stockTicker = stock.ticker;
+    [self.cacheOfInterestedStocks addObject:stock];
     NewsFeedViewController *newsFeedVc = [NewsFeedViewController alloc];
-    [newsFeedVc updateToPersonalizedNews: stock.ticker];
+    newsFeedVc.stocksOfInterest = self.cacheOfInterestedStocks;
     NSDictionary *dimensions = @{
       // Define ranges to bucket data points into meaningful segments
       @"Stock Ticker": [NSString stringWithFormat: @"%@", stock.ticker],

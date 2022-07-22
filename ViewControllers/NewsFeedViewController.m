@@ -1,5 +1,5 @@
 //
-//  LogoutViewController.m
+//  NewsFeedViewController.m
 //  StalkFinance
 //
 //  Created by Yonatan Desta on 7/6/22.
@@ -64,11 +64,29 @@
     }];
 }
 
-- (void) updateToPersonalizedNews:(void(^)(NSString *ticker))completion {
-    [[APIManager shared] fetchNews:^(NSArray * newsArticles, NSString * ticker, NSError * _Nonnull error){
-        
-    }];
-    
+- (void) updateToPersonalizedNews{
+
+    Stock *keyStock = [self.stocksOfInterest objectAtIndex:self.stocksOfInterest.count - 1];
+    NSString *keyword = keyStock.ticker;
+    [[APIManager shared] fetchHeadlineNews:^(NSArray * _Nonnull headlineArticles, NSError * _Nonnull error) {
+        if (headlineArticles) {
+            for (NSMutableDictionary *dict in headlineArticles) {
+                [self.newsArray insertObject:dict atIndex:0];
+            }
+            NSLog(@"Successfully loaded Headline News");
+            //
+            for (News *news in headlineArticles) {
+                // uses text field in stock model to fetch the text body of a stock.
+                NSString *newsDescription = news.title;
+                NSLog(@": YD: %@", newsDescription);
+            }
+        } else {
+            NSLog(@"Error getting Headline News: %@", error.localizedDescription);
+        }
+        [self.newsFeedTableView reloadData];
+
+   }];
+
     
 }
 
@@ -104,7 +122,6 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.newsArray.count;
 }
-
 
 
 
