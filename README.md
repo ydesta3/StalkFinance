@@ -52,34 +52,27 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] User can log in and log out of his or her account
 - [X] The current signed in user is persisted across app restarts
 - [X] User can use a tab bar to surface  stock, crypto, and chat views.
-- [X] User can view stock prices as a preview in a timeline feed
-- [X] User can view crypto prices as a preview in a timeline feed
+- [X] User can view stock prices as a preview in a timeline feed using Yahoo Finance API
+- [X] User can view crypto prices as a preview in a timeline feed using AlphaFinance API 
 - [X] User can pull to refresh either crypto/stock timeline to get updated prices
 - [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
 - [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
-- [X] Users can see a default news feed rooted in business topics in the respective tab.
-- Users can see a personalized news feed in the respective tab after taking time to search/view certain stocks and cryptocurrencies.
+- [X] Users can see a default news feed rooted in business topics in the respective tab using News.org API.
+- [X] Search bar to search for a particular stock/crypto to faciliate faster use of newsfeed algo
+- Users can see 2 or 3 articles about a recent stock they have clicked on in their custom session newsfeed in addition to the default business news
+- Incorporates at least one external library to add visual polish
+- Users can double tab on a stock to make it appear at the top of the feed list
 - Users can create a chat room with a custom title
 - Users can post a chat to a chat room
 - Users can see existing public chat rooms
-- Users can double tap on a chat to like, increasing the like count
-- Users can share a particular stock/crypto detail page to a desired room thread as a post
 - Users can click on links that appear in chats
-- Incorporates at least one external library to add visual polish
-
 
 ### **Optional Nice-to-have Stories**
-* Search bar to search for a particular
-   - stock
-   - crypto
-   - news article/source
-   - chat room
+* Login options using credentials of many different platforms such as Facebook, Twitter, Google.
+* Users can share a particular stock/crypto detail page to a desired room thread as a post
+* Users can double tap on a chat to like, increasing the like count
 * Profile page for each user
 * Allow users to make sub-comments on a comment
-* Login using credentials of many other platforms.
-
-
-
 
 ### 2. Screen Archetypes
 
