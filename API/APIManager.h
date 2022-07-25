@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)fetchStockQuote:(void(^)(NSArray *stocks, NSError *error))completion;
 - (void)fetchCryptoQuotes:(void(^)(NSArray *crypto, NSError *error))completion;
 - (void)fetchNews:(void(^)(NSArray *newsArticles, NSError *error))completion;
-- (void)fetchHeadlineNews: (void(^)(NSArray *allNewsArticles, NSError *error))completion;
+- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSArray *allNewsArticles, NSError *error))completion;
 
 
 

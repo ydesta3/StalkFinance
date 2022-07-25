@@ -17,7 +17,7 @@
 
 
 
-@interface StockFeedViewController () <StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface StockFeedViewController () <UISearchBarDelegate, StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
 @property (nonatomic, strong)NSMutableArray *stocksArray;
 @property (nonatomic, strong)NSMutableArray *cacheOfInterestedStocks;
@@ -37,6 +37,8 @@
     // Do any additional setup after loading the view.
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
+    
+
     
     _isFiltered = FALSE;
     self.searchBar.delegate = self;
@@ -82,10 +84,15 @@
     } else {
         self.isFiltered = true;
         self.filteredStocksArray = [[NSMutableArray alloc] init];
+        for (Stock* stock in self.stocksArray){
+            NSRange resultsRange = [stock.ticker rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(resultsRange.location != NSNotFound){
+                [self.filteredStocksArray addObject:stock];
+            }
+        }
     }
+    [self.stockTableView reloadData];
 }
-
-#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -94,6 +101,9 @@
         StockDetailsViewController *stockDetailsController = [segue destinationViewController];
         NSIndexPath *index = self.stockTableView.indexPathForSelectedRow;
         Stock *dataToPass = self.stocksArray[index.row];
+        if(self.isFiltered){
+            dataToPass = self.filteredStocksArray[index.row];
+        }
         stockDetailsController.stock = dataToPass;
     }
 }
@@ -101,24 +111,31 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     StockCell *stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockCell"];
     Stock *stock = self.stocksArray[indexPath.row];
-    // sets stock instance to current stock in stock cell
+    if (self.isFiltered){
+        stock = self.filteredStocksArray[indexPath.row];
+    }
     stockCell.stock = stock;
     stockCell.selectionStyle = nil;
     return stockCell;
 } 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   return self.stocksArray.count;
+    if (self.isFiltered){
+        return self.filteredStocksArray.count;
+    }
+    return self.stocksArray.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Stock *stock = self.stocksArray[indexPath.row];
-    [self.cacheOfInterestedStocks addObject:stock];
-    NewsFeedViewController *newsFeedVc = [NewsFeedViewController alloc];
-    newsFeedVc.stocksOfInterest = self.cacheOfInterestedStocks;
+    Stock *stockOfInterest = self.stocksArray[indexPath.row];
+    NSLog(@": Stock Of Interest ticker: %@", stockOfInterest.ticker);
+    [self.cacheOfInterestedStocks addObject:stockOfInterest];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.cacheOfInterestedStocks forKey:@"Soi"];
+    [userDefaults synchronize];
     NSDictionary *dimensions = @{
       // Define ranges to bucket data points into meaningful segments
-      @"Stock Ticker": [NSString stringWithFormat: @"%@", stock.ticker],
+      @"Stock Ticker": [NSString stringWithFormat: @"%@", stockOfInterest.ticker],
       @"User": [NSString stringWithFormat: @"%@", [PFUser currentUser]],
     };
     // Send the dimensions to Parse along with the event

@@ -24,7 +24,7 @@
 }
 
 -(void) fetchStockQuote :(void(^)(NSArray *stocks, NSError *error))completion {
-    NSURL *url = [NSURL URLWithString:stockUrl];
+    NSURL *url = [NSURL URLWithString:@"https://yfapi.net/ws/screeners/v1/finance/screener/predefined/saved?count=50&scrIds=day_gainers"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
@@ -117,8 +117,10 @@
     
 }
 
-- (void)fetchHeadlineNews: (void(^)(NSArray *allNewsArticles, NSError *error))completion{
-    NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:ticker];
+- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSArray *allNewsArticles, NSError *error))completion {
+    NSLog(@": HEADLINE: %@", ticker);
+    NSString *keyword = ticker;
+    NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:keyword];
     NSURL *urlforSpecificHeadlines = [NSURL URLWithString:appendEndpoint];
     NSMutableURLRequest *requestForHeadlines = [NSMutableURLRequest requestWithURL:urlforSpecificHeadlines cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     [requestForHeadlines setHTTPMethod:@"GET"];

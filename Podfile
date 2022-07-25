@@ -9,6 +9,7 @@ target 'StalkFinance' do
   pod 'Parse'
   pod 'BDBOAuth1Manager'
   pod 'DateTools'
+  pod 'AFNetworking'
 
   target 'StalkFinanceTests' do
     inherit! :search_paths
