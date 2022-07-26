@@ -97,7 +97,7 @@
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
-    NSString *key = [dict objectForKey: @"News"];
+    NSString *key = [dict objectForKey: @"NewsArticles"];
     [request addValue:key forHTTPHeaderField:@"X-Api-Key"];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -127,7 +127,7 @@
     [requestForHeadlines setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
-    NSString *key = [dict objectForKey: @"News"];
+    NSString *key = [dict objectForKey: @"NewsArticles"];
     [requestForHeadlines addValue:key forHTTPHeaderField:@"X-Api-Key"];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:requestForHeadlines completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
