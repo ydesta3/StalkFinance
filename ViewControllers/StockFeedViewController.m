@@ -37,8 +37,7 @@
     // Do any additional setup after loading the view.
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
-    
-
+    self.cacheOfInterestedStocks = [NSMutableArray array];
     
     _isFiltered = FALSE;
     self.searchBar.delegate = self;
@@ -128,11 +127,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Stock *stockOfInterest = self.stocksArray[indexPath.row];
-    NSLog(@": Stock Of Interest ticker: %@", stockOfInterest.ticker);
-    [self.cacheOfInterestedStocks addObject:stockOfInterest];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:self.cacheOfInterestedStocks forKey:@"Soi"];
-    [userDefaults synchronize];
+    NSString *keyword = stockOfInterest.ticker;
+    [self.cacheOfInterestedStocks addObject:keyword];
+    NSLog(@": Stock Of Interest ticker: %@", keyword);
+    [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+    {
+        PFUser *currentUser = [PFUser currentUser];
+        [currentUser addObject:keyword forKey:@"StocksOfInterest"];
+        [[PFUser currentUser] saveInBackground];
+    }];
     NSDictionary *dimensions = @{
       // Define ranges to bucket data points into meaningful segments
       @"Stock Ticker": [NSString stringWithFormat: @"%@", stockOfInterest.ticker],
