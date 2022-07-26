@@ -38,10 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
     @property (nonatomic, strong) NSString *twoHundredDayAverage;
     @property (nonatomic, strong) NSString *region;
 
- 
-
-
-
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)arrayOfStocks:(NSArray *)dictionaries;
 

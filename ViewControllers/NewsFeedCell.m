@@ -18,6 +18,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    
     self.title.text = (NSString *)self.news.title;
     if ([self.synopsis.text isEqualToString:@"<null>"]){
         self.synopsis.text = @" ";

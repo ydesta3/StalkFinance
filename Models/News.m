@@ -17,7 +17,7 @@
         self.content = dictionary[@"content"];
         self.synopsis = dictionary[@"description"];
         self.urlToArticle = dictionary[@"url"];
-        self.urlImage = dictionary[@"urlToImage"];
+        self.urlImage = (NSString *)dictionary[@"urlToImage"];
         self.publishedAt = dictionary[@"author"];
     }
 
