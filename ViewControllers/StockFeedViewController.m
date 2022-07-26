@@ -88,6 +88,14 @@
             if(resultsRange.location != NSNotFound){
                 [self.filteredStocksArray addObject:stock];
             }
+            NSRange companyNameResultsRange = [stock.companyName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(companyNameResultsRange.location != NSNotFound){
+                [self.filteredStocksArray addObject:stock];
+            }
+            NSRange exchangeResultsRange = [stock.exchange rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(exchangeResultsRange.location != NSNotFound){
+                [self.filteredStocksArray addObject:stock];
+            }
         }
     }
     [self.stockTableView reloadData];
