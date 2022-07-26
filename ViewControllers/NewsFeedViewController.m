@@ -1,5 +1,5 @@
 //
-//  LogoutViewController.m
+//  NewsFeedViewController.m
 //  StalkFinance
 //
 //  Created by Yonatan Desta on 7/6/22.
@@ -12,6 +12,8 @@
 #import "NewsFeedCell.h"
 #import "APIManager.h"
 #import "News.h"
+#import "Stock.h"
+
 @import SafariServices;
 
 
@@ -34,6 +36,7 @@
     self.newsFeedTableView.dataSource = self;
     self.newsFeedTableView.delegate = self;
     [self fetchNews];
+    [self updateToPersonalizedNews];
     self.refresh = [[UIRefreshControl alloc] init];
     [self.refresh setTintColor:[UIColor whiteColor]];
     [self.refresh addTarget:self action:@selector(fetchNews) forControlEvents:UIControlEventValueChanged];
@@ -54,6 +57,11 @@
                 NSString *newsDescription = news.title;
                 NSLog(@": YD: %@", newsDescription);
             }
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSMutableArray *stocksForPersonalization = [[userDefaults arrayForKey:@"Soi"] mutableCopy];
+            Stock *stock = stocksForPersonalization[0];
+
+            NSLog(@": StocksOfInterest: %@", stock.ticker);
         } else {
             NSLog(@"Error getting News Feed: %@", error.localizedDescription);
         }
@@ -61,6 +69,31 @@
         [self.refresh endRefreshing];
     }];
 }
+
+- (void) updateToPersonalizedNews{
+    if (self.stocksOfInterest.count != 0){
+        Stock *keyStock = [self.stocksOfInterest objectAtIndex:self.stocksOfInterest.count - 1];
+        NSString *keyword = keyStock.ticker;
+        [[APIManager shared] fetchHeadlineNews:(NSString *) keyword completion:^(NSArray *allNewsArticles, NSError *error) {
+            if (allNewsArticles) {
+                for (NSMutableDictionary *dict in allNewsArticles) {
+                    [self.newsArray insertObject:dict atIndex:0];
+                }
+                NSLog(@"Successfully loaded Headline News");
+                //
+                for (News *news in allNewsArticles) {
+                    // uses text field in stock model to fetch the text body of a stock.
+                    NSString *newsDescription = news.title;
+                    NSLog(@": YD: %@", newsDescription);
+                }
+            } else {
+                NSLog(@"Error getting Headline News: %@", error.localizedDescription);
+            }
+            [self.newsFeedTableView reloadData];
+       }];
+    }
+}
+
 - (IBAction)onSignoutTap:(id)sender {
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -93,7 +126,6 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.newsArray.count;
 }
-
 
 
 

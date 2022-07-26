@@ -15,11 +15,15 @@
 
 
 
-@interface CryptoFeedViewController ()<CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface CryptoFeedViewController ()<UISearchBarDelegate, CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
 @property (nonatomic, strong)NSMutableArray *cryptoArray;
 @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong)NSMutableArray *filteredCryptoArray;
+@property (nonatomic, assign) BOOL isFiltered;
+
 
 
 
@@ -33,6 +37,9 @@
     
     self.cryptoTableView.dataSource = self;
     self.cryptoTableView.delegate = self;
+    _isFiltered = FALSE;
+    self.searchBar.delegate = self;
+
     
     //date formatter
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -71,7 +78,21 @@
     }];
 }
 
-#pragma mark - Navigation
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if(searchText.length == 0){
+        self.isFiltered = false;
+    } else {
+        self.isFiltered = true;
+        self.filteredCryptoArray = [[NSMutableArray alloc] init];
+        for (Crypto* crypto in self.cryptoArray){
+            NSRange resultsRange = [crypto.conversionId rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(resultsRange.location != NSNotFound){
+                [self.filteredCryptoArray addObject:crypto];
+            }
+        }
+    }
+    [self.cryptoTableView reloadData];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -80,6 +101,9 @@
         CryptoDetailsViewController *cryptoDetailsController = [segue destinationViewController];
         NSIndexPath *index = self.cryptoTableView.indexPathForSelectedRow;
         Crypto *dataToPass = self.cryptoArray[index.row];
+        if(self.isFiltered){
+            dataToPass = self.filteredCryptoArray[index.row];
+        }
         cryptoDetailsController.crypto = dataToPass;
     }
 }
@@ -88,15 +112,19 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
         CryptoCell *cryptoCell = [tableView dequeueReusableCellWithIdentifier:@"cryptoCell"];
         Crypto *crypto = self.cryptoArray[indexPath.row];
-        // sets stock instance to current stock in stock cell
+        if(self.isFiltered){
+            crypto = self.filteredCryptoArray[indexPath.row];
+        }
         cryptoCell.crypto = crypto;
         cryptoCell.selectionStyle = nil;
-        
         return cryptoCell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (self.isFiltered){
+        return self.filteredCryptoArray.count;
+    }
+    return self.cryptoArray.count;
 }
 
 @end
