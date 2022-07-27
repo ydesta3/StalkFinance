@@ -107,9 +107,9 @@
           else {
               NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
               NSLog(@": NewsDictionary: %@", newsDictionary);
-              self.allNews = newsDictionary[@"articles"];
-              NSLog(@": Storylines: %@", self.allNews);
-              NSMutableArray *articleOfNews = [News arrayOfNews:self.allNews];
+              NSMutableArray *articles = newsDictionary[@"articles"];
+              NSLog(@": Storylines: %@", articles);
+              NSMutableArray *articleOfNews = [News arrayOfNews:articles];
               completion(articleOfNews, nil);
           }
       }];
@@ -117,7 +117,7 @@
     
 }
 
-- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSArray *allNewsArticles, NSError *error))completion {
+- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
     NSLog(@": HEADLINE: %@", ticker);
     NSString *keyword = ticker;
     NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:keyword];
@@ -136,15 +136,11 @@
            }
           else {
               NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-              NSLog(@": NewsDictionary: %@", newsDictionary);
-              NSMutableArray *storylines = newsDictionary[@"articles"];
-              for (NSMutableDictionary *dict in storylines) {
-                  [self.allNews insertObject:dict atIndex:0];
-              }
-              NSLog(@": Storylines: %@", self.allNews);
-              NSMutableArray *allNewsArticles = [News arrayOfNews:self.allNews];
-              completion(allNewsArticles, nil);
-
+              NSLog(@": HeadlinesDictionary: %@", newsDictionary);
+              NSMutableArray *storylinesForKeyword = newsDictionary[@"articles"];
+              NSLog(@": StorylinesForKey: %@", storylinesForKeyword);
+              NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
+              completion(keywordArticleOfNews, nil);
 
           }
       }];

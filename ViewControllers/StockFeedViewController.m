@@ -135,6 +135,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Stock *stockOfInterest = self.stocksArray[indexPath.row];
+    if (self.isFiltered){
+        stockOfInterest = self.filteredStocksArray[indexPath.row];
+    }
     NSString *keyword = stockOfInterest.ticker;
     [self.cacheOfInterestedStocks addObject:keyword];
     NSLog(@": Stock Of Interest ticker: %@", keyword);
