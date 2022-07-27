@@ -61,7 +61,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] Search bar to search for a particular stock/crypto to faciliate faster use of newsfeed algo
 - Users can see 2 or 3 articles about a recent stock they have clicked on in their custom session newsfeed in addition to the default business news
 - Incorporates at least one external library to add visual polish
-- Users can double tab on a stock to make it appear at the top of the feed list
+- [X] Users can double tab on a stock to make it appear at the in their watchlist
 - Users can create a chat room with a custom title
 - Users can post a chat to a chat room
 - Users can see existing public chat rooms
