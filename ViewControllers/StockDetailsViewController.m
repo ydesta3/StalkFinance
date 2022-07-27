@@ -6,6 +6,8 @@
 //
 
 #import "StockDetailsViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface StockDetailsViewController ()
 
@@ -25,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *bid;
 @property (weak, nonatomic) IBOutlet UILabel *bidSize;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *scrollVew;
+
 
 @end
 
@@ -54,6 +58,25 @@
     NSString *bidSizeFormat = [NSString stringWithFormat: @"%@", self.stock.bidSize];
     self.bidSize.text = bidSizeFormat;
 
+    
+}
+- (IBAction)onDoubleTap:(id)sender {
+    NSString *keyword = self.stock.ticker;
+    [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+    {
+        PFUser *currentUser = [PFUser currentUser];
+        [currentUser addObject:keyword forKey:@"StocksOfInterest"];
+        [[PFUser currentUser] saveInBackground];
+    }];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Added to WatchList"
+                               message:[self.stock.companyName stringByAppendingString:@" was saved to your WatchList"]
+                               preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {}];
+
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 - (IBAction)didTapDismiss:(id)sender {

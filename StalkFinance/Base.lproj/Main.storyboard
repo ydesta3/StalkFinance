@@ -214,6 +214,7 @@
                                                 <constraint firstItem="fBx-Ss-VQM" firstAttribute="top" secondItem="YEC-hG-EVy" secondAttribute="bottom" constant="12" id="taZ-JD-L30"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="companyName" destination="fBx-Ss-VQM" id="MIs-ZU-ECo"/>
                                             <outlet property="currentPrice" destination="nQw-PR-QAq" id="ua3-fU-tNZ"/>
@@ -248,21 +249,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFk-DK-i6M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WatchList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFk-DK-i6M">
                                 <rect key="frame" x="20" y="38" width="288" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="28"/>
                                 <color key="textColor" red="0.99580007791519165" green="0.71794861555099487" blue="0.00074602663516998291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoM-pB-ysE">
-                                <rect key="frame" x="142" y="36" width="44" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
-                                    <color key="baseForegroundColor" red="1" green="0.70908714279999996" blue="0.083138805100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cbT-FA-QIg"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -845,6 +838,7 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Jc5-lW-whk" firstAttribute="leading" secondItem="7U0-6V-zyH" secondAttribute="leading" id="F60-Ts-tBr"/>
                                             <constraint firstAttribute="bottom" secondItem="Jc5-lW-whk" secondAttribute="bottom" constant="1031.5" id="HnR-yc-sVI"/>
@@ -855,6 +849,9 @@
                                             <constraint firstAttribute="bottom" secondItem="Jc5-lW-whk" secondAttribute="bottom" constant="1031.5" id="d8L-iu-t2z"/>
                                             <constraint firstItem="Jc5-lW-whk" firstAttribute="leading" secondItem="yui-D1-Cbg" secondAttribute="leading" constant="20" id="zKn-Ih-TKO"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="LIi-8N-9CG" appends="YES" id="8Fc-GQ-toh"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -899,6 +896,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qn3-uB-OZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="LIi-8N-9CG">
+                    <connections>
+                        <action selector="onDoubleTap:" destination="HI4-qS-WYC" id="eGd-ea-TdW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="92.753623188405811" y="1958.7053571428571"/>
         </scene>
@@ -1163,7 +1165,6 @@
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="lock.icloud.fill" catalog="system" width="128" height="88"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="text.bubble.fill.rtl" catalog="system" width="128" height="110"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

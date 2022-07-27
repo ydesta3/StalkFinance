@@ -139,12 +139,11 @@
         stockOfInterest = self.filteredStocksArray[indexPath.row];
     }
     NSString *keyword = stockOfInterest.ticker;
-    [self.cacheOfInterestedStocks addObject:keyword];
     NSLog(@": Stock Of Interest ticker: %@", keyword);
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];
-        [currentUser addObject:keyword forKey:@"StocksOfInterest"];
+        [currentUser addObject:keyword forKey:@"ViewedStocks"];
         [[PFUser currentUser] saveInBackground];
     }];
     NSDictionary *dimensions = @{
