@@ -27,6 +27,7 @@
 
 
 
+
 @end
 
 @implementation CryptoFeedViewController
@@ -37,6 +38,7 @@
     
     self.cryptoTableView.dataSource = self;
     self.cryptoTableView.delegate = self;
+    
     _isFiltered = FALSE;
     self.searchBar.delegate = self;
 
@@ -61,15 +63,6 @@
         
         if (cryptos) {
             self.cryptoArray = (NSMutableArray *)cryptos;
-            NSLog(@"Successfully loaded Crypto Feed");
-            //
-            for (Crypto *crypto in cryptos) {
-                // uses text field in stock model to fetch the text body of a stock.
-                NSString *ticker = crypto.ticker;
-                NSLog(@": cryptoTickers: %@", ticker);
-            }
-        } else {
-            NSLog(@"Error getting Crypto Feed: %@", error.localizedDescription);
         }
         [self.cryptoTableView reloadData];
         [self.refresh endRefreshing];
@@ -119,6 +112,7 @@
         cryptoCell.selectionStyle = nil;
         return cryptoCell;
 }
+
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.isFiltered){

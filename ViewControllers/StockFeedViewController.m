@@ -62,15 +62,6 @@
         
         if (stocks) {
             self.stocksArray = (NSMutableArray *)stocks;
-            NSLog(@"Successfully loaded Stock Feed");
-            //
-            for (Stock *stock in stocks) {
-                // uses text field in stock model to fetch the text body of a stock.
-                NSString *ticker = stock.ticker;
-                NSLog(@": YD: %@", ticker);
-            }
-        } else {
-            NSLog(@"Error getting Stock Feed: %@", error.localizedDescription);
         }
         [self.stockTableView reloadData];
         [self.refresh endRefreshing];
@@ -86,6 +77,14 @@
         for (Stock* stock in self.stocksArray){
             NSRange resultsRange = [stock.ticker rangeOfString:searchText options:NSCaseInsensitiveSearch];
             if(resultsRange.location != NSNotFound){
+                [self.filteredStocksArray addObject:stock];
+            }
+            NSRange companyNameResultsRange = [stock.companyName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(companyNameResultsRange.location != NSNotFound){
+                [self.filteredStocksArray addObject:stock];
+            }
+            NSRange exchangeResultsRange = [stock.exchange rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(exchangeResultsRange.location != NSNotFound){
                 [self.filteredStocksArray addObject:stock];
             }
         }
@@ -127,13 +126,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Stock *stockOfInterest = self.stocksArray[indexPath.row];
+    if (self.isFiltered){
+        stockOfInterest = self.filteredStocksArray[indexPath.row];
+    }
     NSString *keyword = stockOfInterest.ticker;
-    [self.cacheOfInterestedStocks addObject:keyword];
-    NSLog(@": Stock Of Interest ticker: %@", keyword);
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];
-        [currentUser addObject:keyword forKey:@"StocksOfInterest"];
+        [currentUser addObject:keyword forKey:@"ViewedStocks"];
         [[PFUser currentUser] saveInBackground];
     }];
     NSDictionary *dimensions = @{

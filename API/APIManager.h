@@ -9,6 +9,8 @@
 #import "Stock.h"
 #import "Crypto.h"
 #import "News.h"
+#import <Parse/Parse.h>
+
 
 
 
@@ -18,15 +20,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : BDBOAuth1SessionManager
 
-@property (nonatomic, strong)NSMutableArray *allNews;
-
+@property (nonatomic, strong)NSMutableArray *watchListKeywords;
 
 + (instancetype)shared;
 
 - (void)fetchStockQuote:(void(^)(NSArray *stocks, NSError *error))completion;
 - (void)fetchCryptoQuotes:(void(^)(NSArray *crypto, NSError *error))completion;
 - (void)fetchNews:(void(^)(NSArray *newsArticles, NSError *error))completion;
-- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSArray *allNewsArticles, NSError *error))completion;
+- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion;
+- (void)fetchWatchlist:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion;
 
 
 
