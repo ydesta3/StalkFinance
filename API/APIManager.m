@@ -131,8 +131,10 @@
               NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
               completion(keywordArticleOfNews, nil);
 
-<<<<<<< Updated upstream
-=======
+          }
+    }];
+}
+    
 - (void)fetchWatchlist:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
     NSURL *url = [NSURL URLWithString:[baseStockUrl stringByAppendingString:ticker]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -153,11 +155,10 @@
               NSMutableArray *result = stockDictionary[@"result"];
               NSMutableArray *stocksWatchlistUsingCryptoAttributes = [Stock arrayOfStocks:result];
               completion(stocksWatchlistUsingCryptoAttributes, nil);
->>>>>>> Stashed changes
           }
       }];
    [task resume];
-    
+
 }
 
 @end
