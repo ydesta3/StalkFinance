@@ -23,8 +23,6 @@
 @property (nonatomic, strong)NSMutableArray *newsArray;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
-
-
 @end
 
 @implementation NewsFeedViewController
@@ -52,17 +50,10 @@
         if (newsArticles) {
             self.newsArray = (NSMutableArray *)newsArticles;
             NSLog(@"Successfully loaded News Feed");
-            //
-            for (News *news in newsArticles) {
-                // uses text field in stock model to fetch the text body of a stock.
-                NSString *newsDescription = news.title;
-                NSLog(@": YD: %@", newsDescription);
-            }
         } else {
             NSLog(@"Error getting News Feed: %@", error.localizedDescription);
         }
         [self.newsFeedTableView reloadData];
-        //[self updateToPersonalizedNews];
         [self.refresh endRefreshing];
     }];
 }
@@ -80,17 +71,10 @@
                 if (keywordArticles) {
                     //[self.newsArray addObjectsFromArray:keywordArticles]
                     NSLog(@"Successfully loaded Headline News");
-                    for (News *news in keywordArticles) {
-                        // uses text field in stock model to fetch the text body of a stock.
-                        NSString *newsDescription = news.title;
-                        NSLog(@": YD UPDATED: %@", newsDescription);
-                    }
                     for (News *dict in keywordArticles) {
                         [self.newsArray insertObject:dict atIndex:0];
                         NSLog(@": Updated News Descriptions: %@", dict.description);
                     }
-                    //NSLog(@": Updated News: %@", self.newsArray);
-
                 } else {
                     NSLog(@"Error getting Headline News: %@", error.localizedDescription);
                 }
