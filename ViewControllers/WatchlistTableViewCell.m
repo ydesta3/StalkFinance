@@ -18,11 +18,8 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    //if(self.crypto.ticker isEqualToString:@")
     self.ticker.text = [self.baseCom.ticker uppercaseString];
     self.currentPrice.text = [@"$" stringByAppendingString:[NSString stringWithFormat: @"%@", self.baseCom.currentPrice]];
-    //NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.crypto.percentChange];
-    //hivuhiblcrkijtuchlvrlnutfeuntbegself.percentMarketChange.text = [ marketChangePercentString stringByAppendingString:@" %"];
     self.conversionId.text = [self.baseCom.companyName uppercaseString];
 }
 

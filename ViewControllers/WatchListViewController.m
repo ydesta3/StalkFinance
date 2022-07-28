@@ -34,8 +34,6 @@
     [self.refresh setTintColor:[UIColor whiteColor]];
     [self.refresh addTarget:self action:@selector(fetchWatchListData) forControlEvents:UIControlEventValueChanged];
     [self.watchListTableView addSubview: self.refresh];
-    
-   
 }
 
 -(void) fetchWatchListData{
@@ -45,18 +43,10 @@
         PFUser *currentUser = [PFUser currentUser];
         [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
         NSString *tickers = [keywords componentsJoinedByString:@"%2C"];
-        //NSLog(@"TICKERS: %@", getRealTimePricesEndpoint);
         [[APIManager shared] fetchWatchlist:(NSString *) tickers completion:^(NSArray *stocks, NSError *error) {
-            
             if (stocks) {
                 self.watchListArray = (NSMutableArray *)stocks;
                 NSLog(@"Successfully loaded Crypto Feed");
-                //
-                for (Stock *baseCom in stocks) {
-                    // uses text field in stock model to fetch the text body of a stock.
-                    NSString *ticker = baseCom.ticker;
-                    NSLog(@": Base Coms: %@", ticker);
-                }
             } else {
                 NSLog(@"Error getting Crypto Feed: %@", error.localizedDescription);
             }
