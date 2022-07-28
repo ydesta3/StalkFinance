@@ -12,6 +12,7 @@
     NSString *headlinesApiUrl = @"https://newsapi.org/v2/top-headlines?q=";
     NSString *businessNewsApiUrl = @"https://newsapi.org/v2/top-headlines?country=us&category=business";
     NSString *cryptoUrl = @"https://alpha.financeapi.net/market/get-realtime-prices?symbols=BTC-USD%2CETH-USD%2CXRP-USD%2CDOGE-USD%2CSOL-USD%2CSHIB-USD%2CADA-USD%2CMATIC-USD%2CLTC-USD%2CUSDT-USD";
+    NSString *baseStockUrl = @"https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=";
 
 
 + (instancetype)shared {
@@ -141,11 +142,38 @@
               NSLog(@": StorylinesForKey: %@", storylinesForKeyword);
               NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
               completion(keywordArticleOfNews, nil);
-
           }
       }];
    [task resume];
     
+}
+
+- (void)fetchWatchlist:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
+    NSLog(@":watchlistTickers: %@", ticker);
+    NSURL *url = [NSURL URLWithString:[baseStockUrl stringByAppendingString:ticker]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString *key = [dict objectForKey: @"APIKey"];
+    [request addValue:key forHTTPHeaderField:@"X-API-KEY"];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@": YD1: %@", [error localizedDescription]);
+           }
+          else {
+              NSDictionary *financeDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+              NSDictionary *stockDictionary = financeDictionary[@"quoteResponse"];
+              NSLog(@": YD2: %@", stockDictionary);
+              NSMutableArray *result = stockDictionary[@"result"];
+              NSLog(@"stockResults: %@", result);
+              NSMutableArray *stocksWatchlistUsingCryptoAttributes = [Stock arrayOfStocks:result];
+              completion(stocksWatchlistUsingCryptoAttributes, nil);
+          }
+      }];
+   [task resume];
 }
 
 @end

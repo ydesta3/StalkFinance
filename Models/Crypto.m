@@ -13,8 +13,14 @@
     self = [super init];
     if (self){
         self.conversionId = dictionary[@"identifier"];
+        if (self.conversionId == nil){
+            self.conversionId = @" ";
+        }
         self.percentChange = dictionary[@"percentChange"];
         self.ticker = dictionary[@"symbol"];
+        if (self.ticker == nil){
+            self.ticker = dictionary[@"name"];
+        }
         self.currentPrice = dictionary[@"price"];
         self.openPrice = dictionary[@"open"];
         self.highTwentyFour = dictionary[@"high24"];

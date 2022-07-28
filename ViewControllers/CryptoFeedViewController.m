@@ -27,6 +27,7 @@
 
 
 
+
 @end
 
 @implementation CryptoFeedViewController
@@ -37,6 +38,7 @@
     
     self.cryptoTableView.dataSource = self;
     self.cryptoTableView.delegate = self;
+    
     _isFiltered = FALSE;
     self.searchBar.delegate = self;
 
@@ -119,6 +121,7 @@
         cryptoCell.selectionStyle = nil;
         return cryptoCell;
 }
+
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.isFiltered){

@@ -241,18 +241,79 @@
             </objects>
             <point key="canvasLocation" x="105.79710144927537" y="1101.5625"/>
         </scene>
-        <!--Chat-->
+        <!--WatchList-->
         <scene sceneID="wxv-EB-4Lf">
             <objects>
-                <viewController id="kBm-Ca-qg6" sceneMemberID="viewController">
+                <viewController id="kBm-Ca-qg6" customClass="WatchListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7LJ-R8-y1u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WatchList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFk-DK-i6M">
-                                <rect key="frame" x="20" y="38" width="288" height="33"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-Lh-L20">
+                                <rect key="frame" x="0.0" y="184" width="414" height="588"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.0" green="0.071663487720000002" blue="0.4385067654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchListCell" rowHeight="259" id="qpg-8r-Hkq" customClass="WatchlistTableViewCell">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="259"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qpg-8r-Hkq" id="MWH-9N-tWb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="259"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="companyName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMj-fz-Jua">
+                                                    <rect key="frame" x="20" y="159" width="113.5" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="eBZ-wx-66D"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq5-yH-c0M">
+                                                    <rect key="frame" x="20" y="200" width="242" height="39"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="39" id="N16-AX-mXU"/>
+                                                        <constraint firstAttribute="width" constant="242" id="Xcs-FL-GhD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="29"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticker" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fco-9v-mkh">
+                                                    <rect key="frame" x="20" y="23" width="374" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="374" id="yok-vK-9lo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jMj-fz-Jua" firstAttribute="leading" secondItem="MWH-9N-tWb" secondAttribute="leading" constant="20" symbolic="YES" id="CGZ-ZA-V8S"/>
+                                                <constraint firstItem="Sq5-yH-c0M" firstAttribute="leading" secondItem="MWH-9N-tWb" secondAttribute="leading" constant="20" id="PNy-M6-WnA"/>
+                                                <constraint firstItem="fco-9v-mkh" firstAttribute="top" secondItem="MWH-9N-tWb" secondAttribute="top" constant="23" id="gtW-6t-eqm"/>
+                                                <constraint firstItem="jMj-fz-Jua" firstAttribute="top" secondItem="fco-9v-mkh" secondAttribute="bottom" constant="8" id="i2k-JW-iQT"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sq5-yH-c0M" secondAttribute="bottom" constant="20" id="jMC-3B-v3S"/>
+                                                <constraint firstItem="Sq5-yH-c0M" firstAttribute="top" secondItem="jMj-fz-Jua" secondAttribute="bottom" constant="21" id="kdc-zb-Wg6"/>
+                                                <constraint firstItem="fco-9v-mkh" firstAttribute="leading" secondItem="MWH-9N-tWb" secondAttribute="leading" constant="20" id="q3w-Rb-sSe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="conversionId" destination="jMj-fz-Jua" id="o8k-fZ-InC"/>
+                                            <outlet property="currentPrice" destination="Sq5-yH-c0M" id="idg-s0-cDN"/>
+                                            <outlet property="ticker" destination="fco-9v-mkh" id="3lv-eR-iUP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stocks WatchList+" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFk-DK-i6M">
+                                <rect key="frame" x="9" y="44" width="314" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="42"/>
                                 <color key="textColor" red="0.99580007791519165" green="0.71794861555099487" blue="0.00074602663516998291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -260,26 +321,14 @@
                         <viewLayoutGuide key="safeArea" id="cbT-FA-QIg"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="text.bubble.fill.rtl" catalog="system" id="NZO-P4-adF"/>
+                    <tabBarItem key="tabBarItem" title="WatchList" image="eyes" catalog="system" id="NZO-P4-adF"/>
+                    <connections>
+                        <outlet property="watchListTableView" destination="7uK-Lh-L20" id="MMs-SE-Hw6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uc-Mw-JXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="842"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="MoF-7c-agJ">
-            <objects>
-                <viewController id="dnj-BY-rlp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fHL-Kn-2pg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="O0D-Vo-Ljp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cFi-IJ-t3p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2783" y="842"/>
+            <point key="canvasLocation" x="1944.9275362318842" y="841.74107142857144"/>
         </scene>
         <!--Crypto-->
         <scene sceneID="NWJ-lL-DzW">
@@ -582,21 +631,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRi-YD-zEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925" y="380"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="oo3-HV-cda">
-            <objects>
-                <viewController id="bZE-Qn-teC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X21-tS-urg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="GvO-rh-HE3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qlI-5x-j1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2783" y="842"/>
         </scene>
         <!--Stock Details View Controller-->
         <scene sceneID="vqh-UA-n9L">
@@ -1163,15 +1197,12 @@
         <image name="StalkFinanceBlackYellow" width="1175" height="475"/>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
+        <image name="eyes" catalog="system" width="128" height="99"/>
         <image name="lock.icloud.fill" catalog="system" width="128" height="88"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
-        <image name="text.bubble.fill.rtl" catalog="system" width="128" height="110"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

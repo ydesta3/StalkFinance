@@ -23,6 +23,8 @@
 		505912F3287FD93A0081FEA6 /* CryptoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912F2287FD93A0081FEA6 /* CryptoDetailsViewController.m */; };
 		505912F62885C4F70081FEA6 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912F52885C4F70081FEA6 /* News.m */; };
 		505912FA28889F300081FEA6 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505912F928889F300081FEA6 /* Keys.plist */; };
+		505912FD2891BC120081FEA6 /* WatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505912FC2891BC120081FEA6 /* WatchListViewController.m */; };
+		50591303289201090081FEA6 /* WatchlistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50591302289201090081FEA6 /* WatchlistTableViewCell.m */; };
 		50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59928745F4800F3AD65 /* AppDelegate.m */; };
 		50C6A59D28745F4800F3AD65 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A59C28745F4800F3AD65 /* SceneDelegate.m */; };
 		50C6A5A328745F4800F3AD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C6A5A128745F4800F3AD65 /* Main.storyboard */; };
@@ -89,6 +91,10 @@
 		505912F42885C4F70081FEA6 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		505912F52885C4F70081FEA6 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		505912F928889F300081FEA6 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		505912FB2891BC120081FEA6 /* WatchListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchListViewController.h; sourceTree = "<group>"; };
+		505912FC2891BC120081FEA6 /* WatchListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchListViewController.m; sourceTree = "<group>"; };
+		50591301289201090081FEA6 /* WatchlistTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchlistTableViewCell.h; sourceTree = "<group>"; };
+		50591302289201090081FEA6 /* WatchlistTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchlistTableViewCell.m; sourceTree = "<group>"; };
 		50C6A59528745F4800F3AD65 /* StalkFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StalkFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C6A59828745F4800F3AD65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50C6A59928745F4800F3AD65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -178,6 +184,10 @@
 				505912EF287FD9230081FEA6 /* StockDetailsViewController.m */,
 				505912F1287FD93A0081FEA6 /* CryptoDetailsViewController.h */,
 				505912F2287FD93A0081FEA6 /* CryptoDetailsViewController.m */,
+				505912FB2891BC120081FEA6 /* WatchListViewController.h */,
+				505912FC2891BC120081FEA6 /* WatchListViewController.m */,
+				50591301289201090081FEA6 /* WatchlistTableViewCell.h */,
+				50591302289201090081FEA6 /* WatchlistTableViewCell.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -516,6 +526,8 @@
 				505912C2287610F30081FEA6 /* SignUpViewController.m in Sources */,
 				505912F62885C4F70081FEA6 /* News.m in Sources */,
 				50C6A59A28745F4800F3AD65 /* AppDelegate.m in Sources */,
+				505912FD2891BC120081FEA6 /* WatchListViewController.m in Sources */,
+				50591303289201090081FEA6 /* WatchlistTableViewCell.m in Sources */,
 				505912DC2878DE3A0081FEA6 /* StockCell.m in Sources */,
 				505912C5287614D10081FEA6 /* LoginViewController.m in Sources */,
 				505912F3287FD93A0081FEA6 /* CryptoDetailsViewController.m in Sources */,
