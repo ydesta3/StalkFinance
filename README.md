@@ -58,17 +58,19 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
 - [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
 - [X] Users can see a default news feed rooted in business topics in the respective tab using News.org API.
-- [X] Search bar to search for a particular stock/crypto to faciliate faster use of newsfeed algo
 - Users can see 2 or 3 articles about a recent stock they have clicked on in their custom session newsfeed in addition to the default business news
+- [X] Search bar to search for a particular stock/crypto in their respective tabs
+- [X] Users can double tab anywhere on the stock detail page to add stock their watchlist
+- [X] User can see a watchlist of the stocks in their likes cache
+- Optimized search for all stocks using cache (hot, warm, cold) data
 - Incorporates at least one external library to add visual polish
-- [X] Users can double tab on a stock to make it appear at the in their watchlist
-- Users can create a chat room with a custom title
-- Users can post a chat to a chat room
-- Users can see existing public chat rooms
-- Users can click on links that appear in chats
 
 ### **Optional Nice-to-have Stories**
 * Login options using credentials of many different platforms such as Facebook, Twitter, Google.
+* Users can create a chat room with a custom title
+* Users can post a chat to a chat room
+* Users can see existing public chat rooms
+* Users can click on links that appear in chats
 * Users can share a particular stock/crypto detail page to a desired room thread as a post
 * Users can double tap on a chat to like, increasing the like count
 * Profile page for each user
