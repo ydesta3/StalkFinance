@@ -121,30 +121,32 @@
 - (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
     NSLog(@": HEADLINE: %@", ticker);
     NSString *keyword = ticker;
-    NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:keyword];
-    NSURL *urlforSpecificHeadlines = [NSURL URLWithString:appendEndpoint];
-    NSMutableURLRequest *requestForHeadlines = [NSMutableURLRequest requestWithURL:urlforSpecificHeadlines cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    [requestForHeadlines setHTTPMethod:@"GET"];
-    [requestForHeadlines setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
-    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
-    NSString *key = [dict objectForKey: @"NewsArticles"];
-    [requestForHeadlines addValue:key forHTTPHeaderField:@"X-Api-Key"];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:requestForHeadlines completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-           if (error != nil) {
-               NSLog(@": YD: %@", [error localizedDescription]);
-           }
-          else {
-              NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-              NSLog(@": HeadlinesDictionary: %@", newsDictionary);
-              NSMutableArray *storylinesForKeyword = newsDictionary[@"articles"];
-              NSLog(@": StorylinesForKey: %@", storylinesForKeyword);
-              NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
-              completion(keywordArticleOfNews, nil);
-          }
-      }];
-   [task resume];
+    if(ticker != nil){
+        NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:keyword];
+        NSURL *urlforSpecificHeadlines = [NSURL URLWithString:appendEndpoint];
+        NSMutableURLRequest *requestForHeadlines = [NSMutableURLRequest requestWithURL:urlforSpecificHeadlines cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+        [requestForHeadlines setHTTPMethod:@"GET"];
+        [requestForHeadlines setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
+        NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        NSString *key = [dict objectForKey: @"NewsArticles"];
+        [requestForHeadlines addValue:key forHTTPHeaderField:@"X-Api-Key"];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+        NSURLSessionDataTask *task = [session dataTaskWithRequest:requestForHeadlines completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+               if (error != nil) {
+                   NSLog(@": YD: %@", [error localizedDescription]);
+               }
+              else {
+                  NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                  NSLog(@": HeadlinesDictionary: %@", newsDictionary);
+                  NSMutableArray *storylinesForKeyword = newsDictionary[@"articles"];
+                  NSLog(@": StorylinesForKey: %@", storylinesForKeyword);
+                  NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
+                  completion(keywordArticleOfNews, nil);
+              }
+          }];
+       [task resume];
+    }
     
 }
 

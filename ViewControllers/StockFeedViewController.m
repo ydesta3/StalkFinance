@@ -62,15 +62,6 @@
         
         if (stocks) {
             self.stocksArray = (NSMutableArray *)stocks;
-            NSLog(@"Successfully loaded Stock Feed");
-            //
-            for (Stock *stock in stocks) {
-                // uses text field in stock model to fetch the text body of a stock.
-                NSString *ticker = stock.ticker;
-                NSLog(@": YD: %@", ticker);
-            }
-        } else {
-            NSLog(@"Error getting Stock Feed: %@", error.localizedDescription);
         }
         [self.stockTableView reloadData];
         [self.refresh endRefreshing];
@@ -139,7 +130,6 @@
         stockOfInterest = self.filteredStocksArray[indexPath.row];
     }
     NSString *keyword = stockOfInterest.ticker;
-    NSLog(@": Stock Of Interest ticker: %@", keyword);
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];

@@ -46,9 +46,6 @@
         [[APIManager shared] fetchWatchlist:(NSString *) tickers completion:^(NSArray *stocks, NSError *error) {
             if (stocks) {
                 self.watchListArray = (NSMutableArray *)stocks;
-                NSLog(@"Successfully loaded Crypto Feed");
-            } else {
-                NSLog(@"Error getting Crypto Feed: %@", error.localizedDescription);
             }
             [self.watchListTableView reloadData];
             [self.refresh endRefreshing];
