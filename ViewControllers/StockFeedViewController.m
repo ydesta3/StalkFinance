@@ -88,6 +88,14 @@
             if(resultsRange.location != NSNotFound){
                 [self.filteredStocksArray addObject:stock];
             }
+            NSRange companyNameResultsRange = [stock.companyName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(companyNameResultsRange.location != NSNotFound){
+                [self.filteredStocksArray addObject:stock];
+            }
+            NSRange exchangeResultsRange = [stock.exchange rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if(exchangeResultsRange.location != NSNotFound){
+                [self.filteredStocksArray addObject:stock];
+            }
         }
     }
     [self.stockTableView reloadData];
@@ -127,13 +135,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Stock *stockOfInterest = self.stocksArray[indexPath.row];
+    if (self.isFiltered){
+        stockOfInterest = self.filteredStocksArray[indexPath.row];
+    }
     NSString *keyword = stockOfInterest.ticker;
-    [self.cacheOfInterestedStocks addObject:keyword];
     NSLog(@": Stock Of Interest ticker: %@", keyword);
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];
-        [currentUser addObject:keyword forKey:@"StocksOfInterest"];
+        [currentUser addObject:keyword forKey:@"ViewedStocks"];
         [[PFUser currentUser] saveInBackground];
     }];
     NSDictionary *dimensions = @{

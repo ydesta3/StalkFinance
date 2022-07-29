@@ -23,7 +23,6 @@
 @property (nonatomic, strong)NSMutableArray *newsArray;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
-
 @end
 
 @implementation NewsFeedViewController
@@ -39,7 +38,7 @@
     [self updateToPersonalizedNews];
     self.refresh = [[UIRefreshControl alloc] init];
     [self.refresh setTintColor:[UIColor whiteColor]];
-    [self.refresh addTarget:self action:@selector(fetchNews) forControlEvents:UIControlEventValueChanged];
+    [self.refresh addTarget:self action:@selector(updateToPersonalizedNews) forControlEvents:UIControlEventValueChanged];
     [self.newsFeedTableView addSubview: self.refresh];
 
 }
@@ -51,17 +50,6 @@
         if (newsArticles) {
             self.newsArray = (NSMutableArray *)newsArticles;
             NSLog(@"Successfully loaded News Feed");
-            //
-            for (News *news in newsArticles) {
-                // uses text field in stock model to fetch the text body of a stock.
-                NSString *newsDescription = news.title;
-                NSLog(@": YD: %@", newsDescription);
-            }
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            NSMutableArray *stocksForPersonalization = [[userDefaults arrayForKey:@"Soi"] mutableCopy];
-            Stock *stock = stocksForPersonalization[0];
-
-            NSLog(@": StocksOfInterest: %@", stock.ticker);
         } else {
             NSLog(@"Error getting News Feed: %@", error.localizedDescription);
         }
@@ -71,27 +59,31 @@
 }
 
 - (void) updateToPersonalizedNews{
-    if (self.stocksOfInterest.count != 0){
-        Stock *keyStock = [self.stocksOfInterest objectAtIndex:self.stocksOfInterest.count - 1];
-        NSString *keyword = keyStock.ticker;
-        [[APIManager shared] fetchHeadlineNews:(NSString *) keyword completion:^(NSArray *allNewsArticles, NSError *error) {
-            if (allNewsArticles) {
-                for (NSMutableDictionary *dict in allNewsArticles) {
-                    [self.newsArray insertObject:dict atIndex:0];
+    NSMutableArray *keywords = [[NSMutableArray alloc] init];
+    [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+    {
+        PFUser *currentUser = [PFUser currentUser];
+        [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
+        NSString *key = [keywords lastObject];
+        NSLog(@"TICKERS: %@", key);
+        if (keywords != nil){
+            [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
+                if (keywordArticles) {
+                    //[self.newsArray addObjectsFromArray:keywordArticles]
+                    NSLog(@"Successfully loaded Headline News");
+                    for (News *dict in keywordArticles) {
+                        [self.newsArray insertObject:dict atIndex:0];
+                        NSLog(@": Updated News Descriptions: %@", dict.description);
+                    }
+                } else {
+                    NSLog(@"Error getting Headline News: %@", error.localizedDescription);
                 }
-                NSLog(@"Successfully loaded Headline News");
-                //
-                for (News *news in allNewsArticles) {
-                    // uses text field in stock model to fetch the text body of a stock.
-                    NSString *newsDescription = news.title;
-                    NSLog(@": YD: %@", newsDescription);
-                }
-            } else {
-                NSLog(@"Error getting Headline News: %@", error.localizedDescription);
-            }
-            [self.newsFeedTableView reloadData];
-       }];
-    }
+                [self.newsFeedTableView reloadData];
+           }];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];    
 }
 
 - (IBAction)onSignoutTap:(id)sender {

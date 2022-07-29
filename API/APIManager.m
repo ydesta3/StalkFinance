@@ -40,14 +40,11 @@
            else {
                NSDictionary *stockDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                NSDictionary *financeDictionary = stockDictionary[@"finance"];
-               NSLog(@": YD2: %@", financeDictionary);
                NSDictionary *result = financeDictionary[@"result"];
-               NSLog(@"stockResults: %@", result);
                NSMutableArray *quotes = nil;
                for (NSDictionary *dict in result) {
                    quotes = dict[@"quotes"];
                }
-               NSLog(@"stockQuotes: %@", quotes);
                NSMutableArray *stocks = [Stock arrayOfStocks:quotes];
                completion(stocks, nil);
            }
@@ -71,9 +68,7 @@
            }
           else {
               NSDictionary *cryptoDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-              NSLog(@": CryptoDictionary: %@", cryptoDictionary);
               NSMutableArray *quotes = cryptoDictionary[@"data"];
-              NSLog(@"cryptoQ: %@", quotes);
               NSMutableArray *cryptoAttributes = [[NSMutableArray alloc] init];
               for (NSMutableDictionary *dict in quotes) {
                   NSMutableDictionary *cryptoAttribute = dict[@"attributes"];
@@ -81,7 +76,6 @@
                   [cryptoAttribute addEntriesFromDictionary:cryptoAttributee];
                   [cryptoAttributes addObject: cryptoAttribute];
               }
-              NSLog(@"cryptoAttributes: %@", cryptoAttributes);
               NSMutableArray *cryptos = [Crypto arrayOfCryptoAttributes:cryptoAttributes];
               completion(cryptos, nil);
           }
@@ -106,10 +100,8 @@
            }
           else {
               NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-              NSLog(@": NewsDictionary: %@", newsDictionary);
-              self.allNews = newsDictionary[@"articles"];
-              NSLog(@": Storylines: %@", self.allNews);
-              NSMutableArray *articleOfNews = [News arrayOfNews:self.allNews];
+              NSMutableArray *articles = newsDictionary[@"articles"];
+              NSMutableArray *articleOfNews = [News arrayOfNews:articles];
               completion(articleOfNews, nil);
           }
       }];
@@ -117,8 +109,7 @@
     
 }
 
-- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSArray *allNewsArticles, NSError *error))completion {
-    NSLog(@": HEADLINE: %@", ticker);
+- (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
     NSString *keyword = ticker;
     NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:keyword];
     NSURL *urlforSpecificHeadlines = [NSURL URLWithString:appendEndpoint];
@@ -136,20 +127,38 @@
            }
           else {
               NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-              NSLog(@": NewsDictionary: %@", newsDictionary);
-              NSMutableArray *storylines = newsDictionary[@"articles"];
-              for (NSMutableDictionary *dict in storylines) {
-                  [self.allNews insertObject:dict atIndex:0];
-              }
-              NSLog(@": Storylines: %@", self.allNews);
-              NSMutableArray *allNewsArticles = [News arrayOfNews:self.allNews];
-              completion(allNewsArticles, nil);
+              NSMutableArray *storylinesForKeyword = newsDictionary[@"articles"];
+              NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
+              completion(keywordArticleOfNews, nil);
 
-
+          }
+    }];
+}
+    
+- (void)fetchWatchlist:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
+    NSURL *url = [NSURL URLWithString:[baseStockUrl stringByAppendingString:ticker]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString *key = [dict objectForKey: @"APIKey"];
+    [request addValue:key forHTTPHeaderField:@"X-API-KEY"];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@": YD1: %@", [error localizedDescription]);
+           }
+          else {
+              NSDictionary *financeDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+              NSDictionary *stockDictionary = financeDictionary[@"quoteResponse"];
+              NSMutableArray *result = stockDictionary[@"result"];
+              NSMutableArray *stocksWatchlistUsingCryptoAttributes = [Stock arrayOfStocks:result];
+              completion(stocksWatchlistUsingCryptoAttributes, nil);
           }
       }];
    [task resume];
-    
+
 }
 
 @end
