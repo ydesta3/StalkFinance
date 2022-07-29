@@ -25,7 +25,7 @@
 }
 
 -(void) fetchStockQuote :(void(^)(NSArray *stocks, NSError *error))completion {
-    NSURL *url = [NSURL URLWithString:@"https://yfapi.net/ws/screeners/v1/finance/screener/predefined/saved?count=50&scrIds=day_gainers"];
+    NSURL *url = [NSURL URLWithString:stockUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
@@ -50,6 +50,7 @@
                }
                NSLog(@"stockQuotes: %@", quotes);
                NSMutableArray *stocks = [Stock arrayOfStocks:quotes];
+               NSMutableArray *famousStocks = [Stock arrayOfStocks:quotes];
                completion(stocks, nil);
            }
        }];
@@ -171,8 +172,8 @@
               NSLog(@": YD2: %@", stockDictionary);
               NSMutableArray *result = stockDictionary[@"result"];
               NSLog(@"stockResults: %@", result);
-              NSMutableArray *stocksWatchlistUsingCryptoAttributes = [Stock arrayOfStocks:result];
-              completion(stocksWatchlistUsingCryptoAttributes, nil);
+              NSMutableArray *stocksWatchlistUsingStockAttributes = [Stock arrayOfStocks:result];
+              completion(stocksWatchlistUsingStockAttributes, nil);
           }
       }];
    [task resume];

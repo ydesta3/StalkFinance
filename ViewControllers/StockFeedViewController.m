@@ -58,14 +58,27 @@
 
 -(void)fetchStocks{
     // Get Feed
-    [[APIManager shared] fetchStockQuote:^(NSArray * _Nonnull stocks, NSError * _Nonnull error) {
+    NSString *key = @"AAPL%2CTSLA%2CMETA%2CBA%2CNKE%2CLCID%2CAMC%2CCLOV%2CGME%2CNIO";
+    [[APIManager shared] fetchWatchlist:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
+        
+        if (keywordArticles) {
+            
+            self.stocksArray = keywordArticles;
+        }
+        [self.stockTableView reloadData];
+        [self.refresh endRefreshing];
+        
+    }];
+    [[APIManager shared] fetchStockQuote:^(NSMutableArray * _Nonnull stocks, NSError * _Nonnull error) {
         
         if (stocks) {
-            self.stocksArray = (NSMutableArray *)stocks;
+            [self.stocksArray addObjectsFromArray:stocks];
         }
         [self.stockTableView reloadData];
         [self.refresh endRefreshing];
     }];
+    [self.stockTableView reloadData];
+    [self.refresh endRefreshing];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{

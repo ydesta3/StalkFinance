@@ -50,7 +50,6 @@
             [self.watchListTableView reloadData];
             [self.refresh endRefreshing];
             
-        
         }];
     }];
 }

@@ -151,7 +151,7 @@
                                 <rect key="frame" x="0.0" y="116" width="414" height="780"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" red="1" green="0.67895126790000004" blue="0.049565206530000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" rowHeight="204" id="gha-gV-325" customClass="StockCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="204"/>
@@ -174,7 +174,7 @@
                                                     <rect key="frame" x="287" y="39" width="107" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.022401631864597676" green="0.54647229381443296" blue="0.18143034693746193" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="exchange" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3p-a5-59d">
@@ -255,15 +255,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.0" green="0.071663487720000002" blue="0.4385067654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchListCell" rowHeight="259" id="qpg-8r-Hkq" customClass="WatchlistTableViewCell">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="259"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchListCell" rowHeight="251" id="qpg-8r-Hkq" customClass="WatchlistTableViewCell">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="251"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qpg-8r-Hkq" id="MWH-9N-tWb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="259"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="251"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="companyName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMj-fz-Jua">
-                                                    <rect key="frame" x="20" y="159" width="113.5" height="20"/>
+                                                    <rect key="frame" x="20" y="134" width="113.5" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="eBZ-wx-66D"/>
                                                     </constraints>
@@ -271,8 +271,18 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticker" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fco-9v-mkh">
+                                                    <rect key="frame" x="20" y="23" width="374" height="103"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="2rj-dj-i4x"/>
+                                                        <constraint firstAttribute="width" constant="374" id="yok-vK-9lo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq5-yH-c0M">
-                                                    <rect key="frame" x="20" y="200" width="242" height="39"/>
+                                                    <rect key="frame" x="20" y="182" width="242" height="39"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="39" id="N16-AX-mXU"/>
                                                         <constraint firstAttribute="width" constant="242" id="Xcs-FL-GhD"/>
@@ -281,23 +291,14 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticker" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fco-9v-mkh">
-                                                    <rect key="frame" x="20" y="23" width="374" height="128"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="374" id="yok-vK-9lo"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="22"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jMj-fz-Jua" firstAttribute="leading" secondItem="MWH-9N-tWb" secondAttribute="leading" constant="20" symbolic="YES" id="CGZ-ZA-V8S"/>
                                                 <constraint firstItem="Sq5-yH-c0M" firstAttribute="leading" secondItem="MWH-9N-tWb" secondAttribute="leading" constant="20" id="PNy-M6-WnA"/>
                                                 <constraint firstItem="fco-9v-mkh" firstAttribute="top" secondItem="MWH-9N-tWb" secondAttribute="top" constant="23" id="gtW-6t-eqm"/>
                                                 <constraint firstItem="jMj-fz-Jua" firstAttribute="top" secondItem="fco-9v-mkh" secondAttribute="bottom" constant="8" id="i2k-JW-iQT"/>
-                                                <constraint firstAttribute="bottom" secondItem="Sq5-yH-c0M" secondAttribute="bottom" constant="20" id="jMC-3B-v3S"/>
-                                                <constraint firstItem="Sq5-yH-c0M" firstAttribute="top" secondItem="jMj-fz-Jua" secondAttribute="bottom" constant="21" id="kdc-zb-Wg6"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sq5-yH-c0M" secondAttribute="bottom" constant="30" id="jMC-3B-v3S"/>
+                                                <constraint firstItem="Sq5-yH-c0M" firstAttribute="top" secondItem="jMj-fz-Jua" secondAttribute="bottom" constant="28" id="kdc-zb-Wg6"/>
                                                 <constraint firstItem="fco-9v-mkh" firstAttribute="leading" secondItem="MWH-9N-tWb" secondAttribute="leading" constant="20" id="q3w-Rb-sSe"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -364,7 +365,7 @@
                                 <rect key="frame" x="0.0" y="111" width="414" height="785"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" red="1" green="0.67895126790000004" blue="0.049565206530000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cryptoCell" rowHeight="136" id="G1v-Je-r06" customClass="CryptoCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="136"/>
@@ -388,7 +389,7 @@
                                                     <rect key="frame" x="248" y="25" width="142" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.02240163186" green="0.54647229379999995" blue="0.18143034690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ff-hO-Q0l">
@@ -402,20 +403,6 @@
                                                     <rect key="frame" x="20" y="66" width="194" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="16"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Updated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgX-6i-UrD">
-                                                    <rect key="frame" x="20" y="95" width="41" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="8"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYe-0o-FwD">
-                                                    <rect key="frame" x="69" y="95" width="78" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="8"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -451,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rL2-pF-uK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102.8985507246377" y="1255.5803571428571"/>
+            <point key="canvasLocation" x="1154" y="1273"/>
         </scene>
         <!--NewsFeed-->
         <scene sceneID="dDR-vF-QoS">
@@ -821,13 +808,6 @@
                                                 <rect key="frame" x="165" y="638" width="196" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBN-lS-A8f">
-                                                <rect key="frame" x="20" y="688" width="181" height="59"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
