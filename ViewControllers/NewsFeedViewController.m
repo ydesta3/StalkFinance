@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
 @property (nonatomic, strong)NSMutableArray *newsArray;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
-
+@property (nonatomic) NSInteger *iteration;
 
 
 @end
@@ -31,11 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     PFUser *accountOwner = [PFUser currentUser];
     self.userName.text = [ @"@" stringByAppendingString:accountOwner.username];
     self.newsFeedTableView.dataSource = self;
     self.newsFeedTableView.delegate = self;
+    self.iteration = 0;
     [self fetchNews];
     [self updateToPersonalizedNews];
     self.refresh = [[UIRefreshControl alloc] init];
@@ -58,18 +58,23 @@
 }
 
 - (void) updateToPersonalizedNews{
-    NSMutableArray *keywords = [[NSMutableArray alloc] init];
+    self.iteration++;
+    NSMutableArray *keywords = [[NSMutans bleArray alloc] init];
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];
         [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
-        NSString *key = [keywords lastObject];
+        uint32_t rnd = arc4random_uniform([keywords count]);
+        NSString *key = [keywords objectAtIndex:rnd];
         if (keywords != nil){
             [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
-                if (keywordArticles) {
-                    [keywordArticles addObjectsFromArray:self.newsArray];
+                if (keywordArticles.count > 0) {
+                    for (int i = 0; i < 3; i++){
+                        [self.newsArray insertObject:keywordArticles[i] atIndex:0];
+                    }
                 }
                 [self.newsFeedTableView reloadData];
+                [self.refresh endRefreshing];
            }];
         }
     }];    
