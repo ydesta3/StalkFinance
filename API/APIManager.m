@@ -152,8 +152,8 @@
               NSDictionary *financeDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
               NSDictionary *stockDictionary = financeDictionary[@"quoteResponse"];
               NSMutableArray *result = stockDictionary[@"result"];
-              NSMutableArray *stocksWatchlistUsingStockAttributes = [Stock arrayOfStocks:result];
-              completion(stocksWatchlistUsingStockAttributes, nil);
+              NSMutableArray *stocksWatchlistUsingCryptoAttributes = [Stock arrayOfStocks:result];
+              completion(stocksWatchlistUsingCryptoAttributes, nil);
           }
       }];
    [task resume];
