@@ -89,15 +89,10 @@
         self.filteredStocksArray = [[NSMutableArray alloc] init];
         for (Stock* stock in self.stocksArray){
             NSRange resultsRange = [stock.ticker rangeOfString:searchText options:NSCaseInsensitiveSearch];
-            if(resultsRange.location != NSNotFound){
-                [self.filteredStocksArray addObject:stock];
-            }
-            NSRange companyNameResultsRange = [stock.companyName rangeOfString:searchText options:NSCaseInsensitiveSearch];
-            if(companyNameResultsRange.location != NSNotFound){
-                [self.filteredStocksArray addObject:stock];
-            }
+            NSRange companyNameResultsRange = [stock.companyName rangeOfString:searchText
+                                                                       options:NSCaseInsensitiveSearch];
             NSRange exchangeResultsRange = [stock.exchange rangeOfString:searchText options:NSCaseInsensitiveSearch];
-            if(exchangeResultsRange.location != NSNotFound){
+            if(resultsRange.location != NSNotFound || companyNameResultsRange.location != NSNotFound ||exchangeResultsRange.location != NSNotFound){
                 [self.filteredStocksArray addObject:stock];
             }
         }
