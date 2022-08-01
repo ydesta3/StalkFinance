@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
 @property (nonatomic, strong)NSMutableArray *newsArray;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
-@property (nonatomic) NSInteger *iteration;
-
 
 @end
 
@@ -35,7 +33,6 @@
     self.userName.text = [ @"@" stringByAppendingString:accountOwner.username];
     self.newsFeedTableView.dataSource = self;
     self.newsFeedTableView.delegate = self;
-    self.iteration = 0;
     [self fetchNews];
     [self updateToPersonalizedNews];
     self.refresh = [[UIRefreshControl alloc] init];
@@ -58,7 +55,6 @@
 }
 
 - (void) updateToPersonalizedNews{
-    self.iteration++;
     NSMutableArray *keywords = [[NSMutableArray alloc] init];
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
