@@ -55,13 +55,13 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] User can view stock prices as a preview in a timeline feed using Yahoo Finance API
 - [X] User can view crypto prices as a preview in a timeline feed using AlphaFinance API 
 - [X] User can pull to refresh either crypto/stock timeline to get updated prices
-- [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
-- [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
+- [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis
+- [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis
 - [X] Users can see a default news feed rooted in business topics in the respective tab using News.org API.
-- Users can see 2 or 3 articles about a recent stock they have clicked on in their custom session newsfeed in addition to the default business news
-- [X] Search bar to search for a particular stock/crypto in their respective tabs
+- [X] Users can see 2 or 3 articles about stocks in their watchlist in their newsfeed in addition to the default business news (allows users to refresh to generate more news about a different liked stock)
+- [X] Search bar to filter feed for a particular stock/crypto in their respective tabs
 - [X] Users can double tab anywhere on the stock detail page to add stock their watchlist
-- [X] User can see a watchlist of the stocks in their likes cache
+- [X] User can see a watchlist of the stocks in their likes cache (watchlist tab)
 - Optimized search for all stocks using cache (hot, warm, cold) data
 - Incorporates at least one external library to add visual polish
 
