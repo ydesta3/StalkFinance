@@ -59,12 +59,12 @@
 
 - (void) updateToPersonalizedNews{
     self.iteration++;
-    NSMutableArray *keywords = [[NSMutans bleArray alloc] init];
+    NSMutableArray *keywords = [[NSMutableArray alloc] init];
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];
         [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
-        uint32_t rnd = arc4random_uniform([keywords count]);
+        NSUInteger rnd = arc4random_uniform((uint32_t)[keywords count]);
         NSString *key = [keywords objectAtIndex:rnd];
         if (keywords != nil){
             [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
