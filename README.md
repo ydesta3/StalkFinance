@@ -52,34 +52,29 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] User can log in and log out of his or her account
 - [X] The current signed in user is persisted across app restarts
 - [X] User can use a tab bar to surface  stock, crypto, and chat views.
-- [X] User can view stock prices as a preview in a timeline feed
-- [X] User can view crypto prices as a preview in a timeline feed
+- [X] User can view stock prices as a preview in a timeline feed using Yahoo Finance API
+- [X] User can view crypto prices as a preview in a timeline feed using AlphaFinance API 
 - [X] User can pull to refresh either crypto/stock timeline to get updated prices
-- [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
-- [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
-- [X] Users can see a default news feed rooted in business topics in the respective tab.
-- Users can see a personalized news feed in the respective tab after taking time to search/view certain stocks and cryptocurrencies.
-- Users can create a chat room with a custom title
-- Users can post a chat to a chat room
-- Users can see existing public chat rooms
-- Users can double tap on a chat to like, increasing the like count
-- Users can share a particular stock/crypto detail page to a desired room thread as a post
-- Users can click on links that appear in chats
+- [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis
+- [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis
+- [X] Users can see a default news feed rooted in business topics in the respective tab using News.org API.
+- [X] Users can see 2 or 3 articles about stocks in their watchlist in their newsfeed in addition to the default business news (allows users to refresh to generate more news about a different liked stock)
+- [X] Search bar to filter feed for a particular stock/crypto in their respective tabs
+- [X] Users can double tab anywhere on the stock detail page to add stock their watchlist
+- [X] User can see a watchlist of the stocks in their likes cache (watchlist tab)
+- Optimized search for all stocks using cache (hot, warm, cold) data
 - Incorporates at least one external library to add visual polish
 
-
 ### **Optional Nice-to-have Stories**
-* Search bar to search for a particular
-   - stock
-   - crypto
-   - news article/source
-   - chat room
+* Login options using credentials of many different platforms such as Facebook, Twitter, Google.
+* Users can create a chat room with a custom title
+* Users can post a chat to a chat room
+* Users can see existing public chat rooms
+* Users can click on links that appear in chats
+* Users can share a particular stock/crypto detail page to a desired room thread as a post
+* Users can double tap on a chat to like, increasing the like count
 * Profile page for each user
 * Allow users to make sub-comments on a comment
-* Login using credentials of many other platforms.
-
-
-
 
 ### 2. Screen Archetypes
 
