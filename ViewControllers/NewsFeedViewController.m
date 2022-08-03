@@ -18,10 +18,11 @@
 
 
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
-@property (nonatomic, strong)NSMutableArray *newsArray;
-@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+
+    @property (weak, nonatomic) IBOutlet UILabel *userName;
+    @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
+    @property (nonatomic, strong)NSMutableArray *newsArray;
+    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
 @end
 
@@ -61,19 +62,21 @@
         PFUser *currentUser = [PFUser currentUser];
         [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
         NSUInteger rnd = arc4random_uniform((uint32_t)[keywords count]);
-        NSString *key = [keywords objectAtIndex:rnd];
-        if (keywords != nil){
-            [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
-                if (keywordArticles.count > 0) {
-                    for (int i = 0; i < 3; i++){
-                        [self.newsArray insertObject:keywordArticles[i] atIndex:0];
+        if (keywords.count > 0) {
+            NSString *key = [keywords objectAtIndex:rnd];
+            if (keywords != nil){
+                [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
+                    if (keywordArticles.count > 0) {
+                        for (int i = 0; i < 3; i++){
+                            [self.newsArray insertObject:keywordArticles[i] atIndex:0];
+                        }
                     }
-                }
-                [self.newsFeedTableView reloadData];
-                [self.refresh endRefreshing];
-           }];
+                    [self.newsFeedTableView reloadData];
+                    [self.refresh endRefreshing];
+               }];
+            }
         }
-    }];    
+    }];
 }
 
 - (IBAction)onSignoutTap:(id)sender {

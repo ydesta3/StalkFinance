@@ -13,10 +13,10 @@
 #import "WatchlistTableViewCell.h"
 
 @interface WatchListViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong)NSMutableArray *watchListArray;
-@property (weak, nonatomic) IBOutlet UITableView *watchListTableView;
-@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
+    @property (nonatomic, strong)NSMutableArray *watchListArray;
+    @property (weak, nonatomic) IBOutlet UITableView *watchListTableView;
+    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
 @end
 
