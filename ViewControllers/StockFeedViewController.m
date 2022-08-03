@@ -18,15 +18,15 @@
 
 
 @interface StockFeedViewController () <UISearchBarDelegate, StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *stockTableView;
-@property (nonatomic, strong)NSMutableArray *stocksArray;
-@property (nonatomic, strong)NSMutableArray *cacheOfInterestedStocks;
-@property (weak, nonatomic) IBOutlet UILabel *todaysDate;
-@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong)NSMutableArray *filteredStocksArray;
-@property (nonatomic, assign) BOOL isFiltered;
 
+    @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
+    @property (nonatomic, strong)NSMutableArray *stocksArray;
+    @property (nonatomic, strong)NSMutableArray *cacheOfInterestedStocks;
+    @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
+    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+    @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+    @property (nonatomic, strong)NSMutableArray *filteredStocksArray;
+    @property (nonatomic, assign) BOOL isFiltered;
 
 @end
 
@@ -62,7 +62,6 @@
     [[APIManager shared] fetchWatchlist:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
         
         if (keywordArticles) {
-            
             self.stocksArray = keywordArticles;
         }
         [self.stockTableView reloadData];

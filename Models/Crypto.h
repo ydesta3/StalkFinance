@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Crypto : NSObject
+
     @property (nonatomic, strong) NSString *ticker;
     @property (nonatomic, strong) NSString *conversionId;
     @property (nonatomic, strong) NSString *symbol;
@@ -24,7 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
     @property (nonatomic, strong) NSString *supply;
     @property (nonatomic, strong) NSNumber *twentyFourHrVolDollars;
     @property (nonatomic, strong) NSDate *updatedAt;
-
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)arrayOfCryptoAttributes:(NSArray *)dictionaries;

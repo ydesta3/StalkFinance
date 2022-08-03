@@ -12,13 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CryptoDetailsViewDelegate
 
-
 @end
 
 @interface CryptoDetailsViewController : UIViewController <UINavigationControllerDelegate>
 
-@property (nonatomic, weak) id<CryptoDetailsViewDelegate> delegate;
-@property (strong, nonatomic) Crypto *crypto;
+    @property (nonatomic, weak) id<CryptoDetailsViewDelegate> delegate;
+    @property (strong, nonatomic) Crypto *crypto;
 
 @end
 

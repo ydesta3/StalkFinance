@@ -11,24 +11,23 @@
 
 @interface StockDetailsViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *ticker;
-@property (weak, nonatomic) IBOutlet UILabel *companyName;
-@property (weak, nonatomic) IBOutlet UILabel *exchange;
-@property (weak, nonatomic) IBOutlet UILabel *analystRating;
-@property (weak, nonatomic) IBOutlet UILabel *open;
-@property (weak, nonatomic) IBOutlet UILabel *high;
-@property (weak, nonatomic) IBOutlet UILabel *low;
-@property (weak, nonatomic) IBOutlet UILabel *fiftyTwoWeekHigh;
-@property (weak, nonatomic) IBOutlet UILabel *fiftyTwoWeekLow;
-@property (weak, nonatomic) IBOutlet UILabel *marketPrice;
-@property (weak, nonatomic) IBOutlet UILabel *percentChange;
-@property (weak, nonatomic) IBOutlet UILabel *ask;
-@property (weak, nonatomic) IBOutlet UILabel *askSize;
-@property (weak, nonatomic) IBOutlet UILabel *bid;
-@property (weak, nonatomic) IBOutlet UILabel *bidSize;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *scrollVew;
-
+    @property (weak, nonatomic) IBOutlet UILabel *ticker;
+    @property (weak, nonatomic) IBOutlet UILabel *companyName;
+    @property (weak, nonatomic) IBOutlet UILabel *exchange;
+    @property (weak, nonatomic) IBOutlet UILabel *analystRating;
+    @property (weak, nonatomic) IBOutlet UILabel *open;
+    @property (weak, nonatomic) IBOutlet UILabel *high;
+    @property (weak, nonatomic) IBOutlet UILabel *low;
+    @property (weak, nonatomic) IBOutlet UILabel *fiftyTwoWeekHigh;
+    @property (weak, nonatomic) IBOutlet UILabel *fiftyTwoWeekLow;
+    @property (weak, nonatomic) IBOutlet UILabel *marketPrice;
+    @property (weak, nonatomic) IBOutlet UILabel *percentChange;
+    @property (weak, nonatomic) IBOutlet UILabel *ask;
+    @property (weak, nonatomic) IBOutlet UILabel *askSize;
+    @property (weak, nonatomic) IBOutlet UILabel *bid;
+    @property (weak, nonatomic) IBOutlet UILabel *bidSize;
+    @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+    @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *scrollVew;
 
 @end
 

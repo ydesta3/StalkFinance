@@ -18,12 +18,11 @@
 
 
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
-@property (nonatomic, strong)NSMutableArray *newsArray;
-@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
-
+    @property (weak, nonatomic) IBOutlet UILabel *userName;
+    @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
+    @property (nonatomic, strong)NSMutableArray *newsArray;
+    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
 @end
 
@@ -31,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     PFUser *accountOwner = [PFUser currentUser];
     self.userName.text = [ @"@" stringByAppendingString:accountOwner.username];
     self.newsFeedTableView.dataSource = self;
@@ -42,7 +41,6 @@
     [self.refresh setTintColor:[UIColor whiteColor]];
     [self.refresh addTarget:self action:@selector(updateToPersonalizedNews) forControlEvents:UIControlEventValueChanged];
     [self.newsFeedTableView addSubview: self.refresh];
-
 }
 
 -(void)fetchNews{
