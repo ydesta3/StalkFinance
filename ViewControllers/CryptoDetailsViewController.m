@@ -22,29 +22,31 @@
     @property (weak, nonatomic) IBOutlet UILabel *marketPrice;
     @property (weak, nonatomic) IBOutlet UILabel *percentChange;
 
-
 @end
 
 @implementation CryptoDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.maximumFractionDigits = 2;
+    formatter.roundingMode = NSNumberFormatterRoundUp;
     self.ticker.text = [self.crypto.ticker uppercaseString];
     self.conversionId.text = [self.crypto.conversionId uppercaseString];
-    self.open.text = [NSString stringWithFormat: @"%@", self.crypto.openPrice];
-    self.high.text = [NSString stringWithFormat: @"%@",self.crypto.highTwentyFour];
+    self.open.text = [formatter stringFromNumber:self.crypto.openPrice];
+    self.high.text = [NSString stringWithFormat: @"%@", self.crypto.highTwentyFour];
     self.low.text = [NSString stringWithFormat: @"%@", self.crypto.lowTwentyFour];
     self.twentyFourHrHigh.text = [NSString stringWithFormat: @"%@", self.crypto.highTwentyFour];
     self.marketCap.text = [NSString stringWithFormat: @"%@", self.crypto.marketCap];
     self.twentyFourHrVol.text = [NSString stringWithFormat: @"%@", self.crypto.twentyFourHrVolDollars];
-    self.previousClose.text = [NSString stringWithFormat: @"%@",self.crypto.previousClose];
+    self.previousClose.text = [formatter stringFromNumber: self.crypto.previousClose];
     self.marketPrice.text = (NSString *)self.crypto.currentPrice;
-    NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.crypto.percentChange];
+    NSString *marketChangePercentString = [formatter stringFromNumber: self.crypto.percentChange];
     self.percentChange.text = [ marketChangePercentString stringByAppendingString:@" %"];
     self.supply.text = self.crypto.supply;
-    
-    
 }
+
 - (IBAction)didTapDismiss:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }

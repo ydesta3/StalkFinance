@@ -16,10 +16,6 @@
 #import "NewsFeedViewController.h"
 #import "WatchlistTableViewCell.h"
 
-
-
-
-
 @interface StockFeedViewController () <UISearchBarDelegate, StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
     @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
@@ -30,7 +26,6 @@
     @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
     @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
     @property (nonatomic, strong)NSMutableArray *fetchedStockCache;
-    @property (nonatomic, assign) BOOL needsFetch;
     @property (nonatomic, assign) NSTimer *delay;
 
 @end
@@ -41,13 +36,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
     self.searchTableView.dataSource = self;
     self.searchTableView.delegate = self;
-    
-    self.needsFetch = FALSE;
     self.searchBar.delegate = self;
     
     //date formatter
@@ -87,11 +79,9 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     if(searchText.length == 0){
-        self.needsFetch = false;
         self.fetchedStockCache = nil;
         [self.searchTableView reloadData];
     } else {
-        self.needsFetch = true;
         self.fetchedStockCache = nil;
         [NSObject cancelPreviousPerformRequestsWithTarget:self];
         [self performSelector:@selector(searchApi:) withObject:searchText afterDelay:delay];

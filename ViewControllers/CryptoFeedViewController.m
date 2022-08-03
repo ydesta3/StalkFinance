@@ -13,8 +13,6 @@
 #import "CryptoDetailsViewController.h"
 #import "DateTools.h"
 
-
-
 @interface CryptoFeedViewController ()<UISearchBarDelegate, CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
     @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
@@ -61,8 +59,6 @@
         }
         [self.cryptoTableView reloadData];
         [self.refresh endRefreshing];
-        
-    
     }];
 }
 

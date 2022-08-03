@@ -672,7 +672,7 @@
                                             <outlet property="companyName" destination="zqK-9d-mVn" id="YAO-TR-B1F"/>
                                             <outlet property="currentPrice" destination="WBY-H2-d8I" id="V1I-2M-PaO"/>
                                             <outlet property="stockTicker" destination="lnc-AG-Scf" id="94l-el-F4a"/>
-                                            <segue destination="HI4-qS-WYC" kind="presentation" identifier="searchToDetails" id="yRR-uS-qpF"/>
+                                            <segue destination="HI4-qS-WYC" kind="presentation" identifier="searchToDetails" modalTransitionStyle="crossDissolve" id="yRR-uS-qpF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -681,7 +681,7 @@
                         <viewLayoutGuide key="safeArea" id="oai-df-3RD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass.circle.fill" catalog="system" id="3Bo-om-AdG"/>
+                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass.circle" catalog="system" id="3Bo-om-AdG"/>
                     <navigationItem key="navigationItem" id="Ock-X0-bSQ"/>
                     <connections>
                         <outlet property="searchBar" destination="4x4-x5-Mln" id="FP9-9e-b54"/>
@@ -705,9 +705,9 @@
                     <connections>
                         <segue destination="aeT-eV-mUN" kind="relationship" relationship="viewControllers" id="eW2-Yj-5uq"/>
                         <segue destination="xVk-df-Qdq" kind="relationship" relationship="viewControllers" id="FsQ-V9-jxW"/>
+                        <segue destination="WK5-DA-mpG" kind="relationship" relationship="viewControllers" id="qKj-T4-dqm"/>
                         <segue destination="YHS-pn-9yW" kind="relationship" relationship="viewControllers" id="m1I-qO-sRl"/>
                         <segue destination="kBm-Ca-qg6" kind="relationship" relationship="viewControllers" id="w9y-hy-wes"/>
-                        <segue destination="WK5-DA-mpG" kind="relationship" relationship="viewControllers" id="qKj-T4-dqm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gfk-TK-kbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1304,7 +1304,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mLT-le-pxc"/>
+        <segue reference="yRR-uS-qpF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="StalkFinanceBlackYellow" width="1175" height="475"/>
@@ -1312,7 +1312,7 @@
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="eyes" catalog="system" width="128" height="99"/>
         <image name="lock.icloud.fill" catalog="system" width="128" height="88"/>
-        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
