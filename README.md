@@ -3,25 +3,22 @@ StalkFinance Design Project - README
 
 # StalkFinance 
 
- **StalkFinance**: Allows uses to see real time information about stocks and crypto regarding price, analysis, and financial statements in a timeline like feed. Contains built-in public chat-rooms feature that users can create to share financial insights or an in app link to a stock/crypto  details page to a particular chat-room thread.
+ **StalkFinance**: Allows users to see real time information about stocks and crypto regarding price, analysis, and financial statements in a timeline like feed that includes trending businesses, top day-gainers, and top digital currencies. StalkFinance also provides users a newsfeed to see relevant business-related news. The newsfeed also incorporates a personalized aspect to it as it curates the top of the feed to news related to stocks you've spent significant effort in knowing their details. Users can also search for all stock/digital curren fetchable from the data-source.
 
 ### Stock/Crypto Feed Data
-**Yahoo Finance API**
-#### https://www.yahoofinanceapi.com/
-
-**Finnhub**
-#### https://finnhub.io/docs/api
+**Yahoo Finance API/Seeking Alpha**
+#### https:/financeapi.net
 
 **News Data**
 #### https://newsapi.org/
 
-Chat-Channel
+Chat-Channel(Stretch)
 #### https://www.pubnub.com/docs/sdks/objective-c/api-reference/channel-groups
 * For Chat Rooms/Collaboration 
 
 ### Opportunity for Complexity
-- Using multiple api's for access to low-latency data for stock crypto and news data models to gather all desired data amongst utilizing Parse for backend authentication and chat-channel feature
-- Personalized Newsfeed for each user based on time spent on user content + more signals (using parse analytics tools)
+* Having an optimized search for stocks and cryptos using two api's for access to low-latency data for stock and crypto data models (Yahoo Finance and Seeking Alpha) to gather all desired data
+* Personalized newsfeed with an emphasis on user behavior (E.g. If a user clicked on stocks, or searched for them, related articles will show up higher in the news tab) and storing user metadata in a cache
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -52,34 +49,29 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] User can log in and log out of his or her account
 - [X] The current signed in user is persisted across app restarts
 - [X] User can use a tab bar to surface  stock, crypto, and chat views.
-- [X] User can view stock prices as a preview in a timeline feed
-- [X] User can view crypto prices as a preview in a timeline feed
+- [X] User can view stock prices as a preview in a timeline feed using Yahoo Finance API
+- [X] User can view crypto prices as a preview in a timeline feed using AlphaFinance API 
 - [X] User can pull to refresh either crypto/stock timeline to get updated prices
-- [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis, and insights
-- [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis, and insights
-- [X] Users can see a default news feed rooted in business topics in the respective tab.
-- Users can see a personalized news feed in the respective tab after taking time to search/view certain stocks and cryptocurrencies.
-- Users can create a chat room with a custom title
-- Users can post a chat to a chat room
-- Users can see existing public chat rooms
-- Users can double tap on a chat to like, increasing the like count
-- Users can share a particular stock/crypto detail page to a desired room thread as a post
-- Users can click on links that appear in chats
+- [X] Implements a fade in  animation when allowing user to tap a stock cell to view stock details, trading volume, analysis
+- [X] Implements a fade in  animation when allowing user to tap a crypto cell to view crypto details such as trading volume, analysis
+- [X] Users can see a default news feed rooted in business topics in the respective tab using News.org API.
+- [X] Users can see 2 or 3 articles about stocks in their watchlist in their newsfeed in addition to the default business news (allows users to refresh to generate more news about a different liked stock)
+- [X] Search bar to filter feed for a particular stock/crypto in their respective tabs
+- [X] Users can double tab anywhere on the stock detail page to add stock their watchlist
+- [X] User can see a watchlist of the stocks in their likes cache (watchlist tab)
+- [X] Optimized search for all stocks and crypto supported by Yahoo Finance 
 - Incorporates at least one external library to add visual polish
 
-
 ### **Optional Nice-to-have Stories**
-* Search bar to search for a particular
-   - stock
-   - crypto
-   - news article/source
-   - chat room
+* Login options using credentials of many different platforms such as Facebook, Twitter, Google.
+* Users can create a chat room with a custom title
+* Users can post a chat to a chat room
+* Users can see existing public chat rooms
+* Users can click on links that appear in chats
+* Users can share a particular stock/crypto detail page to a desired room thread as a post
+* Users can double tap on a chat to like, increasing the like count
 * Profile page for each user
 * Allow users to make sub-comments on a comment
-* Login using credentials of many other platforms.
-
-
-
 
 ### 2. Screen Archetypes
 
@@ -99,10 +91,13 @@ Allows users to see real time information about stocks and cryptocurrency regard
    -- Tabular news display
    -- Tap gesture recognizer to send user to Safari to read full text of synopsis. 
 
-* Chat 
-   * Public Chat Room Display
-   -- Chat Room Conversation Thread
-   -- Allows users post chats to a particular room thread 
+* WatchList 
+   -- Enables users to see simple stats about all of the stocks they've liked
+   
+* Search
+   -- Enables users to search for any stock/crypto and view it's details
+  
+   
 
 ### 3. Navigation
 
@@ -175,13 +170,13 @@ Allows users to see real time information about stocks and cryptocurrency regard
 |urlImage|URL     |Image associated with news article|
 |urlToArticle|URL     |Link to article|
 
-### Chat
+### WatchList
 
 |Property |Type| Description|
 |-----|--------|--------|
-|userId|String     |username|
-|chatRoomId|String     |chatRoom name|
-|chatPost  |String      |composed text/insight|
+|ticker|String     |stock symbol of the entity|
+|companyName  |String      |full name of the publicly traded company|
+|currentPrice  |Number     |the current price of one share of the publicy held company|
 
 
 
