@@ -16,17 +16,14 @@
 
 
 @interface CryptoFeedViewController ()<UISearchBarDelegate, CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
-@property (nonatomic, strong)NSMutableArray *cryptoArray;
-@property (weak, nonatomic) IBOutlet UILabel *todaysDate;
-@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong)NSMutableArray *filteredCryptoArray;
-@property (nonatomic, assign) BOOL isFiltered;
 
-
-
-
+    @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
+    @property (nonatomic, strong)NSMutableArray *cryptoArray;
+    @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
+    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+    @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+    @property (nonatomic, strong)NSMutableArray *filteredCryptoArray;
+    @property (nonatomic, assign) BOOL isFiltered;
 
 @end
 
@@ -66,8 +63,6 @@
         }
         [self.cryptoTableView reloadData];
         [self.refresh endRefreshing];
-        
-    
     }];
 }
 

@@ -11,6 +11,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
+    
     if (self){
         self.conversionId = dictionary[@"identifier"];
         if (self.conversionId == nil){
@@ -31,7 +32,6 @@
         self.marketCap = dictionary[@"marketcap"];
         self.updatedAt = dictionary[@"\"updated_at"];
     }
-
     return self;
 }
 

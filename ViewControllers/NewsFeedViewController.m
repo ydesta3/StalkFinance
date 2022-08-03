@@ -18,14 +18,18 @@
 
 
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
-@property (nonatomic, strong)NSMutableArray *newsArray;
-@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+
+    @property (weak, nonatomic) IBOutlet UILabel *userName;
+    @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
+    @property (nonatomic, strong)NSMutableArray *newsArray;
+    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
 @end
 
 @implementation NewsFeedViewController
+    
+    // number of articles for personalized portion
+    int numberOfArticles = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +69,7 @@
         if (keywords != nil){
             [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
                 if (keywordArticles.count > 0) {
-                    for (int i = 0; i < 3; i++){
+                    for (int i = 0; i < numberOfArticles; i++){
                         [self.newsArray insertObject:keywordArticles[i] atIndex:0];
                     }
                 }
@@ -102,13 +106,10 @@
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@", articleUrlString]];
     SFSafariViewController *safariViewCont = [[SFSafariViewController alloc] initWithURL:URL];
     [self presentViewController:safariViewCont animated:YES completion:nil];
-    
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.newsArray.count;
 }
-
-
 
 @end

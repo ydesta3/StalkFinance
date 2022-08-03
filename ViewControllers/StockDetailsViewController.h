@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 @interface StockDetailsViewController : UIViewController <UINavigationControllerDelegate>
 
-@property (nonatomic, weak) id<StockDetailsViewDelegate> delegate;
-@property (strong, nonatomic) Stock *stock;
+    @property (nonatomic, weak) id<StockDetailsViewDelegate> delegate;
+    @property (strong, nonatomic) Stock *stock;
 
 @end
 

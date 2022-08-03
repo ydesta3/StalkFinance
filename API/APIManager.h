@@ -11,11 +11,6 @@
 #import "News.h"
 #import <Parse/Parse.h>
 
-
-
-
-
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : BDBOAuth1SessionManager
@@ -29,9 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)fetchNews:(void(^)(NSArray *newsArticles, NSError *error))completion;
 - (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion;
 - (void)fetchWatchlist:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion;
-
-
-
 
 @end
 

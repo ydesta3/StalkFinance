@@ -42,9 +42,7 @@
        // call sign up function on the object
        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
            if (error != nil) {
-               NSLog(@"Error: %@", error.localizedDescription);
            } else {
-               NSLog(@"User registered successfully");
                // manually segue to logged in view
                SceneDelegate *sceneDelegate = (SceneDelegate *)UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
