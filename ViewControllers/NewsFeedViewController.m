@@ -28,6 +28,9 @@
 
 @implementation NewsFeedViewController
 
+    // number of articles for personalized portion
+    int numberOfArticles = 3;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFUser *accountOwner = [PFUser currentUser];
@@ -67,7 +70,7 @@
             if (keywords != nil){
                 [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
                     if (keywordArticles.count > 0) {
-                        for (int i = 0; i < 3; i++){
+                        for (int i = 0; i < numberOfArticles; i++){
                             [self.newsArray insertObject:keywordArticles[i] atIndex:0];
                         }
                     }
