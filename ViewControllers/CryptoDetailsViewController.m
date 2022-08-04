@@ -22,14 +22,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *marketPrice;
 @property (weak, nonatomic) IBOutlet UILabel *percentChange;
 
-
 @end
 
 @implementation CryptoDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.ticker.text = [self.crypto.ticker uppercaseString];
     self.conversionId.text = [self.crypto.conversionId uppercaseString];
     self.open.text = [NSString stringWithFormat: @"%@", self.crypto.openPrice];

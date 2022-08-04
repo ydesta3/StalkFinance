@@ -14,8 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface NewsFeedViewController : UIViewController<NewsFeedViewDelegate>
-    @property (nonatomic, weak) id<NewsFeedViewDelegate> delegate;
-    @property(nonatomic, retain)NSMutableArray *stocksOfInterest;
+
+@property (nonatomic, weak) id<NewsFeedViewDelegate> delegate;
+@property(nonatomic, retain)NSMutableArray *stocksOfInterest;
 
 @end
 

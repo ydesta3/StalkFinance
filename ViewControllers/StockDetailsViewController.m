@@ -29,7 +29,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *scrollVew;
 
-
 @end
 
 @implementation StockDetailsViewController

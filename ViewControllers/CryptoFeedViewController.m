@@ -16,6 +16,7 @@
 
 
 @interface CryptoFeedViewController ()<UISearchBarDelegate, CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
 @property (nonatomic, strong)NSMutableArray *cryptoArray;
 @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
@@ -23,9 +24,6 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong)NSMutableArray *filteredCryptoArray;
 @property (nonatomic, assign) BOOL isFiltered;
-
-
-
 
 @end
 
@@ -37,6 +35,7 @@
     
     self.cryptoTableView.dataSource = self;
     self.cryptoTableView.delegate = self;
+    
     _isFiltered = FALSE;
     self.searchBar.delegate = self;
 
@@ -56,25 +55,14 @@
 }
 
 -(void) fetchCryptoData{
-    // Get timeline
+    // Get crypto timeline
     [[APIManager shared] fetchCryptoQuotes:^(NSArray * _Nonnull cryptos, NSError * _Nonnull error) {
         
         if (cryptos) {
             self.cryptoArray = (NSMutableArray *)cryptos;
-            NSLog(@"Successfully loaded Crypto Feed");
-            //
-            for (Crypto *crypto in cryptos) {
-                // uses text field in stock model to fetch the text body of a stock.
-                NSString *ticker = crypto.ticker;
-                NSLog(@": cryptoTickers: %@", ticker);
-            }
-        } else {
-            NSLog(@"Error getting Crypto Feed: %@", error.localizedDescription);
         }
         [self.cryptoTableView reloadData];
         [self.refresh endRefreshing];
-        
-    
     }];
 }
 
@@ -119,6 +107,7 @@
         cryptoCell.selectionStyle = nil;
         return cryptoCell;
 }
+
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.isFiltered){

@@ -1,19 +1,20 @@
 //
-//  CryptoCell.h
+//  WatchlistTableViewCell.h
 //  StalkFinance
 //
-//  Created by Yonatan Desta on 7/11/22.
+//  Created by Yonatan Desta on 7/27/22.
 //
 
 #import <UIKit/UIKit.h>
 #import "Crypto.h"
+#import "Stock.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CryptoCell : UITableViewCell
+@interface WatchlistTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) Crypto *crypto;
+@property (strong, nonatomic) Stock *baseCom;
 @property (weak, nonatomic) IBOutlet UILabel *ticker;
 @property (weak, nonatomic) IBOutlet UILabel *currentPrice;
 @property (weak, nonatomic) IBOutlet UILabel *percentMarketChange;

@@ -18,6 +18,7 @@
 
 
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
 @property (nonatomic, strong)NSMutableArray *newsArray;
@@ -29,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     PFUser *accountOwner = [PFUser currentUser];
     self.userName.text = [ @"@" stringByAppendingString:accountOwner.username];
     self.newsFeedTableView.dataSource = self;
@@ -40,7 +41,6 @@
     [self.refresh setTintColor:[UIColor whiteColor]];
     [self.refresh addTarget:self action:@selector(updateToPersonalizedNews) forControlEvents:UIControlEventValueChanged];
     [self.newsFeedTableView addSubview: self.refresh];
-
 }
 
 -(void)fetchNews{
@@ -49,9 +49,6 @@
         
         if (newsArticles) {
             self.newsArray = (NSMutableArray *)newsArticles;
-            NSLog(@"Successfully loaded News Feed");
-        } else {
-            NSLog(@"Error getting News Feed: %@", error.localizedDescription);
         }
         [self.newsFeedTableView reloadData];
         [self.refresh endRefreshing];
@@ -65,23 +62,13 @@
         PFUser *currentUser = [PFUser currentUser];
         [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
         NSString *key = [keywords lastObject];
-        NSLog(@"TICKERS: %@", key);
         if (keywords != nil){
             [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
                 if (keywordArticles) {
-                    //[self.newsArray addObjectsFromArray:keywordArticles]
-                    NSLog(@"Successfully loaded Headline News");
-                    for (News *dict in keywordArticles) {
-                        [self.newsArray insertObject:dict atIndex:0];
-                        NSLog(@": Updated News Descriptions: %@", dict.description);
-                    }
-                } else {
-                    NSLog(@"Error getting Headline News: %@", error.localizedDescription);
+                    [keywordArticles addObjectsFromArray:self.newsArray];
                 }
                 [self.newsFeedTableView reloadData];
            }];
-        } else {
-            NSLog(@"%@", error.localizedDescription);
         }
     }];    
 }

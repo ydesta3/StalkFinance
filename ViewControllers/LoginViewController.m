@@ -10,6 +10,7 @@
 #import "SceneDelegate.h"
 
 @interface LoginViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
@@ -23,7 +24,6 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
         [self.view addGestureRecognizer:gestureRecognizer];
         gestureRecognizer.cancelsTouchesInView = NO;
-
 }
 
 - (void)dismissKeyboard {
@@ -37,9 +37,7 @@
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
-            NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
-            NSLog(@"User logged in successfully");
             // manually segue to logged in view
             SceneDelegate *sceneDelegate = (SceneDelegate *)UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
              UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -48,7 +46,5 @@
         }
     }];
 }
-
-
 
 @end

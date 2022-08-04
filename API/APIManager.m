@@ -8,12 +8,13 @@
 #import "APIManager.h"
 
 @implementation APIManager
+
     NSString *stockUrl = @"https://yfapi.net/ws/screeners/v1/finance/screener/predefined/saved?count=50&scrIds=day_gainers";
     NSString *headlinesApiUrl = @"https://newsapi.org/v2/top-headlines?q=";
     NSString *businessNewsApiUrl = @"https://newsapi.org/v2/top-headlines?country=us&category=business";
     NSString *cryptoUrl = @"https://alpha.financeapi.net/market/get-realtime-prices?symbols=BTC-USD%2CETH-USD%2CXRP-USD%2CDOGE-USD%2CSOL-USD%2CSHIB-USD%2CADA-USD%2CMATIC-USD%2CLTC-USD%2CUSDT-USD";
-
-
+    NSString *baseStockUrl = @"https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=";
+    double timeOutInterval = 10.0;
 + (instancetype)shared {
     static APIManager *sharedManager = nil;
     static dispatch_once_t onceToken;
@@ -23,9 +24,9 @@
     return sharedManager;
 }
 
--(void) fetchStockQuote :(void(^)(NSArray *stocks, NSError *error))completion {
-    NSURL *url = [NSURL URLWithString:@"https://yfapi.net/ws/screeners/v1/finance/screener/predefined/saved?count=50&scrIds=day_gainers"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+-(void) fetchStockQuote :(void(^)(NSMutableArray *stocks, NSError *error))completion {
+    NSURL *url = [NSURL URLWithString:stockUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:timeOutInterval];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
@@ -35,7 +36,6 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
-               NSLog(@": YD1: %@", [error localizedDescription]);
             }
            else {
                NSDictionary *stockDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -54,7 +54,7 @@
 
 - (void)fetchCryptoQuotes:(void(^)(NSArray *stocks, NSError *error))completion{
     NSURL *url = [NSURL URLWithString:cryptoUrl];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:timeOutInterval];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
@@ -64,7 +64,6 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
-               NSLog(@": YD1: %@", [error localizedDescription]);
            }
           else {
               NSDictionary *cryptoDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -86,7 +85,7 @@
 
 - (void)fetchNews: (void(^)(NSArray *newsArticles, NSError *error))completion{
     NSURL *url = [NSURL URLWithString:businessNewsApiUrl];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:timeOutInterval];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
@@ -96,7 +95,6 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
-               NSLog(@": YD: %@", [error localizedDescription]);
            }
           else {
               NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -111,33 +109,35 @@
 
 - (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
     NSString *keyword = ticker;
-    NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:keyword];
-    NSURL *urlforSpecificHeadlines = [NSURL URLWithString:appendEndpoint];
-    NSMutableURLRequest *requestForHeadlines = [NSMutableURLRequest requestWithURL:urlforSpecificHeadlines cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    [requestForHeadlines setHTTPMethod:@"GET"];
-    [requestForHeadlines setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
-    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
-    NSString *key = [dict objectForKey: @"NewsArticles"];
-    [requestForHeadlines addValue:key forHTTPHeaderField:@"X-Api-Key"];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:requestForHeadlines completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-           if (error != nil) {
-               NSLog(@": YD: %@", [error localizedDescription]);
-           }
-          else {
-              NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-              NSMutableArray *storylinesForKeyword = newsDictionary[@"articles"];
-              NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
-              completion(keywordArticleOfNews, nil);
-
-          }
-    }];
-}
+    if(ticker != nil){
+        NSString *appendEndpoint = [headlinesApiUrl stringByAppendingString:keyword];
+        NSURL *urlforSpecificHeadlines = [NSURL URLWithString:appendEndpoint];
+        NSMutableURLRequest *requestForHeadlines = [NSMutableURLRequest requestWithURL:urlforSpecificHeadlines cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:timeOutInterval];
+        [requestForHeadlines setHTTPMethod:@"GET"];
+        [requestForHeadlines setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
+        NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        NSString *key = [dict objectForKey: @"NewsArticles"];
+        [requestForHeadlines addValue:key forHTTPHeaderField:@"X-Api-Key"];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+        NSURLSessionDataTask *task = [session dataTaskWithRequest:requestForHeadlines completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+               if (error != nil) {
+               }
+              else {
+                  NSDictionary *newsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                  NSMutableArray *storylinesForKeyword = newsDictionary[@"articles"];
+                  NSMutableArray *keywordArticleOfNews = [News arrayOfNews:storylinesForKeyword];
+                  completion(keywordArticleOfNews, nil);
+              }
+          }];
+       [task resume];
+    }
     
+}
+
 - (void)fetchWatchlist:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion {
     NSURL *url = [NSURL URLWithString:[baseStockUrl stringByAppendingString:ticker]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:timeOutInterval];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
@@ -147,7 +147,6 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
-               NSLog(@": YD1: %@", [error localizedDescription]);
            }
           else {
               NSDictionary *financeDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -158,7 +157,6 @@
           }
       }];
    [task resume];
-
 }
 
 @end

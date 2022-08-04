@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CryptoDetailsViewDelegate
 
-
 @end
 
 @interface CryptoDetailsViewController : UIViewController <UINavigationControllerDelegate>

@@ -6,6 +6,7 @@
 //
 
 #import "StockCell.h"
+#include <math.h>
 
 @implementation StockCell
 
@@ -20,15 +21,11 @@
     self.stockTicker.text = self.stock.ticker;
     self.companyName.text = self.stock.companyName;
     NSString *currentPriceString = [NSString stringWithFormat: @"%@", self.stock.currentPrice];
-    NSString *moneySign = @"$ ";
-    self.currentPrice.text = [ moneySign stringByAppendingString:currentPriceString];
+    self.currentPrice.text = [ @"$ " stringByAppendingString:currentPriceString];
     NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.stock.percentChange];
     NSString *percent = @" %";
     self.percentMarketChange.text = [ marketChangePercentString stringByAppendingString:percent];
     self.exchange.text = self.stock.exchange;
-    
-
-
     
 }
 

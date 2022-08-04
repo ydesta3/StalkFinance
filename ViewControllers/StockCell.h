@@ -14,14 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface StockCell : UITableViewCell
 
 @property (strong, nonatomic) Stock *stock;
-
 @property (weak, nonatomic) IBOutlet UILabel *stockTicker;
 @property (weak, nonatomic) IBOutlet UILabel *companyName;
 @property (weak, nonatomic) IBOutlet UILabel *currentPrice;
 @property (weak, nonatomic) IBOutlet UILabel *percentMarketChange;
 @property (weak, nonatomic) IBOutlet UILabel *exchange;
-
-
 
 @end
 
