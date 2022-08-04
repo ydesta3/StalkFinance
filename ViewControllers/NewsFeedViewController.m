@@ -19,10 +19,10 @@
 
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
-    @property (weak, nonatomic) IBOutlet UILabel *userName;
-    @property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
-    @property (nonatomic, strong)NSMutableArray *newsArray;
-    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UITableView *newsFeedTableView;
+@property (nonatomic, strong)NSMutableArray *newsArray;
+@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 
 @end
 

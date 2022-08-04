@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface News : NSObject
 
-    @property (nonatomic, strong) NSString *author;
-    @property (nonatomic, strong) NSString *title;
-    @property (nonatomic, strong) NSString *content;
-    @property (nonatomic, strong) NSString *synopsis;
-    @property (nonatomic, strong) NSString *urlToArticle;
-    @property (nonatomic, strong) NSURL *publishedAt;
-    @property (nonatomic, strong) NSString *urlImage;
+@property (nonatomic, strong) NSString *author;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSString *synopsis;
+@property (nonatomic, strong) NSString *urlToArticle;
+@property (nonatomic, strong) NSURL *publishedAt;
+@property (nonatomic, strong) NSString *urlImage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)arrayOfNews:(NSArray *)dictionaries;
