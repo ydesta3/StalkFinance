@@ -40,7 +40,6 @@
     formatter.maximumFractionDigits = 2;
     formatter.roundingMode = NSNumberFormatterRoundUp;
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+300);
-    // Do any additional setup after loading the view.
     self.ticker.text = self.stock.ticker;
     self.companyName.text = self.stock.companyName;
     self.exchange.text = self.stock.exchange;

@@ -32,7 +32,6 @@
         NSURL *url = [NSURL URLWithString:urltoImageString];
         [self.articleImage setImageWithURL:url];
     }
-    
 }
 
 @end

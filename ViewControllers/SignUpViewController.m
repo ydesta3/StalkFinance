@@ -51,7 +51,6 @@
                sceneDelegate.window.rootViewController = tabbViewController;
            }
        }];
-    
 }
 
 @end
