@@ -42,8 +42,6 @@
     NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.crypto.percentChange];
     self.percentChange.text = [ marketChangePercentString stringByAppendingString:@" %"];
     self.supply.text = self.crypto.supply;
-    
-    
 }
 - (IBAction)didTapDismiss:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];

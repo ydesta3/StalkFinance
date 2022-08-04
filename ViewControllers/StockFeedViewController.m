@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
     self.cacheOfInterestedStocks = [NSMutableArray array];
