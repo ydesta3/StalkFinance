@@ -18,15 +18,15 @@
 
 @interface StockFeedViewController () <UISearchBarDelegate, StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
-    @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
-    @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
-    @property (nonatomic, strong)NSMutableArray *stocksArray;
-    @property (nonatomic, strong)NSMutableArray *cacheOfInterestedStocks;
-    @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
-    @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
-    @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-    @property (nonatomic, strong)NSMutableArray *fetchedStockCache;
-    @property (nonatomic, assign) NSTimer *delay;
+@property (weak, nonatomic) IBOutlet UITableView *stockTableView;
+@property (weak, nonatomic) IBOutlet UITableView *searchTableView;
+@property (nonatomic, strong)NSMutableArray *stocksArray;
+@property (nonatomic, strong)NSMutableArray *cacheOfInterestedStocks;
+@property (weak, nonatomic) IBOutlet UILabel *todaysDate;
+@property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong)NSMutableArray *fetchedStockCache;
+@property (nonatomic, assign) NSTimer *delay;
 
 @end
 
@@ -106,7 +106,7 @@
         NSIndexPath *index = self.stockTableView.indexPathForSelectedRow;
         Stock *dataToPass = self.stocksArray[index.row];
         stockDetailsController.stock = dataToPass;
-    } else if([segue.identifier isEqualToString: @"searchToDetails"]){
+    } else if ([segue.identifier isEqualToString: @"searchToDetails"]){
         StockDetailsViewController *stockDetailsController = [segue destinationViewController];
         NSIndexPath *index = self.searchTableView.indexPathForSelectedRow;
         Stock *dataToPass = self.fetchedStockCache[index.row];
@@ -133,7 +133,7 @@
 } 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(tableView == self.searchTableView){
+    if (tableView == self.searchTableView){
         return self.fetchedStockCache.count;
     } else if (tableView == self.stockTableView){
         return self.stocksArray.count;
@@ -161,6 +161,5 @@
     // Send the dimensions to Parse along with the event
     [PFAnalytics trackEvent:@"UserToStockEngagement" dimensions:dimensions];
 }
-
 
 @end

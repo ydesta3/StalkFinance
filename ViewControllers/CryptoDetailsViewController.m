@@ -9,18 +9,18 @@
 
 @interface CryptoDetailsViewController ()
 
-    @property (weak, nonatomic) IBOutlet UILabel *ticker;
-    @property (weak, nonatomic) IBOutlet UILabel *conversionId;
-    @property (weak, nonatomic) IBOutlet UILabel *open;
-    @property (weak, nonatomic) IBOutlet UILabel *high;
-    @property (weak, nonatomic) IBOutlet UILabel *low;
-    @property (weak, nonatomic) IBOutlet UILabel *twentyFourHrHigh;
-    @property (weak, nonatomic) IBOutlet UILabel *marketCap;
-    @property (weak, nonatomic) IBOutlet UILabel *supply;
-    @property (weak, nonatomic) IBOutlet UILabel *twentyFourHrVol;
-    @property (weak, nonatomic) IBOutlet UILabel *previousClose;
-    @property (weak, nonatomic) IBOutlet UILabel *marketPrice;
-    @property (weak, nonatomic) IBOutlet UILabel *percentChange;
+@property (weak, nonatomic) IBOutlet UILabel *ticker;
+@property (weak, nonatomic) IBOutlet UILabel *conversionId;
+@property (weak, nonatomic) IBOutlet UILabel *open;
+@property (weak, nonatomic) IBOutlet UILabel *high;
+@property (weak, nonatomic) IBOutlet UILabel *low;
+@property (weak, nonatomic) IBOutlet UILabel *twentyFourHrHigh;
+@property (weak, nonatomic) IBOutlet UILabel *marketCap;
+@property (weak, nonatomic) IBOutlet UILabel *supply;
+@property (weak, nonatomic) IBOutlet UILabel *twentyFourHrVol;
+@property (weak, nonatomic) IBOutlet UILabel *previousClose;
+@property (weak, nonatomic) IBOutlet UILabel *marketPrice;
+@property (weak, nonatomic) IBOutlet UILabel *percentChange;
 
 @end
 

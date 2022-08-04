@@ -25,9 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)fetchHeadlineNews:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion;
 - (void)fetchWatchlist:(NSString *)ticker completion:(void(^)(NSMutableArray *allNewsArticles, NSError *error))completion;
 
-
-
-
 @end
 
 NS_ASSUME_NONNULL_END
