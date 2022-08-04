@@ -21,7 +21,6 @@
         self.urlImage = (NSString *)dictionary[@"urlToImage"];
         self.publishedAt = dictionary[@"author"];
     }
-
     return self;
 }
 

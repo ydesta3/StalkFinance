@@ -55,7 +55,7 @@
 }
 
 -(void) fetchCryptoData{
-    // Get timeline
+    // Get crypto timeline
     [[APIManager shared] fetchCryptoQuotes:^(NSArray * _Nonnull cryptos, NSError * _Nonnull error) {
         
         if (cryptos) {
