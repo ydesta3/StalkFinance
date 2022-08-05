@@ -16,7 +16,6 @@
 
 @import SafariServices;
 
-
 @interface NewsFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *userName;
@@ -59,15 +58,17 @@
 }
 
 - (void) updateToPersonalizedNews{
-    NSMutableArray *keywords = [[NSMutableArray alloc] init];
+    NSMutableArray *likedKeywords = [[NSMutableArray alloc] init];
+    NSMutableArray *searchedKeywords = [[NSMutableArray alloc] init];
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];
-        [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
-        NSUInteger rnd = arc4random_uniform((uint32_t)[keywords count]);
-        if (keywords.count > 0) {
-            NSString *key = [keywords objectAtIndex:rnd];
-            if (keywords != nil){
+        [likedKeywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
+        [searchedKeywords addObjectsFromArray:[currentUser valueForKey:@"SearchedCommodities"]];
+        NSUInteger rnd = arc4random_uniform((uint32_t)[likedKeywords count]);
+        if (likedKeywords.count > 0) {
+            NSString *key = [likedKeywords objectAtIndex:rnd];
+            if (likedKeywords != nil){
                 [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
                     if (keywordArticles.count > 0) {
                         for (int i = 0; i < numberOfArticles; i++){

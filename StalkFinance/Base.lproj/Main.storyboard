@@ -319,6 +319,7 @@
                                             <outlet property="conversionId" destination="jMj-fz-Jua" id="o8k-fZ-InC"/>
                                             <outlet property="currentPrice" destination="Sq5-yH-c0M" id="idg-s0-cDN"/>
                                             <outlet property="ticker" destination="fco-9v-mkh" id="3lv-eR-iUP"/>
+                                            <segue destination="HI4-qS-WYC" kind="presentation" identifier="watchlistToDetails" id="cWF-r0-OGG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -341,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uc-Mw-JXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944.9275362318842" y="841.74107142857144"/>
+            <point key="canvasLocation" x="2132" y="814"/>
         </scene>
         <!--Crypto-->
         <scene sceneID="NWJ-lL-DzW">
@@ -681,7 +682,7 @@
                         <viewLayoutGuide key="safeArea" id="oai-df-3RD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass.circle" catalog="system" id="3Bo-om-AdG"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle.fill" catalog="system" id="3Bo-om-AdG"/>
                     <navigationItem key="navigationItem" id="Ock-X0-bSQ"/>
                     <connections>
                         <outlet property="searchBar" destination="4x4-x5-Mln" id="FP9-9e-b54"/>
@@ -706,8 +707,8 @@
                         <segue destination="aeT-eV-mUN" kind="relationship" relationship="viewControllers" id="eW2-Yj-5uq"/>
                         <segue destination="xVk-df-Qdq" kind="relationship" relationship="viewControllers" id="FsQ-V9-jxW"/>
                         <segue destination="WK5-DA-mpG" kind="relationship" relationship="viewControllers" id="qKj-T4-dqm"/>
-                        <segue destination="YHS-pn-9yW" kind="relationship" relationship="viewControllers" id="m1I-qO-sRl"/>
                         <segue destination="kBm-Ca-qg6" kind="relationship" relationship="viewControllers" id="w9y-hy-wes"/>
+                        <segue destination="YHS-pn-9yW" kind="relationship" relationship="viewControllers" id="m1I-qO-sRl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gfk-TK-kbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1304,7 +1305,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yRR-uS-qpF"/>
+        <segue reference="cWF-r0-OGG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="StalkFinanceBlackYellow" width="1175" height="475"/>
@@ -1312,11 +1313,14 @@
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="eyes" catalog="system" width="128" height="99"/>
         <image name="lock.icloud.fill" catalog="system" width="128" height="88"/>
-        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

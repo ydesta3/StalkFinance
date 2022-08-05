@@ -11,6 +11,7 @@
 #import "StockCell.h"
 #import "APIManager.h"
 #import "WatchlistTableViewCell.h"
+#import "StockDetailsViewController.h"
 
 @interface WatchListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -52,6 +53,14 @@
             
         }];
     }];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"watchlistToDetails"]){
+        StockDetailsViewController *stockDetailsController = [segue destinationViewController];
+        NSIndexPath *index = self.watchListTableView.indexPathForSelectedRow;
+        Stock *dataToPass = self.watchListArray[index.row];
+        stockDetailsController.stock = dataToPass;
+    }
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
