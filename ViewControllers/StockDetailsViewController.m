@@ -35,19 +35,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.maximumFractionDigits = 2;
+    formatter.roundingMode = NSNumberFormatterRoundUp;
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+300);
     self.ticker.text = self.stock.ticker;
     self.companyName.text = self.stock.companyName;
     self.exchange.text = self.stock.exchange;
     self.analystRating.text = [NSString stringWithFormat: @"%@", self.stock.averageAnalystRating];
-    self.open.text = [NSString stringWithFormat: @"%@",self.stock.openPrice];
-    self.high.text = [NSString stringWithFormat: @"%@", self.stock.highPrice];
-    self.low.text = [NSString stringWithFormat: @"%@", self.stock.lowPrice];
-    self.fiftyTwoWeekHigh.text = [NSString stringWithFormat: @"%@",self.stock.highFiftyTwo];
-    self.fiftyTwoWeekLow.text = [NSString stringWithFormat: @"%@", self.stock.lowFiftyTwo];
-    NSString *currentPriceString = [NSString stringWithFormat: @"%@", self.stock.currentPrice];
+    self.open.text = [formatter stringFromNumber:self.stock.openPrice];
+    self.high.text = [formatter stringFromNumber:self.stock.highPrice];
+    self.low.text = [formatter stringFromNumber: self.stock.lowPrice];
+    self.fiftyTwoWeekHigh.text = [formatter stringFromNumber: self.stock.highFiftyTwo];
+    self.fiftyTwoWeekLow.text = [formatter stringFromNumber:self.stock.lowFiftyTwo];
+    NSString *currentPriceString = [formatter stringFromNumber: self.stock.currentPrice];
     self.marketPrice.text = [ @"$ " stringByAppendingString:currentPriceString];
-    NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.stock.percentChange];
+    NSString *marketChangePercentString = [formatter stringFromNumber: self.stock.percentChange];
     self.percentChange.text =  [ marketChangePercentString stringByAppendingString:@"%"];
     self.ask.text = [NSString stringWithFormat: @"%@", self.stock.ask];
     NSString *askSizeFormat = [NSString stringWithFormat: @"%@", self.stock.askSize];
@@ -55,9 +59,8 @@
     self.bid.text = [NSString stringWithFormat: @"%@", self.stock.bid];
     NSString *bidSizeFormat = [NSString stringWithFormat: @"%@", self.stock.bidSize];
     self.bidSize.text = bidSizeFormat;
-
-    
 }
+
 - (IBAction)onDoubleTap:(id)sender {
     NSString *keyword = self.stock.ticker;
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
@@ -77,6 +80,7 @@
     [self presentViewController:alert animated:YES completion:nil];
     
 }
+
 - (IBAction)didTapDismiss:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }

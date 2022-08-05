@@ -8,14 +8,13 @@
 #import "APIManager.h"
 
 @implementation APIManager
-
     NSString *stockUrl = @"https://yfapi.net/ws/screeners/v1/finance/screener/predefined/saved?count=50&scrIds=day_gainers";
     NSString *headlinesApiUrl = @"https://newsapi.org/v2/top-headlines?q=";
     NSString *businessNewsApiUrl = @"https://newsapi.org/v2/top-headlines?country=us&category=business";
     NSString *cryptoUrl = @"https://alpha.financeapi.net/market/get-realtime-prices?symbols=BTC-USD%2CETH-USD%2CXRP-USD%2CDOGE-USD%2CSOL-USD%2CSHIB-USD%2CADA-USD%2CMATIC-USD%2CLTC-USD%2CUSDT-USD";
     NSString *baseStockUrl = @"https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=";
-
     double timeOutInterval = 10.0;
+
 + (instancetype)shared {
     static APIManager *sharedManager = nil;
     static dispatch_once_t onceToken;
@@ -151,3 +150,4 @@
 }
 
 @end
+

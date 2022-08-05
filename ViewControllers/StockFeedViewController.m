@@ -14,32 +14,32 @@
 #import "StockDetailsViewController.h"
 #import "DateTools.h"
 #import "NewsFeedViewController.h"
-
-
+#import "WatchlistTableViewCell.h"
 
 @interface StockFeedViewController () <UISearchBarDelegate, StockDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *stockTableView;
+@property (weak, nonatomic) IBOutlet UITableView *searchTableView;
 @property (nonatomic, strong)NSMutableArray *stocksArray;
 @property (nonatomic, strong)NSMutableArray *cacheOfInterestedStocks;
 @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
 @property (nonatomic, strong) IBOutlet UIRefreshControl *refresh;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong)NSMutableArray *filteredStocksArray;
-@property (nonatomic, assign) BOOL isFiltered;
+@property (nonatomic, strong)NSMutableArray *fetchedStockCache;
+@property (nonatomic, assign) NSTimer *delay;
 
 @end
 
 @implementation StockFeedViewController
 
+    double delay = 0.5;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.stockTableView.dataSource = self;
     self.stockTableView.delegate = self;
-    self.cacheOfInterestedStocks = [NSMutableArray array];
-    
-    _isFiltered = FALSE;
+    self.searchTableView.dataSource = self;
+    self.searchTableView.delegate = self;
     self.searchBar.delegate = self;
     
     //date formatter
@@ -58,18 +58,15 @@
 
 -(void)fetchStocks{
     // Get Feed
-    NSString *key = @"AAPL%2CTSLA%2CMETA%2CBA%2CNKE%2CLCID%2CAMC%2CCLOV%2CGME%2CNIO";
-    [[APIManager shared] fetchWatchlist:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
-        
+    NSString *trendingEnterprises = @"AAPL%2CTSLA%2CMETA%2CBA%2CNKE%2CLCID%2CAMC%2CCLOV%2CGME%2CNIO";
+    [[APIManager shared] fetchWatchlist:(NSString *) trendingEnterprises completion:^(NSMutableArray *keywordArticles, NSError *error) {
         if (keywordArticles) {
             self.stocksArray = keywordArticles;
         }
         [self.stockTableView reloadData];
         [self.refresh endRefreshing];
-        
     }];
     [[APIManager shared] fetchStockQuote:^(NSMutableArray * _Nonnull stocks, NSError * _Nonnull error) {
-        
         if (stocks) {
             [self.stocksArray addObjectsFromArray:stocks];
         }
@@ -82,21 +79,23 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     if(searchText.length == 0){
-        self.isFiltered = false;
+        self.fetchedStockCache = nil;
+        [self.searchTableView reloadData];
     } else {
-        self.isFiltered = true;
-        self.filteredStocksArray = [[NSMutableArray alloc] init];
-        for (Stock* stock in self.stocksArray){
-            NSRange resultsRange = [stock.ticker rangeOfString:searchText options:NSCaseInsensitiveSearch];
-            NSRange companyNameResultsRange = [stock.companyName rangeOfString:searchText
-                                                                       options:NSCaseInsensitiveSearch];
-            NSRange exchangeResultsRange = [stock.exchange rangeOfString:searchText options:NSCaseInsensitiveSearch];
-            if(resultsRange.location != NSNotFound || companyNameResultsRange.location != NSNotFound ||exchangeResultsRange.location != NSNotFound){
-                [self.filteredStocksArray addObject:stock];
-            }
-        }
+        self.fetchedStockCache = nil;
+        [NSObject cancelPreviousPerformRequestsWithTarget:self];
+        [self performSelector:@selector(searchApi:) withObject:searchText afterDelay:delay];
     }
-    [self.stockTableView reloadData];
+}
+
+- (void)searchApi:(NSString *)searchText{
+    self.fetchedStockCache = [[NSMutableArray alloc] init];
+    [[APIManager shared] fetchWatchlist:(NSString *) searchText completion:^(NSMutableArray *keywordArticles, NSError *error) {
+        if (keywordArticles) {
+            [self.fetchedStockCache addObjectsFromArray:keywordArticles];
+        }
+        [self.searchTableView reloadData];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -106,35 +105,41 @@
         StockDetailsViewController *stockDetailsController = [segue destinationViewController];
         NSIndexPath *index = self.stockTableView.indexPathForSelectedRow;
         Stock *dataToPass = self.stocksArray[index.row];
-        if(self.isFiltered){
-            dataToPass = self.filteredStocksArray[index.row];
-        }
+        stockDetailsController.stock = dataToPass;
+    } else if ([segue.identifier isEqualToString: @"searchToDetails"]){
+        StockDetailsViewController *stockDetailsController = [segue destinationViewController];
+        NSIndexPath *index = self.searchTableView.indexPathForSelectedRow;
+        Stock *dataToPass = self.fetchedStockCache[index.row];
         stockDetailsController.stock = dataToPass;
     }
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    StockCell *stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockCell"];
-    Stock *stock = self.stocksArray[indexPath.row];
-    if (self.isFiltered){
-        stock = self.filteredStocksArray[indexPath.row];
+    StockCell *stockCell;
+    if (tableView == self.stockTableView){
+        stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockCell"];
+        stockCell.stock  = self.stocksArray[indexPath.row];
+    } else if (tableView == self.searchTableView){
+        stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockSearchCell"];
+        stockCell.stock = self.fetchedStockCache[indexPath.row];
     }
-    stockCell.stock = stock;
     stockCell.selectionStyle = nil;
     return stockCell;
 } 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.isFiltered){
-        return self.filteredStocksArray.count;
+    if (tableView == self.searchTableView){
+        return self.fetchedStockCache.count;
+    } else if (tableView == self.stockTableView){
+        return self.stocksArray.count;
     }
-    return self.stocksArray.count;
+    return 0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Stock *stockOfInterest = self.stocksArray[indexPath.row];
-    if (self.isFiltered){
-        stockOfInterest = self.filteredStocksArray[indexPath.row];
+    if (tableView == self.searchTableView){
+        stockOfInterest = self.fetchedStockCache[indexPath.row];
     }
     NSString *keyword = stockOfInterest.ticker;
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
@@ -152,5 +157,5 @@
     [PFAnalytics trackEvent:@"UserToStockEngagement" dimensions:dimensions];
 }
 
-
 @end
+

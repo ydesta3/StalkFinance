@@ -17,9 +17,13 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.maximumFractionDigits = 2;
+    formatter.roundingMode = NSNumberFormatterRoundUp;
     self.ticker.text = [self.baseCom.ticker uppercaseString];
-    self.currentPrice.text = [@"$" stringByAppendingString:[NSString stringWithFormat: @"%@", self.baseCom.currentPrice]];
+    NSString *currentPriceStringRounded = [formatter stringFromNumber:self.baseCom.currentPrice];
+    self.currentPrice.text = [@"$" stringByAppendingString:currentPriceStringRounded];
     self.conversionId.text = [self.baseCom.companyName uppercaseString];
 }
 

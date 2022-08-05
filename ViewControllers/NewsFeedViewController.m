@@ -27,7 +27,7 @@
 @end
 
 @implementation NewsFeedViewController
-    
+
     // number of articles for personalized portion
     int numberOfArticles = 3;
 
@@ -38,7 +38,7 @@
     self.newsFeedTableView.dataSource = self;
     self.newsFeedTableView.delegate = self;
     [self fetchNews];
-    [self updateToPersonalizedNews];
+    //[self updateToPersonalizedNews];
     self.refresh = [[UIRefreshControl alloc] init];
     [self.refresh setTintColor:[UIColor whiteColor]];
     [self.refresh addTarget:self action:@selector(updateToPersonalizedNews) forControlEvents:UIControlEventValueChanged];
@@ -65,19 +65,21 @@
         PFUser *currentUser = [PFUser currentUser];
         [keywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
         NSUInteger rnd = arc4random_uniform((uint32_t)[keywords count]);
-        NSString *key = [keywords objectAtIndex:rnd];
-        if (keywords != nil){
-            [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
-                if (keywordArticles.count > 0) {
-                    for (int i = 0; i < numberOfArticles; i++){
-                        [self.newsArray insertObject:keywordArticles[i] atIndex:0];
+        if (keywords.count > 0) {
+            NSString *key = [keywords objectAtIndex:rnd];
+            if (keywords != nil){
+                [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
+                    if (keywordArticles.count > 0) {
+                        for (int i = 0; i < numberOfArticles; i++){
+                            [self.newsArray insertObject:keywordArticles[i] atIndex:0];
+                        }
                     }
-                }
-                [self.newsFeedTableView reloadData];
-                [self.refresh endRefreshing];
-           }];
+                    [self.newsFeedTableView reloadData];
+                    [self.refresh endRefreshing];
+               }];
+            }
         }
-    }];    
+    }];
 }
 
 - (IBAction)onSignoutTap:(id)sender {
@@ -106,10 +108,13 @@
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@", articleUrlString]];
     SFSafariViewController *safariViewCont = [[SFSafariViewController alloc] initWithURL:URL];
     [self presentViewController:safariViewCont animated:YES completion:nil];
+    
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.newsArray.count;
 }
+
+
 
 @end

@@ -57,7 +57,6 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     WatchlistTableViewCell *stockCell = [tableView dequeueReusableCellWithIdentifier:@"WatchListCell"];
     Stock *stock = self.watchListArray[indexPath.row];
-    
     stockCell.baseCom = stock;
     stockCell.selectionStyle = nil;
     return stockCell;

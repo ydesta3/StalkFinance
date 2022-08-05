@@ -20,11 +20,15 @@
 
     self.stockTicker.text = self.stock.ticker;
     self.companyName.text = self.stock.companyName;
-    NSString *currentPriceString = [NSString stringWithFormat: @"%@", self.stock.currentPrice];
-    self.currentPrice.text = [ @"$ " stringByAppendingString:currentPriceString];
-    NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.stock.percentChange];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.maximumFractionDigits = 2;
+    formatter.roundingMode = NSNumberFormatterRoundUp;
+    NSString *currentPriceStringRounded = [formatter stringFromNumber:self.stock.currentPrice];
+    self.currentPrice.text = [ @"$ " stringByAppendingString:currentPriceStringRounded];
+    NSString *marketChangePercentStringRounded = [formatter stringFromNumber:self.stock.percentChange];
     NSString *percent = @" %";
-    self.percentMarketChange.text = [ marketChangePercentString stringByAppendingString:percent];
+    self.percentMarketChange.text = [ marketChangePercentStringRounded stringByAppendingString:percent];
     self.exchange.text = self.stock.exchange;
     
 }

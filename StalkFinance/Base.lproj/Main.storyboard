@@ -121,35 +121,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todays Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7P-yh-Oee">
-                                <rect key="frame" x="262" y="30" width="152" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
-                                <color key="textColor" red="0.87850354381443296" green="0.61351341070206999" blue="0.0011559262161891324" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stocks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-8J-FVJ">
-                                <rect key="frame" x="20" y="32" width="288" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stocks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-8J-FVJ">
+                                <rect key="frame" x="20" y="31" width="92" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="78X-vV-Xsj"/>
+                                    <constraint firstAttribute="width" constant="92" id="NdL-eu-Unr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="29"/>
                                 <color key="textColor" red="0.99580007791519165" green="0.71794861555099487" blue="0.00074602663516998291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" placeholder="Search Stocks" id="zuv-OB-0jQ">
-                                <rect key="frame" x="0.0" y="65" width="414" height="51"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="1"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UhP-Ye-bg3">
-                                <rect key="frame" x="0.0" y="116" width="414" height="780"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UhP-Ye-bg3">
+                                <rect key="frame" x="0.0" y="82" width="414" height="814"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -226,13 +209,42 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top Commodities &amp; Day-Gainers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0E-6W-MS9">
+                                <rect key="frame" x="115" y="49" width="155" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="8C9-bL-piy"/>
+                                    <constraint firstAttribute="height" constant="25" id="pBi-Ig-keK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="9"/>
+                                <color key="textColor" red="0.99580007790000002" green="0.71794861560000001" blue="0.00074602663520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7P-yh-Oee">
+                                <rect key="frame" x="294" y="31" width="111" height="24"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
+                                <color key="textColor" red="0.87850354381443296" green="0.61351341070206999" blue="0.0011559262161891324" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l3m-nV-Zwo"/>
-                        <color key="backgroundColor" red="0.2256677614" green="0.28337182440000003" blue="0.3711541559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z7P-yh-Oee" firstAttribute="top" secondItem="0hU-8J-FVJ" secondAttribute="top" id="22f-mu-eIu"/>
+                            <constraint firstItem="p0E-6W-MS9" firstAttribute="leading" secondItem="0hU-8J-FVJ" secondAttribute="trailing" constant="5" id="8LV-JV-drs"/>
+                            <constraint firstItem="UhP-Ye-bg3" firstAttribute="top" secondItem="Z7P-yh-Oee" secondAttribute="bottom" constant="27" id="Pd2-GF-mLL"/>
+                            <constraint firstItem="0hU-8J-FVJ" firstAttribute="leading" secondItem="l3m-nV-Zwo" secondAttribute="leading" constant="20" id="QCP-RH-1cZ"/>
+                            <constraint firstItem="UhP-Ye-bg3" firstAttribute="leading" secondItem="0hU-8J-FVJ" secondAttribute="trailing" constant="-112" id="Rs8-YF-Fba"/>
+                            <constraint firstItem="UhP-Ye-bg3" firstAttribute="trailing" secondItem="l3m-nV-Zwo" secondAttribute="trailing" id="X2D-1M-676"/>
+                            <constraint firstItem="p0E-6W-MS9" firstAttribute="top" secondItem="l3m-nV-Zwo" secondAttribute="top" constant="5" id="b6A-jf-W7S"/>
+                            <constraint firstItem="UhP-Ye-bg3" firstAttribute="leading" secondItem="l3m-nV-Zwo" secondAttribute="leading" id="fPG-9m-hjH"/>
+                            <constraint firstItem="UhP-Ye-bg3" firstAttribute="top" secondItem="0hU-8J-FVJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ghF-54-KRp"/>
+                            <constraint firstItem="UhP-Ye-bg3" firstAttribute="top" secondItem="p0E-6W-MS9" secondAttribute="bottom" constant="8" symbolic="YES" id="ifW-jJ-Ask"/>
+                            <constraint firstAttribute="bottom" secondItem="UhP-Ye-bg3" secondAttribute="bottom" id="t7b-cm-GCH"/>
+                            <constraint firstItem="l3m-nV-Zwo" firstAttribute="trailing" secondItem="Z7P-yh-Oee" secondAttribute="trailing" constant="9" id="zph-ku-jQQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stock" image="chart.line.uptrend.xyaxis" catalog="system" id="K94-gj-uTQ"/>
                     <connections>
-                        <outlet property="searchBar" destination="zuv-OB-0jQ" id="caX-VW-Gnv"/>
                         <outlet property="stockTableView" destination="UhP-Ye-bg3" id="eOe-TO-ef9"/>
                         <outlet property="todaysDate" destination="Z7P-yh-Oee" id="C6f-kr-7Oh"/>
                     </connections>
@@ -339,31 +351,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todays Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0W-y3-FNv">
-                                <rect key="frame" x="260" y="27" width="154" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
-                                <color key="textColor" red="0.87850354379999995" green="0.61351341069999998" blue="0.001155926216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crypto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3b-Wx-MCt">
-                                <rect key="frame" x="20" y="33" width="186" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3b-Wx-MCt">
+                                <rect key="frame" x="12" y="32" width="105" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="cxg-gN-96O"/>
+                                    <constraint firstAttribute="height" constant="33" id="dCp-y0-rsC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="28"/>
                                 <color key="textColor" red="0.99580007791519165" green="0.71794861555099487" blue="0.00074602663516998291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" placeholder="Search Cryptocurrencies" id="KdH-gQ-OyF">
-                                <rect key="frame" x="0.0" y="63" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.90000000000000002" height="1"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-B6-5Ot">
-                                <rect key="frame" x="0.0" y="111" width="414" height="785"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top Digital Currencies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCs-yg-NkF">
+                                <rect key="frame" x="119" y="48" width="143" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="iUw-5K-4aU"/>
+                                    <constraint firstAttribute="height" constant="25" id="nMc-VC-XC6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="11"/>
+                                <color key="textColor" red="0.99580007790000002" green="0.71794861560000001" blue="0.00074602663520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-B6-5Ot">
+                                <rect key="frame" x="0.0" y="81" width="414" height="815"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -425,20 +434,42 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0W-y3-FNv">
+                                <rect key="frame" x="295" y="32" width="111" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="bKT-ZN-nUg"/>
+                                    <constraint firstAttribute="height" constant="25" id="ynd-V0-VTF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
+                                <color key="textColor" red="0.87850354379999995" green="0.61351341069999998" blue="0.001155926216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6ae-Fc-94c"/>
-                        <color key="backgroundColor" red="0.22566776142105857" green="0.28337182442468667" blue="0.37115415592783507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hmA-B6-5Ot" secondAttribute="bottom" id="2nn-dv-PyI"/>
+                            <constraint firstItem="lCs-yg-NkF" firstAttribute="top" secondItem="6ae-Fc-94c" secondAttribute="top" constant="4" id="5N9-fa-zXD"/>
+                            <constraint firstItem="H3b-Wx-MCt" firstAttribute="leading" secondItem="6ae-Fc-94c" secondAttribute="leading" constant="12" id="CZ4-Uw-foO"/>
+                            <constraint firstItem="hmA-B6-5Ot" firstAttribute="leading" secondItem="6ae-Fc-94c" secondAttribute="leading" id="DbS-b9-QBk"/>
+                            <constraint firstItem="hmA-B6-5Ot" firstAttribute="top" secondItem="V0W-y3-FNv" secondAttribute="bottom" constant="24" id="GYH-dC-ofs"/>
+                            <constraint firstItem="lCs-yg-NkF" firstAttribute="leading" secondItem="H3b-Wx-MCt" secondAttribute="trailing" constant="5" id="Mqs-df-cLS"/>
+                            <constraint firstItem="6ae-Fc-94c" firstAttribute="trailing" secondItem="V0W-y3-FNv" secondAttribute="trailing" constant="8" id="OAe-1X-hnl"/>
+                            <constraint firstItem="V0W-y3-FNv" firstAttribute="top" secondItem="H3b-Wx-MCt" secondAttribute="top" id="Rwk-KY-3bx"/>
+                            <constraint firstItem="6ae-Fc-94c" firstAttribute="top" secondItem="H3b-Wx-MCt" secondAttribute="top" constant="12" id="bWK-FY-Lwi"/>
+                            <constraint firstItem="hmA-B6-5Ot" firstAttribute="trailing" secondItem="6ae-Fc-94c" secondAttribute="trailing" id="zaz-Br-a0d"/>
+                            <constraint firstItem="hmA-B6-5Ot" firstAttribute="top" secondItem="lCs-yg-NkF" secondAttribute="bottom" constant="8" symbolic="YES" id="zjN-h4-pDi"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Crypto" image="lock.icloud.fill" catalog="system" id="zBU-di-IGq"/>
                     <connections>
                         <outlet property="cryptoTableView" destination="hmA-B6-5Ot" id="ptx-fB-pWN"/>
-                        <outlet property="searchBar" destination="KdH-gQ-OyF" id="Q6G-HA-rTp"/>
                         <outlet property="todaysDate" destination="V0W-y3-FNv" id="7B5-rZ-t0k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rL2-pF-uK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="1273"/>
+            <point key="canvasLocation" x="1153.6231884057972" y="1272.9910714285713"/>
         </scene>
         <!--NewsFeed-->
         <scene sceneID="dDR-vF-QoS">
@@ -448,24 +479,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-md-RbV">
-                                <rect key="frame" x="162" y="44" width="135" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@username" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-md-RbV">
+                                <rect key="frame" x="162" y="44" width="135" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="HBh-X2-Fmz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <color key="textColor" red="0.92088836984536082" green="0.64941893881028989" blue="0.12217835739535438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="NewsFeed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP0-bQ-wdW">
-                                <rect key="frame" x="20" y="49" width="142" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="27"/>
-                                <color key="textColor" red="0.99580007791519165" green="0.71794861555099487" blue="0.00074602663516998291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tB3-Lu-czw">
-                                <rect key="frame" x="0.0" y="76" width="414" height="737"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tB3-Lu-czw">
+                                <rect key="frame" x="0.0" y="78" width="414" height="737"/>
                                 <color key="backgroundColor" red="0.2256677614" green="0.28337182440000003" blue="0.3711541559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="737" id="KaR-aE-wEy"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="214" id="G4l-gq-INY" customClass="NewsFeedCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="214"/>
@@ -521,9 +549,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7r-g3-JeO">
-                                <rect key="frame" x="295" y="33" width="99" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7r-g3-JeO">
+                                <rect key="frame" x="295" y="35" width="99" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Out">
                                     <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="20"/>
@@ -534,9 +561,33 @@
                                     <action selector="onSignoutTap:" destination="YHS-pn-9yW" eventType="touchUpInside" id="I81-ha-WdH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="NewsFeed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP0-bQ-wdW">
+                                <rect key="frame" x="19" y="44" width="142" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="HN1-CO-YZT"/>
+                                    <constraint firstAttribute="width" constant="142" id="dN3-Tr-tPe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="27"/>
+                                <color key="textColor" red="0.99580007791519165" green="0.71794861555099487" blue="0.00074602663516998291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fdn-R2-4MU"/>
                         <color key="backgroundColor" red="0.2256677614" green="0.28337182440000003" blue="0.3711541559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aP0-bQ-wdW" firstAttribute="leading" secondItem="Fdn-R2-4MU" secondAttribute="leading" constant="19" id="0lC-Jg-MAL"/>
+                            <constraint firstItem="aP0-bQ-wdW" firstAttribute="top" secondItem="yvJ-md-RbV" secondAttribute="top" id="2D7-Nh-aHs"/>
+                            <constraint firstItem="tB3-Lu-czw" firstAttribute="top" secondItem="aP0-bQ-wdW" secondAttribute="bottom" constant="-2" id="2fG-ne-E6W"/>
+                            <constraint firstItem="yvJ-md-RbV" firstAttribute="top" secondItem="Fdn-R2-4MU" secondAttribute="top" id="3e0-be-P7V"/>
+                            <constraint firstItem="tB3-Lu-czw" firstAttribute="trailing" secondItem="Fdn-R2-4MU" secondAttribute="trailing" id="BY4-n9-od0"/>
+                            <constraint firstItem="Fdn-R2-4MU" firstAttribute="trailing" secondItem="yvJ-md-RbV" secondAttribute="trailing" constant="117" id="JKo-Vb-b7f"/>
+                            <constraint firstItem="tB3-Lu-czw" firstAttribute="top" secondItem="W7r-g3-JeO" secondAttribute="bottom" constant="5" id="K9y-ZL-pPk"/>
+                            <constraint firstItem="tB3-Lu-czw" firstAttribute="bottom" secondItem="Fdn-R2-4MU" secondAttribute="bottom" constant="2" id="WwG-aJ-jjC"/>
+                            <constraint firstItem="W7r-g3-JeO" firstAttribute="trailing" secondItem="TCe-vO-b7V" secondAttribute="trailingMargin" id="YjJ-yj-rOR"/>
+                            <constraint firstItem="tB3-Lu-czw" firstAttribute="top" secondItem="yvJ-md-RbV" secondAttribute="bottom" constant="16" id="fPo-Qo-938"/>
+                            <constraint firstItem="tB3-Lu-czw" firstAttribute="leading" secondItem="Fdn-R2-4MU" secondAttribute="leading" id="hVl-FA-Wlb"/>
+                            <constraint firstItem="yvJ-md-RbV" firstAttribute="leading" secondItem="aP0-bQ-wdW" secondAttribute="trailing" constant="1" id="jVZ-0m-D7s"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="NewsFeed" image="newspaper.fill" catalog="system" id="2je-5N-gUc"/>
                     <connections>
@@ -548,6 +599,99 @@
             </objects>
             <point key="canvasLocation" x="2131.8840579710145" y="2205.1339285714284"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="R4c-Rr-cM7">
+            <objects>
+                <viewController id="WK5-DA-mpG" customClass="StockFeedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lyy-qC-Uyp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search All Stocks &amp; Crypto" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-x5-Mln">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="295-sa-30f">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockSearchCell" rowHeight="212" id="1sL-oR-Com" customClass="StockCell">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="212"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1sL-oR-Com" id="cw4-zX-FSE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="212"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="companyName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqK-9d-mVn">
+                                                    <rect key="frame" x="20" y="81" width="374" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="374" id="3kB-AS-JgM"/>
+                                                        <constraint firstAttribute="height" constant="46" id="dGn-UU-m3e"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="15"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticker" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-AG-Scf">
+                                                    <rect key="frame" x="20" y="31" width="374" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="374" id="54i-Bx-u1r"/>
+                                                        <constraint firstAttribute="height" constant="42" id="ylA-be-lPC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="22"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBY-H2-d8I">
+                                                    <rect key="frame" x="20" y="138" width="242" height="37"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="242" id="Dkb-DM-bQL"/>
+                                                        <constraint firstAttribute="height" constant="37" id="hVg-gv-rrY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="29"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="WBY-H2-d8I" secondAttribute="bottom" constant="37" id="BMR-Lo-Xu7"/>
+                                                <constraint firstItem="WBY-H2-d8I" firstAttribute="leading" secondItem="cw4-zX-FSE" secondAttribute="leading" constant="20" symbolic="YES" id="DPp-4S-8xZ"/>
+                                                <constraint firstItem="lnc-AG-Scf" firstAttribute="top" secondItem="cw4-zX-FSE" secondAttribute="top" constant="31" id="PSI-8s-JUL"/>
+                                                <constraint firstItem="WBY-H2-d8I" firstAttribute="top" secondItem="zqK-9d-mVn" secondAttribute="bottom" constant="11" id="ckc-hA-Dzc"/>
+                                                <constraint firstItem="zqK-9d-mVn" firstAttribute="top" secondItem="lnc-AG-Scf" secondAttribute="bottom" constant="8" symbolic="YES" id="keK-F9-KZf"/>
+                                                <constraint firstItem="zqK-9d-mVn" firstAttribute="leading" secondItem="cw4-zX-FSE" secondAttribute="leading" constant="20" symbolic="YES" id="mwP-Ld-Mjj"/>
+                                                <constraint firstItem="lnc-AG-Scf" firstAttribute="leading" secondItem="cw4-zX-FSE" secondAttribute="leading" constant="20" symbolic="YES" id="of8-Lz-1mr"/>
+                                                <constraint firstAttribute="trailing" secondItem="WBY-H2-d8I" secondAttribute="trailing" constant="152" id="tuj-U8-lp8"/>
+                                                <constraint firstAttribute="trailing" secondItem="lnc-AG-Scf" secondAttribute="trailing" constant="20" symbolic="YES" id="uO7-Db-TUh"/>
+                                                <constraint firstAttribute="trailing" secondItem="zqK-9d-mVn" secondAttribute="trailing" constant="20" symbolic="YES" id="voq-ky-ZWk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="companyName" destination="zqK-9d-mVn" id="YAO-TR-B1F"/>
+                                            <outlet property="currentPrice" destination="WBY-H2-d8I" id="V1I-2M-PaO"/>
+                                            <outlet property="stockTicker" destination="lnc-AG-Scf" id="94l-el-F4a"/>
+                                            <segue destination="HI4-qS-WYC" kind="presentation" identifier="searchToDetails" modalTransitionStyle="crossDissolve" id="yRR-uS-qpF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oai-df-3RD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass.circle" catalog="system" id="3Bo-om-AdG"/>
+                    <navigationItem key="navigationItem" id="Ock-X0-bSQ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="4x4-x5-Mln" id="FP9-9e-b54"/>
+                        <outlet property="searchTableView" destination="295-sa-30f" id="6Ts-hs-5Cs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4DT-XH-bpw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1320.289855072464" y="1918.5267857142856"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cep-Ga-q5x">
             <objects>
@@ -555,12 +699,13 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45T-Wv-5LX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="aeT-eV-mUN" kind="relationship" relationship="viewControllers" id="eW2-Yj-5uq"/>
                         <segue destination="xVk-df-Qdq" kind="relationship" relationship="viewControllers" id="FsQ-V9-jxW"/>
+                        <segue destination="WK5-DA-mpG" kind="relationship" relationship="viewControllers" id="qKj-T4-dqm"/>
                         <segue destination="YHS-pn-9yW" kind="relationship" relationship="viewControllers" id="m1I-qO-sRl"/>
                         <segue destination="kBm-Ca-qg6" kind="relationship" relationship="viewControllers" id="w9y-hy-wes"/>
                     </connections>
@@ -918,21 +1063,6 @@
             </objects>
             <point key="canvasLocation" x="92.753623188405811" y="1958.7053571428571"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Mt4-ri-aj0">
-            <objects>
-                <viewController id="cv9-jS-zZf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hlb-yR-3uK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="DbB-yc-Mx2"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K0R-fh-BEp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2414" y="1520"/>
-        </scene>
         <!--Crypto Details View Controller-->
         <scene sceneID="z87-VU-cUA">
             <objects>
@@ -1173,12 +1303,16 @@
             <point key="canvasLocation" x="1153.6231884057972" y="2097.9910714285716"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yRR-uS-qpF"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="StalkFinanceBlackYellow" width="1175" height="475"/>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="eyes" catalog="system" width="128" height="99"/>
         <image name="lock.icloud.fill" catalog="system" width="128" height="88"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

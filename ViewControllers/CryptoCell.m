@@ -16,11 +16,15 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.maximumFractionDigits = 2;
+    formatter.roundingMode = NSNumberFormatterRoundUp;
     self.ticker.text = [self.crypto.ticker uppercaseString];
     self.currentPrice.text = (NSString *)self.crypto.currentPrice;
-    NSString *marketChangePercentString = [NSString stringWithFormat: @"%@", self.crypto.percentChange];
-    self.percentMarketChange.text = [ marketChangePercentString stringByAppendingString:@" %"];
+    NSString *marketChangePercentStringRounded = [formatter stringFromNumber:self.crypto.percentChange];
+    self.percentMarketChange.text = [ marketChangePercentStringRounded stringByAppendingString:@" %"];
     self.conversionId.text = [self.crypto.conversionId uppercaseString];
     
 }

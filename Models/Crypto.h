@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *twentyFourHrVolDollars;
 @property (nonatomic, strong) NSDate *updatedAt;
 
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)arrayOfCryptoAttributes:(NSArray *)dictionaries;
 

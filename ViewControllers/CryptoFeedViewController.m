@@ -13,8 +13,6 @@
 #import "CryptoDetailsViewController.h"
 #import "DateTools.h"
 
-
-
 @interface CryptoFeedViewController ()<UISearchBarDelegate, CryptoDetailsViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *cryptoTableView;
@@ -31,14 +29,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.cryptoTableView.dataSource = self;
     self.cryptoTableView.delegate = self;
     
     _isFiltered = FALSE;
     self.searchBar.delegate = self;
-
     
     //date formatter
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
