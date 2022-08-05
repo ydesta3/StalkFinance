@@ -38,7 +38,7 @@
     self.newsFeedTableView.dataSource = self;
     self.newsFeedTableView.delegate = self;
     [self fetchNews];
-    [self updateToPersonalizedNews];
+    //[self updateToPersonalizedNews];
     self.refresh = [[UIRefreshControl alloc] init];
     [self.refresh setTintColor:[UIColor whiteColor]];
     [self.refresh addTarget:self action:@selector(updateToPersonalizedNews) forControlEvents:UIControlEventValueChanged];

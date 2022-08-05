@@ -115,21 +115,16 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    StockCell *stockCell;
     if (tableView == self.stockTableView){
-        StockCell *stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockCell"];
-        Stock *stock = self.stocksArray[indexPath.row];
-        stockCell.stock = stock;
-        stockCell.selectionStyle = nil;
-        return stockCell;
+        stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockCell"];
+        stockCell.stock  = self.stocksArray[indexPath.row];
     } else if (tableView == self.searchTableView){
-        StockCell *stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockSearchCell"];
-        Stock *stock = self.fetchedStockCache[indexPath.row];
-        stockCell.stock = stock;
-        stockCell.selectionStyle = nil;
-        return stockCell;
+        stockCell = [tableView dequeueReusableCellWithIdentifier:@"stockSearchCell"];
+        stockCell.stock = self.fetchedStockCache[indexPath.row];
     }
-    return nil;
-
+    stockCell.selectionStyle = nil;
+    return stockCell;
 } 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
