@@ -24,7 +24,6 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
         [self.view addGestureRecognizer:gestureRecognizer];
         gestureRecognizer.cancelsTouchesInView = NO;
-
 }
 
 - (void)dismissKeyboard {
