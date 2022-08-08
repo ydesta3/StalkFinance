@@ -59,26 +59,55 @@
 - (void) updateToPersonalizedNews{
     NSMutableArray *likedKeywords = [[NSMutableArray alloc] init];
     NSMutableArray *searchedKeywords = [[NSMutableArray alloc] init];
+    NSMutableArray *timeSpent = [[NSMutableArray alloc] init];
+    NSMutableArray *timeSpentTicker = [[NSMutableArray alloc] init];
     [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         PFUser *currentUser = [PFUser currentUser];
         [likedKeywords addObjectsFromArray:[currentUser valueForKey:@"StocksOfInterest"]];
         [searchedKeywords addObjectsFromArray:[currentUser valueForKey:@"SearchedCommodities"]];
-        NSUInteger rnd = arc4random_uniform((uint32_t)[likedKeywords count]);
-        if (likedKeywords.count > 0) {
-            NSString *key = [likedKeywords objectAtIndex:rnd];
-            if (likedKeywords != nil){
-                [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
-                    if (keywordArticles.count > 0) {
-                        for (int i = 0; i < numberOfArticles; i++){
-                            [self.newsArray insertObject:keywordArticles[i] atIndex:0];
-                        }
-                    }
-                    [self.newsFeedTableView reloadData];
-                    [self.refresh endRefreshing];
-               }];
+        [timeSpent addObjectsFromArray:[currentUser valueForKey:@"TimeSpent"]];
+        [timeSpentTicker addObjectsFromArray:[currentUser valueForKey:@"TimeSpentTicker"]];
+        NSInteger *largestIndex = 0;
+        NSNumber *largestNumber = @0;
+        // retrieves index that holds largest time interval
+        for (int i = 0; i < [timeSpent count] ; i++) {
+            NSNumber *number = [timeSpent objectAtIndex:i];
+            if (number > largestNumber) {
+                largestNumber = number;
+                largestIndex = (long*)[timeSpent indexOfObject:number];
             }
         }
+        NSString *mostSpentTimeKey;
+        NSString *key;
+        if (timeSpentTicker.count > 0){
+            mostSpentTimeKey = [timeSpentTicker objectAtIndex:(NSInteger)largestIndex];
+        }
+        if ([likedKeywords containsObject:mostSpentTimeKey]){
+            if ([searchedKeywords containsObject:mostSpentTimeKey]) {
+                key = mostSpentTimeKey;
+            }
+        } else if (likedKeywords.count > 0) {
+            // obtains a keyword from a random index
+            key = [likedKeywords objectAtIndex:arc4random_uniform((uint32_t)[likedKeywords count])];
+        } else if (searchedKeywords.count > 0) {
+            key = [searchedKeywords objectAtIndex:arc4random_uniform((uint32_t)[searchedKeywords count])];
+        } else {
+            key = @"markets";
+        }
+        [[APIManager shared] fetchHeadlineNews:(NSString *) key completion:^(NSMutableArray *keywordArticles, NSError *error) {
+            int i = 0;
+            if (keywordArticles.count < numberOfArticles) {
+                numberOfArticles = (int)keywordArticles.count;
+            }
+            for (i = 0; i < numberOfArticles; i++){
+                if(![self.newsArray containsObject:keywordArticles[i]]){
+                    [self.newsArray insertObject:keywordArticles[i] atIndex:0];
+                }
+            }
+            [self.newsFeedTableView reloadData];
+            [self.refresh endRefreshing];
+       }];
     }];
 }
 
