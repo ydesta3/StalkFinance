@@ -60,7 +60,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
 - [X] Users can double tab anywhere on the stock detail page to add stock their watchlist
 - [X] User can see a watchlist of the stocks in their likes cache (watchlist tab)
 - [X] Optimized search for all stocks and crypto supported by Yahoo Finance 
-- Incorporates at least one external library to add visual polish
+- [X] Incorporates at least one external library to add visual polish (SCLAlertView)
 
 ### **Optional Nice-to-have Stories**
 * Login options using credentials of many different platforms such as Facebook, Twitter, Google.
