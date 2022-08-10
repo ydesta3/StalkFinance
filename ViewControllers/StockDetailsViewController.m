@@ -56,11 +56,9 @@
     NSString *marketChangePercentString = [formatter stringFromNumber: self.stock.percentChange];
     self.percentChange.text =  [ marketChangePercentString stringByAppendingString:@"%"];
     self.ask.text = [NSString stringWithFormat: @"%@", self.stock.ask];
-    NSString *askSizeFormat = [NSString stringWithFormat: @"%@", self.stock.askSize];
-    self.askSize.text = askSizeFormat;
+    self.askSize.text = [NSString stringWithFormat: @"%@", self.stock.askSize];
     self.bid.text = [NSString stringWithFormat: @"%@", self.stock.bid];
-    NSString *bidSizeFormat = [NSString stringWithFormat: @"%@", self.stock.bidSize];
-    self.bidSize.text = bidSizeFormat;
+    self.bidSize.text = [NSString stringWithFormat: @"%@", self.stock.bidSize];;
 }
 
 - (IBAction)onDoubleTap:(id)sender {
@@ -72,7 +70,6 @@
         [[PFUser currentUser] saveInBackground];
     }];
     SCLAlertView *alert = [[SCLAlertView alloc] init];
-        //alert.showAnimationType = SCLAlertViewHideAnimationSlideOutToCenter;
     alert.hideAnimationType = SCLAlertViewHideAnimationSlideOutFromCenter;
     alert.backgroundType = SCLAlertViewBackgroundBlur;
     [alert showSuccess:self title:@"Added to WatchList" subTitle:[self.stock.companyName stringByAppendingString:@" was saved to your WatchList"] closeButtonTitle:@"Done" duration:0.0f];
