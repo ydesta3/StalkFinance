@@ -7,7 +7,7 @@
 
 #import "StockDetailsViewController.h"
 #import <Parse/Parse.h>
-
+#import "SCLAlertView-Objective-C-umbrella.h"
 
 @interface StockDetailsViewController ()
 
@@ -71,16 +71,11 @@
         [currentUser addObject:keyword forKey:@"StocksOfInterest"];
         [[PFUser currentUser] saveInBackground];
     }];
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Added to WatchList"
-                               message:[self.stock.companyName stringByAppendingString:@" was saved to your WatchList"]
-                               preferredStyle:UIAlertControllerStyleActionSheet];
-
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction * action) {}];
-
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
-    
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+        //alert.showAnimationType = SCLAlertViewHideAnimationSlideOutToCenter;
+    alert.hideAnimationType = SCLAlertViewHideAnimationSlideOutFromCenter;
+    alert.backgroundType = SCLAlertViewBackgroundBlur;
+    [alert showSuccess:self title:@"Added to WatchList" subTitle:[self.stock.companyName stringByAppendingString:@" was saved to your WatchList"] closeButtonTitle:@"Done" duration:0.0f];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

@@ -10,6 +10,8 @@ target 'StalkFinance' do
   pod 'BDBOAuth1Manager'
   pod 'DateTools'
   pod 'AFNetworking'
+  pod 'TORoundedTableView'
+  pod 'SCLAlertView-Objective-C'
 
   target 'StalkFinanceTests' do
     inherit! :search_paths

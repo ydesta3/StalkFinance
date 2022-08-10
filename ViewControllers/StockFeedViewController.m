@@ -49,11 +49,16 @@
     NSString *dateToday = [formatter stringFromDate:[NSDate date]];
     self.todaysDate.text = dateToday;
     
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    
     [self fetchStocks];
     self.refresh = [[UIRefreshControl alloc] init];
     [self.refresh setTintColor:[UIColor whiteColor]];
     [self.refresh addTarget:self action:@selector(fetchStocks) forControlEvents:UIControlEventValueChanged];
     [self.stockTableView addSubview: self.refresh];
+    
 }
 
 -(void)fetchStocks{
@@ -161,6 +166,10 @@
     };
     // Send the dimensions to Parse along with the event
     [PFAnalytics trackEvent:@"UserToStockEngagement" dimensions:dimensions];
+}
+
+- (void)dismissKeyboard {
+     [self.view endEditing:YES];
 }
 
 @end

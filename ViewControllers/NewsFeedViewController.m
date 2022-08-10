@@ -38,7 +38,7 @@
     self.newsFeedTableView.delegate = self;
     [self fetchNews];
     self.refresh = [[UIRefreshControl alloc] init];
-    [self.refresh setTintColor:[UIColor whiteColor]];
+    [self.refresh setTintColor:[UIColor grayColor]];
     [self.refresh addTarget:self action:@selector(updateToPersonalizedNews) forControlEvents:UIControlEventValueChanged];
     [self.newsFeedTableView addSubview: self.refresh];
 
@@ -74,7 +74,6 @@
         for (int i = 0; i < [timeSpent count] ; i++) {
             NSNumber *number = [timeSpent objectAtIndex:i];
             if (number > largestNumber) {
-                largestNumber = number;
                 largestIndex = (long*)[timeSpent indexOfObject:number];
             }
         }
@@ -83,6 +82,7 @@
         if (timeSpentTicker.count > 0){
             mostSpentTimeKey = [timeSpentTicker objectAtIndex:(NSInteger)largestIndex];
         }
+        // liked keywords == user watchList
         if ([likedKeywords containsObject:mostSpentTimeKey]){
             if ([searchedKeywords containsObject:mostSpentTimeKey]) {
                 key = mostSpentTimeKey;
@@ -137,7 +137,6 @@
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@", articleUrlString]];
     SFSafariViewController *safariViewCont = [[SFSafariViewController alloc] initWithURL:URL];
     [self presentViewController:safariViewCont animated:YES completion:nil];
-    
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
