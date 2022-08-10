@@ -3,7 +3,7 @@ StalkFinance Design Project - README
 
 # StalkFinance 
 
- **StalkFinance**: Allows users to see real time information about stocks and crypto regarding price, analysis, and financial statements in a timeline like feed that includes trending businesses, top day-gainers, and top digital currencies. StalkFinance also provides users a newsfeed to see relevant business-related news. The newsfeed also incorporates a personalized aspect to it as it curates the top of the feed to news related to stocks you've spent significant effort in knowing their details. Users can also search for all stock/digital curren fetchable from the data-source.
+ **StalkFinance**: Allows users to see real time information about stocks and crypto regarding price, analysis, and financial statements in a timeline like feed that includes trending businesses, top day-gainers, and top digital currencies. StalkFinance also provides users a newsfeed to see relevant business-related news. The newsfeed also incorporates a personalized aspect to it as it curates the top of the feed to news related to stocks you've spent significant effort in knowing their details. Users can also search for all stock/digital currencies fetchable from the data-source.
 
 ### Stock/Crypto Feed Data
 **Yahoo Finance API/Seeking Alpha**
@@ -34,7 +34,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
 [Evaluation of your app across the following attributes]
 - **Category:**: Finance / Social Networking
 - **Mobile:**: This app is targeted to iOS mobile users. Functionality is not limited to just mobile devices however, the spirit of the app is meant to be on convenient on-the-go devices.
-- **Story:**: Users can access information about stocks and cryptocurrencies' exchange rate with the USD. Users can also post to a feed in a desired chat room or create a custom public chat room 
+- **Story:**: Users can access information about stocks and cryptocurrencies' from a variety of exchanges and read relevant news topics relating to investment analysis.
 - **Market:**: This app is for any individuals who are interested in being informed regarding details about stocks and cryptocurrencies and having a platform to discuss with others about stock and crypto subtopics.
 - **Habit:**: This app should be used as a tool to help with financial decisions regarding investments as much as needed.
 - **Scope:**: This app would be data and user-driven in terms of what a potential user want to do on the app. Users can read, analyze, and discuss about topics related to investing in stocks and cryptocurrencies.
@@ -110,7 +110,7 @@ Allows users to see real time information about stocks and cryptocurrency regard
 
 **Flow Navigation** (Screen to Screen)
 
-* Login view -> Sign up view is user doesn't have  credentials already
+* Login view -> Sign up view if user doesn't have credentials already
 
 * Stock feed view -> Specific stock details view
 
