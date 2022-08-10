@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *bidSize;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *scrollVew;
+@property (nonatomic, strong) NSDate *viewSessionStart;
+@property (nonatomic, strong) NSDate *viewSessionEnd;
 
 @end
 
@@ -78,6 +80,24 @@
 
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    self.viewSessionEnd = nil;
+    self.viewSessionStart = [NSDate date];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    self.viewSessionEnd = [NSDate date];
+    NSTimeInterval distanceBetweenDates = [self.viewSessionStart timeIntervalSinceDate:self.viewSessionEnd];
+    NSString *minutesBetweenDates = [NSString stringWithFormat:@"%f", (distanceBetweenDates / 60)];
+    [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        [[PFUser currentUser] addObject: minutesBetweenDates forKey:@"TimeSpent"];
+        [[PFUser currentUser] addObject: self.stock.ticker forKey:@"TimeSpentTicker"];
+        [[PFUser currentUser] saveInBackground];
+    }];
+    self.viewSessionStart = nil;
     
 }
 

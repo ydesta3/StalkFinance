@@ -90,9 +90,15 @@
 
 - (void)searchApi:(NSString *)searchText{
     self.fetchedStockCache = [[NSMutableArray alloc] init];
-    [[APIManager shared] fetchWatchlist:(NSString *) searchText completion:^(NSMutableArray *keywordArticles, NSError *error) {
-        if (keywordArticles) {
-            [self.fetchedStockCache addObjectsFromArray:keywordArticles];
+    [[APIManager shared] fetchWatchlist:(NSString *) searchText completion:^(NSMutableArray *results, NSError *error) {
+        if (results.count > 0) {
+            // caching search queries that only show results
+            [[PFUser query] getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+                PFUser *currentUser = [PFUser currentUser];
+                [currentUser addObject:[searchText uppercaseString] forKey:@"SearchedCommodities"];
+                [[PFUser currentUser] saveInBackground];
+            }];
+            [self.fetchedStockCache addObjectsFromArray:results];
         }
         [self.searchTableView reloadData];
     }];
