@@ -79,11 +79,11 @@
         }
         NSString *mostSpentTimeKey;
         NSString *key;
-        if (timeSpentTicker.count > 0){
+        if (timeSpentTicker.count > 0) {
             mostSpentTimeKey = [timeSpentTicker objectAtIndex:(NSInteger)largestIndex];
         }
         // liked keywords == user watchList
-        if ([likedKeywords containsObject:mostSpentTimeKey]){
+        if ([likedKeywords containsObject:mostSpentTimeKey]) {
             if ([searchedKeywords containsObject:mostSpentTimeKey]) {
                 key = mostSpentTimeKey;
             }
