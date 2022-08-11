@@ -131,10 +131,10 @@
                                 <color key="textColor" red="0.99580007791519165" green="0.71794861555099487" blue="0.00074602663516998291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UhP-Ye-bg3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UhP-Ye-bg3">
                                 <rect key="frame" x="0.0" y="82" width="414" height="814"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" rowHeight="204" id="gha-gV-325" customClass="StockCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="204"/>
@@ -372,10 +372,10 @@
                                 <color key="textColor" red="0.99580007790000002" green="0.71794861560000001" blue="0.00074602663520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-B6-5Ot">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-B6-5Ot">
                                 <rect key="frame" x="0.0" y="81" width="414" height="815"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cryptoCell" rowHeight="136" id="G1v-Je-r06" customClass="CryptoCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="136"/>
@@ -489,28 +489,28 @@
                                 <color key="textColor" red="0.92088836984536082" green="0.64941893881028989" blue="0.12217835739535438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tB3-Lu-czw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tB3-Lu-czw">
                                 <rect key="frame" x="0.0" y="78" width="414" height="737"/>
-                                <color key="backgroundColor" red="0.2256677614" green="0.28337182440000003" blue="0.3711541559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="737" id="KaR-aE-wEy"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="214" id="G4l-gq-INY" customClass="NewsFeedCell">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="214"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G4l-gq-INY" id="66f-iK-OVk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iI-pI-Z6x">
-                                                    <rect key="frame" x="20" y="28" width="251" height="70"/>
+                                                    <rect key="frame" x="20" y="28" width="211" height="70"/>
                                                     <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synopsis" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Py-G7-DWG">
-                                                    <rect key="frame" x="20" y="116" width="251" height="59"/>
+                                                    <rect key="frame" x="20" y="116" width="211" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="251" id="0P8-Oq-5cz"/>
                                                         <constraint firstAttribute="height" constant="59" id="iyq-xU-u0Q"/>
@@ -520,7 +520,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKO-i1-FS3">
-                                                    <rect key="frame" x="279" y="28" width="125" height="101"/>
+                                                    <rect key="frame" x="239" y="28" width="125" height="101"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="125" id="Ncr-jW-L1d"/>
                                                         <constraint firstAttribute="height" constant="125" id="iwV-8V-Yvo"/>
@@ -587,7 +587,7 @@
                             <constraint firstItem="W7r-g3-JeO" firstAttribute="trailing" secondItem="TCe-vO-b7V" secondAttribute="trailingMargin" id="YjJ-yj-rOR"/>
                             <constraint firstItem="tB3-Lu-czw" firstAttribute="top" secondItem="yvJ-md-RbV" secondAttribute="bottom" constant="16" id="fPo-Qo-938"/>
                             <constraint firstItem="tB3-Lu-czw" firstAttribute="leading" secondItem="Fdn-R2-4MU" secondAttribute="leading" id="hVl-FA-Wlb"/>
-                            <constraint firstItem="yvJ-md-RbV" firstAttribute="leading" secondItem="aP0-bQ-wdW" secondAttribute="trailing" constant="1" id="jVZ-0m-D7s"/>
+                            <constraint firstItem="yvJ-md-RbV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aP0-bQ-wdW" secondAttribute="trailing" constant="1" id="jVZ-0m-D7s"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="NewsFeed" image="newspaper.fill" catalog="system" id="2je-5N-gUc"/>
